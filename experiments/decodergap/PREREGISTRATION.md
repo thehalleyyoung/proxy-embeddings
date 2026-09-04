@@ -162,3 +162,30 @@ The falsifier for the lever itself is unchanged and separate: if `instruct` does
 not exceed `decoy` by an interval-excluding margin at the equalized budget, on
 both decoders, the lever result does not survive and the paper's positive half
 goes with it.
+
+### Outcome of the lever re-run: branch 3, the one we did not name
+
+| | old budget | equalized budget |
+|---|---|---|
+| instruct, per call issued (programs) | 62.5% | **78.5%** |
+| instruct, of those that answered | 98.9% | **90.4%** |
+| completion spread across arms | 36.1 pts | 14.6 pts |
+
+Intent-to-treat grew **and** the conditional figure fell — branch 3, registered by
+a collaborating session and not by us. The original 98.9% was partly
+survivorship: at a starved budget only the attempts confident enough to finish
+emitted at all, so the conditional rate was computed over a favourable subset.
+The honest conditional figure is 90.4% [84.8, 95.2].
+
+The lever's own falsifier is not met: `instruct` exceeds `decoy` by +72.9 points
+[+65.3, +80.6] on programs and +63.3 [+55.5, +70.6] on SQL. The result survives
+and is larger than published.
+
+A second claim did not survive. `retry` was reported as buying nothing (61.8%
+against `instruct`'s 62.5%). At an adequate budget it scores 85.4% against 78.5%,
+and 100% of generations that answered. That null was a second casualty of the same
+starvation, and it is now an eighth retraction.
+
+SQL's completion spread is 17.2 points at the new budget, still above the
+threshold this paper recommends. It runs against the instructed arm, so the SQL
+figure understates the lever.

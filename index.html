@@ -101,16 +101,20 @@ target rather than merely transmitting specificity. Reach extends past
 the generator's own experience: on targets it has <strong>never once
 produced</strong>, compliance is 94.4% for expressions and 25.0% for
 programs, against 0.0% for both controls.</p>
-<p><strong>Stating the target as a band rather than a point is worth
-about seven points</strong>, smaller than the 18.6 we first reported and
-traced to a generation budget too small for the harder arm (§3.4). What
-is robust is a pair of scoring comparisons immune to that error: a band
-costs point compliance heavily (36.4% against 90.7%), and relaxing the
-acceptance criterion <em>after</em> generation recovers almost nothing
-(92.2% against 90.7%), because failures on emergent targets are
-wholesale rather than near-misses. Observability, not tolerance, is the
-axis that moves accuracy: an unobservable target was answered 24 times
-out of 24 and hit 0.</p>
+<p><strong>A stated target is hit 78.5% of the time against 5.6% for a
+decoy</strong> that names a different target in the same words, and
+17.4% for no instruction at all — so the decoy is <em>worse</em> than
+silence, and the channel carries which target rather than mere
+specificity. <strong>Stating the target as a band rather than a point is
+worth about seven points</strong>, smaller than the 18.6 we first
+reported and traced to a generation budget too small for the harder arm
+(§3.4). What is robust is a pair of scoring comparisons immune to that
+error: a band costs point compliance heavily (36.4% against 90.7%), and
+relaxing the acceptance criterion <em>after</em> generation recovers
+almost nothing (92.2% against 90.7%), because failures on emergent
+targets are wholesale rather than near-misses. Observability, not
+tolerance, is the axis that moves accuracy: an unobservable target was
+answered 24 times out of 24 and hit 0.</p>
 <p><strong>Matching a distribution: it works, and it degrades
 predictably.</strong> Compliance falls monotonically as the target moves
 into the generator's tail — 100%, 63.9%, 55.6%, 30.6%, 25.0% across five
@@ -407,88 +411,81 @@ by decoding rather than by asking the model.</p>
 <tr>
 <td><code>blind</code></td>
 <td>the fixed prompt; the target is never mentioned</td>
-<td>18.1% [12.5, 24.3]</td>
-<td>10.0% [6.1, 14.4]</td>
+<td>17.4% [11.1, 23.6]</td>
+<td>16.7% [11.7, 22.2]</td>
 <td>2.2% [0.0, 5.6]</td>
 </tr>
 <tr>
 <td><code>decoy</code></td>
 <td>a <em>different</em> target, stated in identical form</td>
-<td><strong>6.9%</strong> [2.8, 11.1]</td>
-<td><strong>1.7%</strong> [0.0, 3.9]</td>
+<td><strong>5.6%</strong> [2.1, 9.7]</td>
+<td><strong>7.8%</strong> [3.9, 11.7]</td>
 <td><strong>4.4%</strong> [1.1, 8.9]</td>
 </tr>
 <tr>
 <td><code>instruct</code></td>
 <td>the target</td>
-<td><strong>62.5%</strong> [54.2, 70.1]</td>
-<td><strong>52.8%</strong> [45.0, 60.0]</td>
+<td><strong>78.5%</strong> [71.5, 84.7]</td>
+<td><strong>71.1%</strong> [64.4, 77.8]</td>
 <td><strong>97.8%</strong> [94.4, 100.0]</td>
 </tr>
 <tr>
 <td><code>retry</code></td>
 <td><code>instruct</code>, then re-prompt showing the wrong value</td>
-<td>61.8% [54.2, 69.4]</td>
+<td><strong>85.4%</strong> [79.2, 91.0]</td>
 <td>—</td>
 <td>—</td>
 </tr>
 </tbody>
 </table></div>
-<p>Counting a generation that returned nothing as a failure, which is
-what a practitioner issuing one call per target experiences. The arms do
-not complete at equal rates — on programs the blind prompt returned a
-usable program 99.3% of the time against <code>instruct</code>'s 63.2% —
-so the same numbers conditional on the model having answered are:</p>
-<div class="tw"><table>
-<thead>
-<tr>
-<th>arm</th>
-<th>programs</th>
-<th>SQL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>blind</code></td>
-<td>18.2% [11.9, 24.5]</td>
-<td>11.2% [6.9, 16.2]</td>
-</tr>
-<tr>
-<td><code>decoy</code></td>
-<td>12.5% [6.2, 20.0]</td>
-<td>2.5% [0.0, 5.9]</td>
-</tr>
-<tr>
-<td><code>instruct</code></td>
-<td><strong>98.9%</strong> [96.7, 100.0]</td>
-<td><strong>79.2%</strong> [71.7, 86.7]</td>
-</tr>
-</tbody>
-</table></div>
-<p>The attrition runs <em>against</em> the result — instructed
-generations are the ones that most often come back empty — so the
-intent-to-treat figures understate the lever and both framings support
-it. Conditional on answering at all, a stated target is hit essentially
-always on programs. Only the intent-to-treat figures are quoted
-elsewhere in this paper, because they are the conservative ones.</p>
-<p><em>Compliance with 95% bootstrap intervals; 60 targets × 3 seeds on
-programs and on SQL, 30 × 3 on expressions. Every interval for
-<code>instruct</code> is disjoint from its decoy's.</em></p>
+<p><em>Compliance per call issued, with 95% bootstrap intervals.
+<code>instruct</code> minus <code>decoy</code> is <strong>+72.9
+points</strong> [+65.3, +80.6] on programs and <strong>+63.3</strong>
+[+55.5, +70.6] on SQL.</em></p>
 <p>The decoy arm is what makes this a result rather than an observation.
 Adding any concrete requirement to a prompt changes what a generator
 produces, so <code>instruct</code> beating <code>blind</code> would be
 consistent with the channel carrying nothing but specificity. The decoy
 is drawn from the same target pool and stated in the same words, so the
 two prompts differ in almost nothing but which value is demanded.</p>
-<p><strong>On programs the decoy scores below unconditioned
-prompting</strong> — 6.9% against 18.1%. Stating the wrong target does
-not merely fail to help; it moves the generator away from the right
-answer, below the rate reached with no instruction at all. The channel
-transmits <em>which</em> target, not that a target exists.</p>
-<p>Re-prompting buys nothing: 61.8% on 149 calls against 62.5% on 144.
-Showing a model its own wrong answer and asking again does not recover
-the misses, which suggests the failures are targets the generator cannot
-construct rather than ones it carelessly missed.</p>
+<p><strong>The decoy scores below unconditioned prompting</strong> on
+both text decoders — 5.6% against 17.4% on programs, 7.8% against 16.7%
+on SQL. Stating the wrong target does not merely fail to help; it moves
+the generator away from the right answer, below the rate reached with no
+instruction at all. The channel transmits <em>which</em> target, not
+that a target exists.</p>
+<p><strong>These are the numbers at an equalized generation budget, and
+the first version was not.</strong> Measured at 900 tokens the
+instructed arm returned a usable artifact 63.2% of the time against the
+blind arm's 99.3% — a 36-point spread — so intent-to-treat figures were
+not comparable across arms. At 2,600 tokens with one retry the spread is
+14.6 points on programs and the instructed figure rises from 62.5% to
+78.5%. The attrition had been running <em>against</em> the result, as
+suspected.</p>
+<p>Two things changed with it, and both are corrections rather than
+confirmations.</p>
+<p><em>The conditional figure fell, and it was partly survivorship.</em>
+Among generations that answered, <code>instruct</code> was 98.9% at the
+old budget and is <strong>90.4%</strong> [84.8, 95.2] at the new one. A
+collaborating session registered this possibility before we scored: a
+larger budget lets <em>marginal</em> attempts through — generations that
+previously ran out while struggling and now emit a wrong answer — which
+raises the denominator of a conditional rate without raising its
+numerator. So the original 98.9% counted only the attempts confident
+enough to finish. The honest conditional figure is 90.4%.</p>
+<p><em>Re-prompting does help, which we previously reported that it did
+not.</em> At the old budget <code>retry</code> scored 61.8% against
+<code>instruct</code>'s 62.5% and we concluded that showing a model its
+own wrong answer buys nothing. At an adequate budget it scores
+<strong>85.4%</strong> against 78.5%, and 100% of the generations that
+answered. The earlier null was a second casualty of the same starvation:
+the retry call had no room to work in.</p>
+<p><em>One arm still fails the check.</em> SQL's spread is 17.2 points
+at the new budget (blind 99.4%, decoy 88.3%, instruct 82.2%), above the
+15-point threshold this paper recommends. It runs against the instructed
+arm, so 71.1% understates the lever rather than inflating it, but the
+SQL intent-to-treat comparison should be read as conservative rather
+than clean.</p>
 <h3 id="32-reaching-what-the-generator-has-never-produced">3.2 Reaching
 what the generator has never produced</h3>
 <p>The interesting end of this is the tail. Each target's
@@ -545,10 +542,11 @@ the natural corpus, but which are reachable in principle.</p>
 <p><strong>The lever reaches outside the generator's demonstrated
 range.</strong> On properties never once produced under the
 unconditioned prompt, both controls score zero on programs and on SQL,
-while instruction reaches 25.0%, 72.2% and 94.4% on the three decoders.
-A pipeline restricted to sampling and filtering cannot obtain these
-artifacts at any budget, because the rate it is filtering is zero.
-Asking obtains them.</p>
+while instruction reaches 25.0%, <strong>100.0%</strong> and 94.4% on
+the three decoders — the SQL figure at the equalized budget, where every
+one of 36 never-produced targets was hit. A pipeline restricted to
+sampling and filtering cannot obtain these artifacts at any budget,
+because the rate it is filtering is zero. Asking obtains them.</p>
 <h3
 id="33-what-governs-how-far-it-reaches-constructible-against-emergent">3.3
 What governs how far it reaches: constructible against emergent</h3>

@@ -1,0 +1,576 @@
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 94, "want": "I14", "seed": 0, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 94, "want": "I14", "seed": 1, "got": "I6", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 94, "want": "I14", "seed": 2, "got": "I144", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 103, "want": "I182", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 103, "want": "I182", "seed": 1, "got": "I235", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 103, "want": "I182", "seed": 2, "got": "I94", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 57, "want": "I12236", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 57, "want": "I12236", "seed": 1, "got": "I19", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 57, "want": "I12236", "seed": 2, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 98, "want": "I52", "seed": 0, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 98, "want": "I52", "seed": 1, "got": "I4", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 98, "want": "I52", "seed": 2, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 106, "want": "I10", "seed": 0, "got": "I6", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 106, "want": "I10", "seed": 1, "got": "I9", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 106, "want": "I10", "seed": 2, "got": "I82", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 69, "want": "I29", "seed": 0, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 69, "want": "I29", "seed": 1, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 69, "want": "I29", "seed": 2, "got": "I25498368", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 86, "want": "Xbuiltin_function_or_method", "seed": 0, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 86, "want": "Xbuiltin_function_or_method", "seed": 1, "got": "I32", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 86, "want": "Xbuiltin_function_or_method", "seed": 2, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 104, "want": "I20", "seed": 0, "got": "I16", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 104, "want": "I20", "seed": 1, "got": "I235", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 104, "want": "I20", "seed": 2, "got": "I235", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 102, "want": "I2", "seed": 0, "got": "I138", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 102, "want": "I2", "seed": 1, "got": "I14", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 102, "want": "I2", "seed": 2, "got": "I157", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 136, "want": "I20", "seed": 0, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 136, "want": "I20", "seed": 1, "got": "I4", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 136, "want": "I20", "seed": 2, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 92, "want": "I126", "seed": 0, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 92, "want": "I126", "seed": 1, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 92, "want": "I126", "seed": 2, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 103, "want": "I115", "seed": 0, "got": "I20", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 103, "want": "I115", "seed": 1, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 103, "want": "I115", "seed": 2, "got": "I6", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "input_idx": 81, "want": "I95", "seed": 0, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "input_idx": 81, "want": "I95", "seed": 1, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "input_idx": 81, "want": "I95", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 80, "want": "I65", "seed": 0, "got": "I17", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 80, "want": "I65", "seed": 1, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 80, "want": "I65", "seed": 2, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 92, "want": "I8", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 92, "want": "I8", "seed": 1, "got": "I221", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 92, "want": "I8", "seed": 2, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 114, "want": "I19", "seed": 0, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 114, "want": "I19", "seed": 1, "got": "I9", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 114, "want": "I19", "seed": 2, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 105, "want": "I105", "seed": 0, "got": "I7", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 105, "want": "I105", "seed": 1, "got": "I3871093016150462512650240", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 105, "want": "I105", "seed": 2, "got": "I71", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 115, "want": "I90", "seed": 0, "got": "I13", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 115, "want": "I90", "seed": 1, "got": "I13", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 115, "want": "I90", "seed": 2, "got": "I20", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "input_idx": 136, "want": "I9", "seed": 0, "got": "I9", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "input_idx": 136, "want": "I9", "seed": 1, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "input_idx": 136, "want": "I9", "seed": 2, "got": "I36", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "input_idx": 105, "want": "I71", "seed": 0, "got": "I14", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "input_idx": 105, "want": "I71", "seed": 1, "got": "I12", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "input_idx": 105, "want": "I71", "seed": 2, "got": "I12", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "input_idx": 50, "want": "I1", "seed": 0, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "input_idx": 50, "want": "I1", "seed": 1, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "input_idx": 50, "want": "I1", "seed": 2, "got": "I8", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 138, "want": "I10", "seed": 0, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 138, "want": "I10", "seed": 1, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 138, "want": "I10", "seed": 2, "got": "I44", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "input_idx": 99, "want": "I5", "seed": 0, "got": "I12", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "input_idx": 99, "want": "I5", "seed": 1, "got": "I5", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "input_idx": 99, "want": "I5", "seed": 2, "got": "I5", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "input_idx": 50, "want": "I6", "seed": 0, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "input_idx": 50, "want": "I6", "seed": 1, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "input_idx": 50, "want": "I6", "seed": 2, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 65, "want": "XNoneType", "seed": 0, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 65, "want": "XNoneType", "seed": 1, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 65, "want": "XNoneType", "seed": 2, "got": "I7", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "input_idx": 58, "want": "I3", "seed": 0, "got": "I3", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "input_idx": 58, "want": "I3", "seed": 1, "got": "I3", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "input_idx": 58, "want": "I3", "seed": 2, "got": "I3", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 21, "want": "XNoneType", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 21, "want": "XNoneType", "seed": 1, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 21, "want": "XNoneType", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 138, "want": "I44", "seed": 0, "got": "I10", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 138, "want": "I44", "seed": 1, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 138, "want": "I44", "seed": 2, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 81, "want": "I2", "seed": 0, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 81, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 81, "want": "I2", "seed": 2, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 82, "want": "XNoneType", "seed": 0, "got": "I4", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 82, "want": "XNoneType", "seed": 1, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 82, "want": "XNoneType", "seed": 2, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "input_idx": 86, "want": "I2", "seed": 0, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "input_idx": 86, "want": "I2", "seed": 1, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "input_idx": 86, "want": "I2", "seed": 2, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "input_idx": 26, "want": "I41", "seed": 0, "got": "I23", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "input_idx": 26, "want": "I41", "seed": 1, "got": "I6", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "input_idx": 26, "want": "I41", "seed": 2, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 30, "want": "I39", "seed": 0, "got": "I39", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 30, "want": "I39", "seed": 1, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 30, "want": "I39", "seed": 2, "got": "I39", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 132, "want": "XNoneType", "seed": 0, "got": "I4", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 132, "want": "XNoneType", "seed": 1, "got": "I6", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 132, "want": "XNoneType", "seed": 2, "got": "I4", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "input_idx": 85, "want": "I4", "seed": 0, "got": "I4", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "input_idx": 85, "want": "I4", "seed": 1, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "input_idx": 85, "want": "I4", "seed": 2, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "input_idx": 25, "want": "I0", "seed": 0, "got": "I1000001", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "input_idx": 25, "want": "I0", "seed": 1, "got": "I1000001", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "input_idx": 25, "want": "I0", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "input_idx": 36, "want": "I2", "seed": 0, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "input_idx": 36, "want": "I2", "seed": 1, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "input_idx": 36, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "input_idx": 23, "want": "I3", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "input_idx": 23, "want": "I3", "seed": 1, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "input_idx": 23, "want": "I3", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 121, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 121, "want": "I2", "seed": 1, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 121, "want": "I2", "seed": 2, "got": "I42", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "input_idx": 28, "want": "I3", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "input_idx": 28, "want": "I3", "seed": 1, "got": "I3", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "input_idx": 28, "want": "I3", "seed": 2, "got": "I4", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 44, "want": "I2", "seed": 0, "got": "I79", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 44, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 44, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "input_idx": 8, "want": "I2", "seed": 0, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "input_idx": 8, "want": "I2", "seed": 1, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "input_idx": 8, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 22, "want": "I2", "seed": 0, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 22, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 22, "want": "I2", "seed": 2, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 13, "want": "I0", "seed": 0, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 13, "want": "I0", "seed": 1, "got": "I0", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 13, "want": "I0", "seed": 2, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 45, "want": "I1", "seed": 0, "got": "I1", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 45, "want": "I1", "seed": 1, "got": "I1", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 45, "want": "I1", "seed": 2, "got": "I1", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 25, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 25, "want": "I2", "seed": 1, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 25, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 42, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 42, "want": "I2", "seed": 1, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 42, "want": "I2", "seed": 2, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 6, "want": "I1", "seed": 0, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 6, "want": "I1", "seed": 1, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 6, "want": "I1", "seed": 2, "got": "I1", "hit": true, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 94, "want": "I14", "seed": 0, "got": "I6", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 94, "want": "I14", "seed": 1, "got": "I72", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 94, "want": "I14", "seed": 2, "got": "I6", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 103, "want": "I182", "seed": 0, "got": "I115", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 103, "want": "I182", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 103, "want": "I182", "seed": 2, "got": "I115", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 57, "want": "I12236", "seed": 0, "got": "I228", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 57, "want": "I12236", "seed": 1, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 57, "want": "I12236", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 98, "want": "I52", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 98, "want": "I52", "seed": 1, "got": "I103", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 98, "want": "I52", "seed": 2, "got": "I7", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 106, "want": "I10", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 106, "want": "I10", "seed": 1, "got": "I2527646517421302251520000", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 106, "want": "I10", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 69, "want": "I29", "seed": 0, "got": "I166", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 69, "want": "I29", "seed": 1, "got": "I0", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 69, "want": "I29", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 86, "want": "Xbuiltin_function_or_method", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 86, "want": "Xbuiltin_function_or_method", "seed": 1, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 86, "want": "Xbuiltin_function_or_method", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 104, "want": "I20", "seed": 0, "got": "I7", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 104, "want": "I20", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 104, "want": "I20", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 102, "want": "I2", "seed": 0, "got": "I5", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 102, "want": "I2", "seed": 1, "got": "I128", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 102, "want": "I2", "seed": 2, "got": "I29", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 136, "want": "I20", "seed": 0, "got": "I9", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 136, "want": "I20", "seed": 1, "got": "I9", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 136, "want": "I20", "seed": 2, "got": "I9", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 92, "want": "I126", "seed": 0, "got": "I7", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 92, "want": "I126", "seed": 1, "got": "I8", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 92, "want": "I126", "seed": 2, "got": "I9", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 103, "want": "I115", "seed": 0, "got": "I182", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 103, "want": "I115", "seed": 1, "got": "I182", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 103, "want": "I115", "seed": 2, "got": "I182", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "input_idx": 81, "want": "I95", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "input_idx": 81, "want": "I95", "seed": 1, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "input_idx": 81, "want": "I95", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 80, "want": "I65", "seed": 0, "got": "I8", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 80, "want": "I65", "seed": 1, "got": "I17", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 80, "want": "I65", "seed": 2, "got": "I3", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 92, "want": "I8", "seed": 0, "got": "I126", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 92, "want": "I8", "seed": 1, "got": "I126", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 92, "want": "I8", "seed": 2, "got": "I126", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 114, "want": "I19", "seed": 0, "got": "I4", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 114, "want": "I19", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 114, "want": "I19", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 105, "want": "I105", "seed": 0, "got": "I71", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 105, "want": "I105", "seed": 1, "got": "I71", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 105, "want": "I105", "seed": 2, "got": "I71", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 115, "want": "I90", "seed": 0, "got": "I217", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 115, "want": "I90", "seed": 1, "got": "I3", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 115, "want": "I90", "seed": 2, "got": "I7", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "input_idx": 136, "want": "I9", "seed": 0, "got": "I20", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "input_idx": 136, "want": "I9", "seed": 1, "got": "I15", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "input_idx": 136, "want": "I9", "seed": 2, "got": "I20", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "input_idx": 105, "want": "I71", "seed": 0, "got": "I105", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "input_idx": 105, "want": "I71", "seed": 1, "got": "I106", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "input_idx": 105, "want": "I71", "seed": 2, "got": "I105", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "input_idx": 50, "want": "I1", "seed": 0, "got": "I6", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "input_idx": 50, "want": "I1", "seed": 1, "got": "I6", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "input_idx": 50, "want": "I1", "seed": 2, "got": "I6", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 138, "want": "I10", "seed": 0, "got": "I44", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 138, "want": "I10", "seed": 1, "got": "I44", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 138, "want": "I10", "seed": 2, "got": "I44", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "input_idx": 99, "want": "I5", "seed": 0, "got": "I5", "hit": true, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "input_idx": 99, "want": "I5", "seed": 1, "got": "I106", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "input_idx": 99, "want": "I5", "seed": 2, "got": "I38", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "input_idx": 50, "want": "I6", "seed": 0, "got": "I1", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "input_idx": 50, "want": "I6", "seed": 1, "got": "I1", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "input_idx": 50, "want": "I6", "seed": 2, "got": "I1", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 65, "want": "XNoneType", "seed": 0, "got": "I4", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 65, "want": "XNoneType", "seed": 1, "got": "I91", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 65, "want": "XNoneType", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "input_idx": 58, "want": "I3", "seed": 0, "got": "I111", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "input_idx": 58, "want": "I3", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "input_idx": 58, "want": "I3", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 21, "want": "XNoneType", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 21, "want": "XNoneType", "seed": 1, "got": "I1", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 21, "want": "XNoneType", "seed": 2, "got": "I202", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 138, "want": "I44", "seed": 0, "got": "I10", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 138, "want": "I44", "seed": 1, "got": "I10", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 138, "want": "I44", "seed": 2, "got": "I10", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 81, "want": "I2", "seed": 0, "got": "I95", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 81, "want": "I2", "seed": 1, "got": "I95", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 81, "want": "I2", "seed": 2, "got": "I95", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 82, "want": "XNoneType", "seed": 0, "got": "I3", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 82, "want": "XNoneType", "seed": 1, "got": "I40320", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 82, "want": "XNoneType", "seed": 2, "got": "I5", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "input_idx": 86, "want": "I2", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "input_idx": 86, "want": "I2", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "input_idx": 86, "want": "I2", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "input_idx": 26, "want": "I41", "seed": 0, "got": "I7", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "input_idx": 26, "want": "I41", "seed": 1, "got": "I41", "hit": true, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "input_idx": 26, "want": "I41", "seed": 2, "got": "I30030", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 30, "want": "I39", "seed": 0, "got": "I3", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 30, "want": "I39", "seed": 1, "got": "I5", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 30, "want": "I39", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 132, "want": "XNoneType", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 132, "want": "XNoneType", "seed": 1, "got": "I4", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 132, "want": "XNoneType", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "input_idx": 85, "want": "I4", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "input_idx": 85, "want": "I4", "seed": 1, "got": "I5", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "input_idx": 85, "want": "I4", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "input_idx": 25, "want": "I0", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "input_idx": 25, "want": "I0", "seed": 1, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "input_idx": 25, "want": "I0", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "input_idx": 36, "want": "I2", "seed": 0, "got": "I18", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "input_idx": 36, "want": "I2", "seed": 1, "got": "I0", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "input_idx": 36, "want": "I2", "seed": 2, "got": "I25", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "input_idx": 23, "want": "I3", "seed": 0, "got": "I10", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "input_idx": 23, "want": "I3", "seed": 1, "got": "I0", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "input_idx": 23, "want": "I3", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 121, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 121, "want": "I2", "seed": 1, "got": "I15", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 121, "want": "I2", "seed": 2, "got": "I3", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "input_idx": 28, "want": "I3", "seed": 0, "got": "I0", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "input_idx": 28, "want": "I3", "seed": 1, "got": "I3", "hit": true, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "input_idx": 28, "want": "I3", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 44, "want": "I2", "seed": 0, "got": "E:NameError", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 44, "want": "I2", "seed": 1, "got": "I124", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 44, "want": "I2", "seed": 2, "got": "I0", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "input_idx": 8, "want": "I2", "seed": 0, "got": "I3", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "input_idx": 8, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "input_idx": 8, "want": "I2", "seed": 2, "got": "I1", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 22, "want": "I2", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 22, "want": "I2", "seed": 1, "got": "I4", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 22, "want": "I2", "seed": 2, "got": "I1", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 13, "want": "I0", "seed": 0, "got": "I0", "hit": true, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 13, "want": "I0", "seed": 1, "got": "I3", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 13, "want": "I0", "seed": 2, "got": "I0", "hit": true, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 45, "want": "I1", "seed": 0, "got": "I3", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 45, "want": "I1", "seed": 1, "got": "I1", "hit": true, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 45, "want": "I1", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 25, "want": "I2", "seed": 0, "got": "I0", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 25, "want": "I2", "seed": 1, "got": "I0", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 25, "want": "I2", "seed": 2, "got": "I0", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 42, "want": "I2", "seed": 0, "got": "I75", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 42, "want": "I2", "seed": 1, "got": "I4", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 42, "want": "I2", "seed": 2, "got": "I21", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 6, "want": "I1", "seed": 0, "got": "I0", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 6, "want": "I1", "seed": 1, "got": "I2", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 6, "want": "I1", "seed": 2, "got": "I0", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 94, "want": "I14", "seed": 0, "got": "I14", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 94, "want": "I14", "seed": 1, "got": "I14", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 94, "want": "I14", "seed": 2, "got": "I14", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 103, "want": "I182", "seed": 0, "got": "I182", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 103, "want": "I182", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 103, "want": "I182", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 57, "want": "I12236", "seed": 0, "got": "I12236", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 57, "want": "I12236", "seed": 1, "got": "I12236", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 57, "want": "I12236", "seed": 2, "got": "I12236", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 98, "want": "I52", "seed": 0, "got": "I52", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 98, "want": "I52", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 98, "want": "I52", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 106, "want": "I10", "seed": 0, "got": "I10", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 106, "want": "I10", "seed": 1, "got": "I12", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 106, "want": "I10", "seed": 2, "got": "I10", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 69, "want": "I29", "seed": 0, "got": "I29", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 69, "want": "I29", "seed": 1, "got": "I29", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 69, "want": "I29", "seed": 2, "got": "I29", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 86, "want": "Xbuiltin_function_or_method", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 86, "want": "Xbuiltin_function_or_method", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 86, "want": "Xbuiltin_function_or_method", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 104, "want": "I20", "seed": 0, "got": "I20", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 104, "want": "I20", "seed": 1, "got": "I20", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 104, "want": "I20", "seed": 2, "got": "I20", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 102, "want": "I2", "seed": 0, "got": "I3", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 102, "want": "I2", "seed": 1, "got": "I1", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 102, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 136, "want": "I20", "seed": 0, "got": "I15", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 136, "want": "I20", "seed": 1, "got": "I20", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 136, "want": "I20", "seed": 2, "got": "I20", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 92, "want": "I126", "seed": 0, "got": "I126", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 92, "want": "I126", "seed": 1, "got": "I126", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 92, "want": "I126", "seed": 2, "got": "I126", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 103, "want": "I115", "seed": 0, "got": "I115", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 103, "want": "I115", "seed": 1, "got": "I115", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 103, "want": "I115", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "input_idx": 81, "want": "I95", "seed": 0, "got": "I95", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "input_idx": 81, "want": "I95", "seed": 1, "got": "I95", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "input_idx": 81, "want": "I95", "seed": 2, "got": "I95", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 80, "want": "I65", "seed": 0, "got": "I65", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 80, "want": "I65", "seed": 1, "got": "I65", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 80, "want": "I65", "seed": 2, "got": "I65", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 92, "want": "I8", "seed": 0, "got": "I8", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 92, "want": "I8", "seed": 1, "got": "I8", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 92, "want": "I8", "seed": 2, "got": "I8", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 114, "want": "I19", "seed": 0, "got": "XNoneType", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 114, "want": "I19", "seed": 1, "got": "I19", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 114, "want": "I19", "seed": 2, "got": "I19", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 105, "want": "I105", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 105, "want": "I105", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 105, "want": "I105", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 115, "want": "I90", "seed": 0, "got": "XNoneType", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 115, "want": "I90", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 115, "want": "I90", "seed": 2, "got": "I90", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "input_idx": 136, "want": "I9", "seed": 0, "got": "I9", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "input_idx": 136, "want": "I9", "seed": 1, "got": "I9", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "input_idx": 136, "want": "I9", "seed": 2, "got": "I9", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "input_idx": 105, "want": "I71", "seed": 0, "got": "I71", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "input_idx": 105, "want": "I71", "seed": 1, "got": "I71", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "input_idx": 105, "want": "I71", "seed": 2, "got": "I71", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "input_idx": 50, "want": "I1", "seed": 0, "got": "I1", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "input_idx": 50, "want": "I1", "seed": 1, "got": "I1", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "input_idx": 50, "want": "I1", "seed": 2, "got": "I1", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 138, "want": "I10", "seed": 0, "got": "I10", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 138, "want": "I10", "seed": 1, "got": "I10", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 138, "want": "I10", "seed": 2, "got": "I10", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "input_idx": 99, "want": "I5", "seed": 0, "got": "I5", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "input_idx": 99, "want": "I5", "seed": 1, "got": "I5", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "input_idx": 99, "want": "I5", "seed": 2, "got": "I5", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "input_idx": 50, "want": "I6", "seed": 0, "got": "I6", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "input_idx": 50, "want": "I6", "seed": 1, "got": "I6", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "input_idx": 50, "want": "I6", "seed": 2, "got": "I6", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 65, "want": "XNoneType", "seed": 0, "got": "I5405", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 65, "want": "XNoneType", "seed": 1, "got": "I91", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 65, "want": "XNoneType", "seed": 2, "got": "I2352", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "input_idx": 58, "want": "I3", "seed": 0, "got": "I3", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "input_idx": 58, "want": "I3", "seed": 1, "got": "I3", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "input_idx": 58, "want": "I3", "seed": 2, "got": "I3", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 21, "want": "XNoneType", "seed": 0, "got": "I20002", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 21, "want": "XNoneType", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 21, "want": "XNoneType", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 138, "want": "I44", "seed": 0, "got": "I44", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 138, "want": "I44", "seed": 1, "got": "I44", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 138, "want": "I44", "seed": 2, "got": "I44", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 81, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 81, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 81, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 82, "want": "XNoneType", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 82, "want": "XNoneType", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 82, "want": "XNoneType", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "input_idx": 86, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "input_idx": 86, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "input_idx": 86, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "input_idx": 26, "want": "I41", "seed": 0, "got": "I41", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "input_idx": 26, "want": "I41", "seed": 1, "got": "I41", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "input_idx": 26, "want": "I41", "seed": 2, "got": "I41", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 30, "want": "I39", "seed": 0, "got": "I39", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 30, "want": "I39", "seed": 1, "got": "I39", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 30, "want": "I39", "seed": 2, "got": "I39", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 132, "want": "XNoneType", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 132, "want": "XNoneType", "seed": 1, "got": "I38", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 132, "want": "XNoneType", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "input_idx": 85, "want": "I4", "seed": 0, "got": "I4", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "input_idx": 85, "want": "I4", "seed": 1, "got": "I4", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "input_idx": 85, "want": "I4", "seed": 2, "got": "I4", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "input_idx": 25, "want": "I0", "seed": 0, "got": "I0", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "input_idx": 25, "want": "I0", "seed": 1, "got": "I0", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "input_idx": 25, "want": "I0", "seed": 2, "got": "I0", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "input_idx": 36, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "input_idx": 36, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "input_idx": 36, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "input_idx": 23, "want": "I3", "seed": 0, "got": "I3", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "input_idx": 23, "want": "I3", "seed": 1, "got": "I3", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "input_idx": 23, "want": "I3", "seed": 2, "got": "I3", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 121, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 121, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 121, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "input_idx": 28, "want": "I3", "seed": 0, "got": "I3", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "input_idx": 28, "want": "I3", "seed": 1, "got": "I3", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "input_idx": 28, "want": "I3", "seed": 2, "got": "I3", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 44, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 44, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 44, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "input_idx": 8, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "input_idx": 8, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "input_idx": 8, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 22, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 22, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 22, "want": "I2", "seed": 2, "got": "I1", "hit": false, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 13, "want": "I0", "seed": 0, "got": "I0", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 13, "want": "I0", "seed": 1, "got": "I0", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 13, "want": "I0", "seed": 2, "got": "I0", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 45, "want": "I1", "seed": 0, "got": "I1", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 45, "want": "I1", "seed": 1, "got": "I1", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 45, "want": "I1", "seed": 2, "got": "I1", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 25, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 25, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 25, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 42, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 42, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 42, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 6, "want": "I1", "seed": 0, "got": "I1", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 6, "want": "I1", "seed": 1, "got": "I1", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 6, "want": "I1", "seed": 2, "got": "I1", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 94, "want": "I14", "seed": 0, "got": "I14", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 94, "want": "I14", "seed": 1, "got": "I14", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 94, "want": "I14", "seed": 2, "got": "I14", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 103, "want": "I182", "seed": 0, "got": "I182", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 103, "want": "I182", "seed": 1, "got": "I182", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 103, "want": "I182", "seed": 2, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 57, "want": "I12236", "seed": 0, "got": "I12236", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 57, "want": "I12236", "seed": 1, "got": "I12236", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 57, "want": "I12236", "seed": 2, "got": "I12236", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 98, "want": "I52", "seed": 0, "got": "I52", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 98, "want": "I52", "seed": 1, "got": "I52", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 98, "want": "I52", "seed": 2, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 106, "want": "I10", "seed": 0, "got": "I10", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 106, "want": "I10", "seed": 1, "got": "I10", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 106, "want": "I10", "seed": 2, "got": "I10", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 69, "want": "I29", "seed": 0, "got": "I29", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 69, "want": "I29", "seed": 1, "got": "I29", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 69, "want": "I29", "seed": 2, "got": "I29", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 86, "want": "Xbuiltin_function_or_method", "seed": 0, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 86, "want": "Xbuiltin_function_or_method", "seed": 1, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 86, "want": "Xbuiltin_function_or_method", "seed": 2, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 104, "want": "I20", "seed": 0, "got": "I20", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 104, "want": "I20", "seed": 1, "got": "I20", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 104, "want": "I20", "seed": 2, "got": "I20", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 102, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 102, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "input_idx": 102, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 136, "want": "I20", "seed": 0, "got": "I20", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 136, "want": "I20", "seed": 1, "got": "I20", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 136, "want": "I20", "seed": 2, "got": "I20", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 92, "want": "I126", "seed": 0, "got": "I126", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 92, "want": "I126", "seed": 1, "got": "I126", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "input_idx": 92, "want": "I126", "seed": 2, "got": "I126", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 103, "want": "I115", "seed": 0, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 103, "want": "I115", "seed": 1, "got": "I115", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "input_idx": 103, "want": "I115", "seed": 2, "got": "I115", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "input_idx": 81, "want": "I95", "seed": 0, "got": "I95", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "input_idx": 81, "want": "I95", "seed": 1, "got": "I95", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "input_idx": 81, "want": "I95", "seed": 2, "got": "I95", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 80, "want": "I65", "seed": 0, "got": "I65", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 80, "want": "I65", "seed": 1, "got": "I65", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 80, "want": "I65", "seed": 2, "got": "I65", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 92, "want": "I8", "seed": 0, "got": "I5", "hit": true, "got2": "I8", "calls": 2}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 92, "want": "I8", "seed": 1, "got": "I8", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "input_idx": 92, "want": "I8", "seed": 2, "got": "I8", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 114, "want": "I19", "seed": 0, "got": "I19", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 114, "want": "I19", "seed": 1, "got": "I19", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 114, "want": "I19", "seed": 2, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 105, "want": "I105", "seed": 0, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 105, "want": "I105", "seed": 1, "got": "I105", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "input_idx": 105, "want": "I105", "seed": 2, "got": "I105", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 115, "want": "I90", "seed": 0, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 115, "want": "I90", "seed": 1, "got": "I90", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 115, "want": "I90", "seed": 2, "got": "I90", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "input_idx": 136, "want": "I9", "seed": 0, "got": "I9", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "input_idx": 136, "want": "I9", "seed": 1, "got": "I8", "hit": true, "got2": "I9", "calls": 2}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "input_idx": 136, "want": "I9", "seed": 2, "got": "I9", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "input_idx": 105, "want": "I71", "seed": 0, "got": "I71", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "input_idx": 105, "want": "I71", "seed": 1, "got": "I71", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "input_idx": 105, "want": "I71", "seed": 2, "got": "I71", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "input_idx": 50, "want": "I1", "seed": 0, "got": "I1", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "input_idx": 50, "want": "I1", "seed": 1, "got": "I1", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "input_idx": 50, "want": "I1", "seed": 2, "got": "I1", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 138, "want": "I10", "seed": 0, "got": "I10", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 138, "want": "I10", "seed": 1, "got": "I11", "hit": true, "got2": "I10", "calls": 2}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "input_idx": 138, "want": "I10", "seed": 2, "got": "I10", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "input_idx": 99, "want": "I5", "seed": 0, "got": "I5", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "input_idx": 99, "want": "I5", "seed": 1, "got": "I5", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "input_idx": 99, "want": "I5", "seed": 2, "got": "I5", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "input_idx": 50, "want": "I6", "seed": 0, "got": "I6", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "input_idx": 50, "want": "I6", "seed": 1, "got": "I6", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "input_idx": 50, "want": "I6", "seed": 2, "got": "I6", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 65, "want": "XNoneType", "seed": 0, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 65, "want": "XNoneType", "seed": 1, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 65, "want": "XNoneType", "seed": 2, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "input_idx": 58, "want": "I3", "seed": 0, "got": "I3", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "input_idx": 58, "want": "I3", "seed": 1, "got": "I3", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "input_idx": 58, "want": "I3", "seed": 2, "got": "I3", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 21, "want": "XNoneType", "seed": 0, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 21, "want": "XNoneType", "seed": 1, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 21, "want": "XNoneType", "seed": 2, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 138, "want": "I44", "seed": 0, "got": "I44", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 138, "want": "I44", "seed": 1, "got": "I44", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 138, "want": "I44", "seed": 2, "got": "I44", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 81, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 81, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 81, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 82, "want": "XNoneType", "seed": 0, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 82, "want": "XNoneType", "seed": 1, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 82, "want": "XNoneType", "seed": 2, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "input_idx": 86, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "input_idx": 86, "want": "I2", "seed": 1, "got": "I1", "hit": true, "got2": "I2", "calls": 2}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "input_idx": 86, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "input_idx": 26, "want": "I41", "seed": 0, "got": "I41", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "input_idx": 26, "want": "I41", "seed": 1, "got": "I41", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "input_idx": 26, "want": "I41", "seed": 2, "got": "I41", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 30, "want": "I39", "seed": 0, "got": "I39", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 30, "want": "I39", "seed": 1, "got": "I39", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "input_idx": 30, "want": "I39", "seed": 2, "got": "I39", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 132, "want": "XNoneType", "seed": 0, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 132, "want": "XNoneType", "seed": 1, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "input_idx": 132, "want": "XNoneType", "seed": 2, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "input_idx": 85, "want": "I4", "seed": 0, "got": "I4", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "input_idx": 85, "want": "I4", "seed": 1, "got": "I4", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "input_idx": 85, "want": "I4", "seed": 2, "got": "I4", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "input_idx": 25, "want": "I0", "seed": 0, "got": "I0", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "input_idx": 25, "want": "I0", "seed": 1, "got": "I0", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "input_idx": 25, "want": "I0", "seed": 2, "got": "I0", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "input_idx": 36, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "input_idx": 36, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "input_idx": 36, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "input_idx": 23, "want": "I3", "seed": 0, "got": "I3", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "input_idx": 23, "want": "I3", "seed": 1, "got": "I3", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "input_idx": 23, "want": "I3", "seed": 2, "got": "I3", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 121, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 121, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 121, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "input_idx": 28, "want": "I3", "seed": 0, "got": "I3", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "input_idx": 28, "want": "I3", "seed": 1, "got": "I3", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "input_idx": 28, "want": "I3", "seed": 2, "got": "I3", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 44, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 44, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 44, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "input_idx": 8, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "input_idx": 8, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "input_idx": 8, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 22, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 22, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "input_idx": 22, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 13, "want": "I0", "seed": 0, "got": "I0", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 13, "want": "I0", "seed": 1, "got": "I0", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 13, "want": "I0", "seed": 2, "got": "I0", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 45, "want": "I1", "seed": 0, "got": "I1", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 45, "want": "I1", "seed": 1, "got": "I1", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "input_idx": 45, "want": "I1", "seed": 2, "got": "I1", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 25, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 25, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 25, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 42, "want": "I2", "seed": 0, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 42, "want": "I2", "seed": 1, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 42, "want": "I2", "seed": 2, "got": "I2", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 6, "want": "I1", "seed": 0, "got": "I1", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 6, "want": "I1", "seed": 1, "got": "I1", "hit": true, "calls": 1}
+{"arm": "retry", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "input_idx": 6, "want": "I1", "seed": 2, "got": "I1", "hit": true, "calls": 1}
