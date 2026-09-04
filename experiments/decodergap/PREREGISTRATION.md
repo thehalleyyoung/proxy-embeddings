@@ -50,3 +50,35 @@ A second, weaker prediction for the same run: because SVG marks are quantized,
 some misses will be near-misses (right tag, adjacent grid cell). Those count as
 misses here; a graded score is not used, because the whole point of the
 compliance measure is that it is checked by decoding rather than judged.
+
+## Addendum, added before the SVG run: SVG is a positive control
+
+A collaborating session pointed out that this is better described as a positive
+control than as a treatment. Every SVG mark target is constructible *and*
+observable — the generator is told the exact tag, grid cell, size band and hue
+band, and can write an element with those properties directly, needing no
+information it does not have. So if compliance is **not** high here, the fault is
+in the rule rather than in the domain, and a positive control that fails is more
+informative than a treatment that succeeds.
+
+## Second addendum: emergence and observability are separate axes
+
+The same session found, on a glob-pattern decoder, constructible targets at
+100.0% and emergent targets at exactly 0.0% — and flagged that its emergent task
+may have been *impossible* rather than merely emergent, because the generator was
+shown 12 sample paths and asked to match a count over a 600-name corpus it could
+not see. Our SQL emergent targets scored 31.3%, which is plainly reachable.
+
+So two axes, not one:
+
+- **emergent**: satisfying the target requires finding a computation whose
+  behaviour lands somewhere, rather than writing a token.
+- **unobservable**: the generator cannot see the space the behaviour is scored
+  against, so it cannot check its own work even in principle.
+
+Our SQL emergent targets are emergent-but-partly-observable (the schema is in the
+prompt, the data is not). A practitioner steering a closed-weight video model is
+usually in the emergent-and-unobservable regime, which is the worse one. We
+predict compliance orders: constructible > emergent-observable >
+emergent-unobservable, and we record here that the SQL number (31.3%) is an
+estimate for the middle case and should not be quoted for the third.

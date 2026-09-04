@@ -66,7 +66,7 @@ h2,h3{scroll-margin-top:1.5rem}
 </head>
 <body>
 <div class="layout">
-<nav class="toc" aria-label="Contents"><h2>Contents</h2><ol><li class=""><a class="sec" href="#1-introduction">1. Introduction</a></li><li class=""><a class="sec" href="#2-setup">2. Setup</a></li><li class=""><a class="sec" href="#3-individual-targets-the-channel-as-a-lever">3. Individual targets: the channel as a lever</a></li><li class="sub"><a class="" href="#31-stating-the-target-and-verifying-by-decoding">3.1 Stating the target, and verifying by decoding</a></li><li class="sub"><a class="" href="#32-reaching-what-the-generator-has-never-produced">3.2 Reaching what the generator has never produced</a></li><li class=""><a class="sec" href="#4-distances-the-channel-as-a-ruler">4. Distances: the channel as a ruler</a></li><li class="sub"><a class="" href="#41-decoders-that-leave-nothing-to-interpretation">4.1 Decoders that leave nothing to interpretation</a></li><li class="sub"><a class="" href="#42-the-profile-that-looks-like-a-finding">4.2 The profile that looks like a finding</a></li><li class="sub"><a class="" href="#43-the-control-two-encoders-no-decoder">4.3 The control: two encoders, no decoder</a></li><li class=""><a class="sec" href="#5-measure-with-the-decoder-it-is-cheaper-than-the-channel">5. Measure with the decoder: it is cheaper than the channel</a></li><li class=""><a class="sec" href="#6-decodergap-the-probe">6. decodergap: the probe</a></li><li class=""><a class="sec" href="#7-when-the-decoder-is-expensive">7. When the decoder is expensive</a></li><li class="sub"><a class="" href="#71-text-diversity-is-nearly-blind-to-image-diversity">7.1 Text diversity is nearly blind to image diversity</a></li><li class="sub"><a class="" href="#73-the-ranking-does-not-depend-on-the-viewpoint">7.3 The ranking does not depend on the viewpoint</a></li><li class="sub"><a class="" href="#74-a-class-of-repetition-the-embedding-misses">7.4 A class of repetition the embedding misses</a></li><li class="sub"><a class="" href="#75-a-defect-no-diversity-measure-can-see">7.5 A defect no diversity measure can see</a></li><li class="sub"><a class="" href="#76-steering-through-the-proxy-where-it-is-all-you-have">7.6 Steering through the proxy where it is all you have</a></li><li class="sub"><a class="" href="#77-conditioning-across-the-seam">7.7 Conditioning across the seam</a></li><li class=""><a class="sec" href="#8-practice">8. Practice</a></li><li class=""><a class="sec" href="#9-limitations">9. Limitations</a></li><li class=""><a class="sec" href="#10-what-this-cost-us-to-learn">10. What this cost us to learn</a></li><li class=""><a class="sec" href="#11-conclusion">11. Conclusion</a></li></ol></nav>
+<nav class="toc" aria-label="Contents"><h2>Contents</h2><ol><li class=""><a class="sec" href="#1-introduction">1. Introduction</a></li><li class=""><a class="sec" href="#2-setup">2. Setup</a></li><li class=""><a class="sec" href="#3-individual-targets-the-channel-as-a-lever">3. Individual targets: the channel as a lever</a></li><li class="sub"><a class="" href="#31-stating-the-target-and-verifying-by-decoding">3.1 Stating the target, and verifying by decoding</a></li><li class="sub"><a class="" href="#32-reaching-what-the-generator-has-never-produced">3.2 Reaching what the generator has never produced</a></li><li class=""><a class="sec" href="#4-distances-the-channel-as-a-ruler">4. Distances: the channel as a ruler</a></li><li class="sub"><a class="" href="#41-decoders-that-leave-nothing-to-interpretation">4.1 Decoders that leave nothing to interpretation</a></li><li class="sub"><a class="" href="#42-the-profile-that-looks-like-a-finding">4.2 The profile that looks like a finding</a></li><li class="sub"><a class="" href="#43-the-control-two-encoders-no-decoder">4.3 The control: two encoders, no decoder</a></li><li class=""><a class="sec" href="#5-measure-with-the-decoder-it-is-cheaper-than-the-channel">5. Measure with the decoder: it is cheaper than the channel</a></li><li class="sub"><a class="" href="#53-the-decode-budget-what-a-partial-decode-buys">5.3 The decode budget: what a partial decode buys</a></li><li class=""><a class="sec" href="#6-decodergap-the-probe">6. decodergap: the probe</a></li><li class=""><a class="sec" href="#7-when-the-decoder-is-expensive">7. When the decoder is expensive</a></li><li class="sub"><a class="" href="#71-text-diversity-is-nearly-blind-to-image-diversity">7.1 Text diversity is nearly blind to image diversity</a></li><li class="sub"><a class="" href="#73-the-ranking-does-not-depend-on-the-viewpoint">7.3 The ranking does not depend on the viewpoint</a></li><li class="sub"><a class="" href="#74-a-class-of-repetition-the-embedding-misses">7.4 A class of repetition the embedding misses</a></li><li class="sub"><a class="" href="#75-a-defect-no-diversity-measure-can-see">7.5 A defect no diversity measure can see</a></li><li class="sub"><a class="" href="#76-steering-through-the-proxy-where-it-is-all-you-have">7.6 Steering through the proxy where it is all you have</a></li><li class="sub"><a class="" href="#77-conditioning-across-the-seam">7.7 Conditioning across the seam</a></li><li class=""><a class="sec" href="#8-practice">8. Practice</a></li><li class=""><a class="sec" href="#9-limitations">9. Limitations</a></li><li class=""><a class="sec" href="#10-what-this-cost-us-to-learn">10. What this cost us to learn</a></li><li class=""><a class="sec" href="#11-conclusion">11. Conclusion</a></li></ol></nav>
 <main>
 <div class="banner">Paper: <a href="paper/paper.pdf">PDF</a> &middot; <a href="paper/paper.tex">LaTeX</a> &middot; <a href="https://github.com/thehalleyyoung/proxy-embeddings">code &amp; data</a> &middot; <a href="https://thehalleyyoung.github.io/rac/">main paper: Recursive Axis Conditioning</a></div>
 <h1
@@ -1102,6 +1102,151 @@ selector but a <em>partial decode budget</em>: decode a sample, and
 spend the rest of the budget where the sample says the behaviour is.
 That regime is where §5's cross-modal steering belongs, and it is the
 boundary between the two halves of this paper.</p>
+<h3 id="53-the-decode-budget-what-a-partial-decode-buys">5.3 The decode
+budget: what a partial decode buys</h3>
+<p>For a cheap decoder the advice is simply to decode everything, and
+§5.1 shows it costs less than embedding. That advice is useless where
+the decoder is a video model, an image model behind a meter, or anything
+else charged per call. There the question is not whether to decode but
+<strong>how much</strong>: <em>I can afford to decode m of my N
+candidates — what do I get?</em></p>
+<p>Decode a uniformly random <em>m</em> of the pool, run the
+artifact-space greedy selection restricted to those, and score the
+chosen <em>k</em> in the artifact's space. We report the fraction of the
+oracle's advantage over random that this recovers,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">recovered</mtext><mo stretchy="false" form="prefix">(</mo><mi>m</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mtext mathvariant="normal">partial</mtext><mo stretchy="false" form="prefix">(</mo><mi>m</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mtext mathvariant="normal">random</mtext></mrow><mrow><mtext mathvariant="normal">oracle</mtext><mo>−</mo><mtext mathvariant="normal">random</mtext></mrow></mfrac></mrow><annotation encoding="application/x-tex">\text{recovered}(m) = \frac{\text{partial}(m) - \text{random}}{\text{oracle} - \text{random}}</annotation></semantics></math></p>
+<p>which is 0 when decoding buys nothing and 1 when a partial decode is
+as good as decoding everything. The text-space selector is scored on the
+same scale, since it is what a pipeline does when it decodes nothing at
+all.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>decoder</th>
+<th><em>k</em></th>
+<th>text-space max-min</th>
+<th><em>m</em> = 5%</th>
+<th>10%</th>
+<th>20%</th>
+<th>40%</th>
+<th>70%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>programs</strong> (<em>N</em> = 203)</td>
+<td>10</td>
+<td>−10%</td>
+<td>0%</td>
+<td>47%</td>
+<td>69%</td>
+<td>83%</td>
+<td>93%</td>
+</tr>
+<tr>
+<td></td>
+<td>20</td>
+<td>18%</td>
+<td>0%</td>
+<td>0%</td>
+<td>35%</td>
+<td>66%</td>
+<td>85%</td>
+</tr>
+<tr>
+<td></td>
+<td>30</td>
+<td>17%</td>
+<td>0%</td>
+<td>0%</td>
+<td>10%</td>
+<td>45%</td>
+<td>76%</td>
+</tr>
+<tr>
+<td></td>
+<td>50</td>
+<td>36%</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+<td>29%</td>
+<td>67%</td>
+</tr>
+<tr>
+<td><strong>SQL</strong> (<em>N</em> = 603)</td>
+<td>10</td>
+<td>16%</td>
+<td>40%</td>
+<td>56%</td>
+<td>73%</td>
+<td>90%</td>
+<td>101%</td>
+</tr>
+<tr>
+<td></td>
+<td>20</td>
+<td>24%</td>
+<td>16%</td>
+<td>40%</td>
+<td>61%</td>
+<td>82%</td>
+<td>95%</td>
+</tr>
+<tr>
+<td></td>
+<td>30</td>
+<td>26%</td>
+<td>0%</td>
+<td>29%</td>
+<td>53%</td>
+<td>77%</td>
+<td>93%</td>
+</tr>
+<tr>
+<td></td>
+<td>50</td>
+<td>27%</td>
+<td>0%</td>
+<td>8%</td>
+<td>39%</td>
+<td>68%</td>
+<td>90%</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Percentage of the oracle's advantage over random recovered, mean
+of 40 seeds.</em></p>
+<p>Three things a practitioner can use.</p>
+<p><strong>A little decoding beats a lot of embedding.</strong> Decoding
+a fifth of the pool matches or beats text-space selection at every
+budget on both decoders, and decoding two fifths roughly doubles it. The
+text-space column is what the alternative buys, and it never exceeds
+36%.</p>
+<p><strong>The budget that matters is relative to the pool, not to the
+selection.</strong> Recovering 70% of the ceiling took <em>m</em>
+between 4.7× and 12.1× the selection budget across our rows, which is
+too wide a range to publish as a rule. Expressed as a share of the pool
+it is stable: <strong>decoding 40% of the pool recovers 29–90% and
+decoding 70% recovers 67–101%</strong>, with the low end of each range
+belonging to the largest selection budget. The reason is structural — a
+greedy selector choosing <em>k</em> items from a decoded sample of
+<em>m</em> has only <em>m</em>/<em>k</em> candidates per pick, so the
+sample must be several times the selection budget before the greedy
+choice has anything to choose between.</p>
+<p><strong>Select small, or decode more.</strong> The recovered fraction
+falls monotonically in <em>k</em> at every <em>m</em>. If the decode
+budget is fixed and small, taking fewer items from it is better than
+taking more, which is the opposite of what a fixed-size corpus
+requirement encourages.</p>
+<p>One boundary is worth stating plainly. A collaborating measurement on
+a decoder with microsecond decoding and a knowable ceiling recovered
+72–81% of the advantage at <em>m</em> = 40%, better than our programs
+decoder at the same fraction. The spread across decoders is real and we
+do not have enough of them to model it, so the table above should be
+read as the shape of the curve rather than as constants to plan against.
+Running it on your own decoder costs one afternoon and is what
+<code>decodergap</code> exists to do.</p>
 <h2 id="6-decodergap-the-probe">6. <code>decodergap</code>: the
 probe</h2>
 <p>The results above do not compose into a rule a practitioner can apply

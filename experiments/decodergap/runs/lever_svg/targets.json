@@ -1,0 +1,314 @@
+[
+  {
+    "cell": "path@4,1|s3|h4",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the drawing must contain a `<path>` whose centre falls in the upper right region of the viewBox (grid cell column 5 of 6, row 2 of 6), which is large in area, and whose fill is cyan"
+  },
+  {
+    "cell": "circle@0,4|s4|h0",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the lower far left region of the viewBox (grid cell column 1 of 6, row 5 of 6), which is very large in area, and whose fill is red"
+  },
+  {
+    "cell": "ellipse@5,3|s2|h2",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the drawing must contain a `<ellipse>` whose centre falls in the lower-middle far right region of the viewBox (grid cell column 6 of 6, row 4 of 6), which is medium in area, and whose fill is yellow"
+  },
+  {
+    "cell": "path@5,0|s2|h7",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the drawing must contain a `<path>` whose centre falls in the top far right region of the viewBox (grid cell column 6 of 6, row 1 of 6), which is medium in area, and whose fill is magenta"
+  },
+  {
+    "cell": "rect@3,2|s4|h7",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the drawing must contain a `<rect>` whose centre falls in the upper-middle centre-right region of the viewBox (grid cell column 4 of 6, row 3 of 6), which is very large in area, and whose fill is magenta"
+  },
+  {
+    "cell": "path@5,5|s2|h8",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the drawing must contain a `<path>` whose centre falls in the bottom far right region of the viewBox (grid cell column 6 of 6, row 6 of 6), which is medium in area, and whose fill is grey or black or white"
+  },
+  {
+    "cell": "polygon@2,0|s4|h4",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the drawing must contain a `<polygon>` whose centre falls in the top centre-left region of the viewBox (grid cell column 3 of 6, row 1 of 6), which is very large in area, and whose fill is cyan"
+  },
+  {
+    "cell": "ellipse@1,2|s1|h8",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the drawing must contain a `<ellipse>` whose centre falls in the upper-middle left region of the viewBox (grid cell column 2 of 6, row 3 of 6), which is small in area, and whose fill is grey or black or white"
+  },
+  {
+    "cell": "rect@4,4|s4|h1",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the drawing must contain a `<rect>` whose centre falls in the lower right region of the viewBox (grid cell column 5 of 6, row 5 of 6), which is very large in area, and whose fill is orange"
+  },
+  {
+    "cell": "line@1,1|s0|h6",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the drawing must contain a `<line>` whose centre falls in the upper left region of the viewBox (grid cell column 2 of 6, row 2 of 6), which is tiny in area, and whose fill is purple"
+  },
+  {
+    "cell": "polygon@0,0|s3|h6",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the drawing must contain a `<polygon>` whose centre falls in the top far left region of the viewBox (grid cell column 1 of 6, row 1 of 6), which is large in area, and whose fill is purple"
+  },
+  {
+    "cell": "rect@0,3|s1|h8",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the drawing must contain a `<rect>` whose centre falls in the lower-middle far left region of the viewBox (grid cell column 1 of 6, row 4 of 6), which is small in area, and whose fill is grey or black or white"
+  },
+  {
+    "cell": "circle@1,2|s0|h1",
+    "rarity": 0.005714285714285714,
+    "band": "[0.001,0.02)",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the upper-middle left region of the viewBox (grid cell column 2 of 6, row 3 of 6), which is tiny in area, and whose fill is orange"
+  },
+  {
+    "cell": "polyline@1,3|s1|h8",
+    "rarity": 0.002857142857142857,
+    "band": "[0.001,0.02)",
+    "req": "the drawing must contain a `<polyline>` whose centre falls in the lower-middle left region of the viewBox (grid cell column 2 of 6, row 4 of 6), which is small in area, and whose fill is grey or black or white"
+  },
+  {
+    "cell": "polygon@1,3|s1|h1",
+    "rarity": 0.0014285714285714286,
+    "band": "[0.001,0.02)",
+    "req": "the drawing must contain a `<polygon>` whose centre falls in the lower-middle left region of the viewBox (grid cell column 2 of 6, row 4 of 6), which is small in area, and whose fill is orange"
+  },
+  {
+    "cell": "polygon@1,2|s3|h0",
+    "rarity": 0.0014285714285714286,
+    "band": "[0.001,0.02)",
+    "req": "the drawing must contain a `<polygon>` whose centre falls in the upper-middle left region of the viewBox (grid cell column 2 of 6, row 3 of 6), which is large in area, and whose fill is red"
+  },
+  {
+    "cell": "path@1,1|s2|h4",
+    "rarity": 0.008571428571428572,
+    "band": "[0.001,0.02)",
+    "req": "the drawing must contain a `<path>` whose centre falls in the upper left region of the viewBox (grid cell column 2 of 6, row 2 of 6), which is medium in area, and whose fill is cyan"
+  },
+  {
+    "cell": "polygon@3,1|s0|h5",
+    "rarity": 0.0014285714285714286,
+    "band": "[0.001,0.02)",
+    "req": "the drawing must contain a `<polygon>` whose centre falls in the upper centre-right region of the viewBox (grid cell column 4 of 6, row 2 of 6), which is tiny in area, and whose fill is blue"
+  },
+  {
+    "cell": "line@5,3|s0|h8",
+    "rarity": 0.004285714285714286,
+    "band": "[0.001,0.02)",
+    "req": "the drawing must contain a `<line>` whose centre falls in the lower-middle far right region of the viewBox (grid cell column 6 of 6, row 4 of 6), which is tiny in area, and whose fill is grey or black or white"
+  },
+  {
+    "cell": "polygon@2,2|s2|h4",
+    "rarity": 0.004285714285714286,
+    "band": "[0.001,0.02)",
+    "req": "the drawing must contain a `<polygon>` whose centre falls in the upper-middle centre-left region of the viewBox (grid cell column 3 of 6, row 3 of 6), which is medium in area, and whose fill is cyan"
+  },
+  {
+    "cell": "path@1,0|s4|h8",
+    "rarity": 0.0014285714285714286,
+    "band": "[0.001,0.02)",
+    "req": "the drawing must contain a `<path>` whose centre falls in the top left region of the viewBox (grid cell column 2 of 6, row 1 of 6), which is very large in area, and whose fill is grey or black or white"
+  },
+  {
+    "cell": "circle@2,2|s1|h8",
+    "rarity": 0.0014285714285714286,
+    "band": "[0.001,0.02)",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the upper-middle centre-left region of the viewBox (grid cell column 3 of 6, row 3 of 6), which is small in area, and whose fill is grey or black or white"
+  },
+  {
+    "cell": "circle@1,2|s0|h4",
+    "rarity": 0.004285714285714286,
+    "band": "[0.001,0.02)",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the upper-middle left region of the viewBox (grid cell column 2 of 6, row 3 of 6), which is tiny in area, and whose fill is cyan"
+  },
+  {
+    "cell": "ellipse@3,2|s1|h3",
+    "rarity": 0.0014285714285714286,
+    "band": "[0.001,0.02)",
+    "req": "the drawing must contain a `<ellipse>` whose centre falls in the upper-middle centre-right region of the viewBox (grid cell column 4 of 6, row 3 of 6), which is small in area, and whose fill is green"
+  },
+  {
+    "cell": "path@1,2|s1|h4",
+    "rarity": 0.037142857142857144,
+    "band": "[0.02,0.1)",
+    "req": "the drawing must contain a `<path>` whose centre falls in the upper-middle left region of the viewBox (grid cell column 2 of 6, row 3 of 6), which is small in area, and whose fill is cyan"
+  },
+  {
+    "cell": "circle@5,2|s0|h4",
+    "rarity": 0.032857142857142856,
+    "band": "[0.02,0.1)",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the upper-middle far right region of the viewBox (grid cell column 6 of 6, row 3 of 6), which is tiny in area, and whose fill is cyan"
+  },
+  {
+    "cell": "circle@1,1|s0|h0",
+    "rarity": 0.054285714285714284,
+    "band": "[0.02,0.1)",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the upper left region of the viewBox (grid cell column 2 of 6, row 2 of 6), which is tiny in area, and whose fill is red"
+  },
+  {
+    "cell": "polygon@2,0|s0|h1",
+    "rarity": 0.03428571428571429,
+    "band": "[0.02,0.1)",
+    "req": "the drawing must contain a `<polygon>` whose centre falls in the top centre-left region of the viewBox (grid cell column 3 of 6, row 1 of 6), which is tiny in area, and whose fill is orange"
+  },
+  {
+    "cell": "polygon@3,2|s2|h8",
+    "rarity": 0.027142857142857142,
+    "band": "[0.02,0.1)",
+    "req": "the drawing must contain a `<polygon>` whose centre falls in the upper-middle centre-right region of the viewBox (grid cell column 4 of 6, row 3 of 6), which is medium in area, and whose fill is grey or black or white"
+  },
+  {
+    "cell": "line@3,1|s0|h8",
+    "rarity": 0.025714285714285714,
+    "band": "[0.02,0.1)",
+    "req": "the drawing must contain a `<line>` whose centre falls in the upper centre-right region of the viewBox (grid cell column 4 of 6, row 2 of 6), which is tiny in area, and whose fill is grey or black or white"
+  },
+  {
+    "cell": "path@3,4|s1|h0",
+    "rarity": 0.02857142857142857,
+    "band": "[0.02,0.1)",
+    "req": "the drawing must contain a `<path>` whose centre falls in the lower centre-right region of the viewBox (grid cell column 4 of 6, row 5 of 6), which is small in area, and whose fill is red"
+  },
+  {
+    "cell": "path@3,5|s2|h4",
+    "rarity": 0.02142857142857143,
+    "band": "[0.02,0.1)",
+    "req": "the drawing must contain a `<path>` whose centre falls in the bottom centre-right region of the viewBox (grid cell column 4 of 6, row 6 of 6), which is medium in area, and whose fill is cyan"
+  },
+  {
+    "cell": "rect@4,4|s0|h4",
+    "rarity": 0.022857142857142857,
+    "band": "[0.02,0.1)",
+    "req": "the drawing must contain a `<rect>` whose centre falls in the lower right region of the viewBox (grid cell column 5 of 6, row 5 of 6), which is tiny in area, and whose fill is cyan"
+  },
+  {
+    "cell": "path@4,4|s0|h4",
+    "rarity": 0.02142857142857143,
+    "band": "[0.02,0.1)",
+    "req": "the drawing must contain a `<path>` whose centre falls in the lower right region of the viewBox (grid cell column 5 of 6, row 5 of 6), which is tiny in area, and whose fill is cyan"
+  },
+  {
+    "cell": "path@3,2|s1|h0",
+    "rarity": 0.04428571428571428,
+    "band": "[0.02,0.1)",
+    "req": "the drawing must contain a `<path>` whose centre falls in the upper-middle centre-right region of the viewBox (grid cell column 4 of 6, row 3 of 6), which is small in area, and whose fill is red"
+  },
+  {
+    "cell": "polygon@3,3|s2|h1",
+    "rarity": 0.03571428571428571,
+    "band": "[0.02,0.1)",
+    "req": "the drawing must contain a `<polygon>` whose centre falls in the lower-middle centre-right region of the viewBox (grid cell column 4 of 6, row 4 of 6), which is medium in area, and whose fill is orange"
+  },
+  {
+    "cell": "path@2,4|s2|h8",
+    "rarity": 0.11857142857142858,
+    "band": "[0.1,0.3)",
+    "req": "the drawing must contain a `<path>` whose centre falls in the lower centre-left region of the viewBox (grid cell column 3 of 6, row 5 of 6), which is medium in area, and whose fill is grey or black or white"
+  },
+  {
+    "cell": "circle@1,0|s0|h1",
+    "rarity": 0.26285714285714284,
+    "band": "[0.1,0.3)",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the top left region of the viewBox (grid cell column 2 of 6, row 1 of 6), which is tiny in area, and whose fill is orange"
+  },
+  {
+    "cell": "path@2,5|s3|h4",
+    "rarity": 0.16714285714285715,
+    "band": "[0.1,0.3)",
+    "req": "the drawing must contain a `<path>` whose centre falls in the bottom centre-left region of the viewBox (grid cell column 3 of 6, row 6 of 6), which is large in area, and whose fill is cyan"
+  },
+  {
+    "cell": "circle@4,0|s0|h1",
+    "rarity": 0.12428571428571429,
+    "band": "[0.1,0.3)",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the top right region of the viewBox (grid cell column 5 of 6, row 1 of 6), which is tiny in area, and whose fill is orange"
+  },
+  {
+    "cell": "path@2,5|s2|h8",
+    "rarity": 0.10428571428571429,
+    "band": "[0.1,0.3)",
+    "req": "the drawing must contain a `<path>` whose centre falls in the bottom centre-left region of the viewBox (grid cell column 3 of 6, row 6 of 6), which is medium in area, and whose fill is grey or black or white"
+  },
+  {
+    "cell": "circle@3,0|s0|h1",
+    "rarity": 0.10714285714285714,
+    "band": "[0.1,0.3)",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the top centre-right region of the viewBox (grid cell column 4 of 6, row 1 of 6), which is tiny in area, and whose fill is orange"
+  },
+  {
+    "cell": "line@3,3|s0|h0",
+    "rarity": 0.12285714285714286,
+    "band": "[0.1,0.3)",
+    "req": "the drawing must contain a `<line>` whose centre falls in the lower-middle centre-right region of the viewBox (grid cell column 4 of 6, row 4 of 6), which is tiny in area, and whose fill is red"
+  },
+  {
+    "cell": "circle@4,1|s1|h1",
+    "rarity": 0.27,
+    "band": "[0.1,0.3)",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the upper right region of the viewBox (grid cell column 5 of 6, row 2 of 6), which is small in area, and whose fill is orange"
+  },
+  {
+    "cell": "circle@1,1|s0|h1",
+    "rarity": 0.23714285714285716,
+    "band": "[0.1,0.3)",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the upper left region of the viewBox (grid cell column 2 of 6, row 2 of 6), which is tiny in area, and whose fill is orange"
+  },
+  {
+    "cell": "polygon@2,4|s4|h4",
+    "rarity": 0.10285714285714286,
+    "band": "[0.1,0.3)",
+    "req": "the drawing must contain a `<polygon>` whose centre falls in the lower centre-left region of the viewBox (grid cell column 3 of 6, row 5 of 6), which is very large in area, and whose fill is cyan"
+  },
+  {
+    "cell": "rect@3,2|s0|h4",
+    "rarity": 0.10428571428571429,
+    "band": "[0.1,0.3)",
+    "req": "the drawing must contain a `<rect>` whose centre falls in the upper-middle centre-right region of the viewBox (grid cell column 4 of 6, row 3 of 6), which is tiny in area, and whose fill is cyan"
+  },
+  {
+    "cell": "polygon@2,3|s3|h4",
+    "rarity": 0.18285714285714286,
+    "band": "[0.1,0.3)",
+    "req": "the drawing must contain a `<polygon>` whose centre falls in the lower-middle centre-left region of the viewBox (grid cell column 3 of 6, row 4 of 6), which is large in area, and whose fill is cyan"
+  },
+  {
+    "cell": "circle@5,2|s0|h1",
+    "rarity": 0.3142857142857143,
+    "band": "[0.3,1.01)",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the upper-middle far right region of the viewBox (grid cell column 6 of 6, row 3 of 6), which is tiny in area, and whose fill is orange"
+  },
+  {
+    "cell": "rect@3,3|s4|h5",
+    "rarity": 0.30714285714285716,
+    "band": "[0.3,1.01)",
+    "req": "the drawing must contain a `<rect>` whose centre falls in the lower-middle centre-right region of the viewBox (grid cell column 4 of 6, row 4 of 6), which is very large in area, and whose fill is blue"
+  },
+  {
+    "cell": "circle@4,1|s1|h0",
+    "rarity": 0.43714285714285717,
+    "band": "[0.3,1.01)",
+    "req": "the drawing must contain a `<circle>` whose centre falls in the upper right region of the viewBox (grid cell column 5 of 6, row 2 of 6), which is small in area, and whose fill is red"
+  },
+  {
+    "cell": "rect@3,3|s4|h4",
+    "rarity": 0.6771428571428572,
+    "band": "[0.3,1.01)",
+    "req": "the drawing must contain a `<rect>` whose centre falls in the lower-middle centre-right region of the viewBox (grid cell column 4 of 6, row 4 of 6), which is very large in area, and whose fill is cyan"
+  }
+]

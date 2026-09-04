@@ -651,6 +651,67 @@ budget*: decode a sample, and spend the rest of the budget where the sample says
 the behaviour is. That regime is where §5's cross-modal steering belongs, and it
 is the boundary between the two halves of this paper.
 
+### 5.3 The decode budget: what a partial decode buys
+
+For a cheap decoder the advice is simply to decode everything, and §5.1 shows it
+costs less than embedding. That advice is useless where the decoder is a video
+model, an image model behind a meter, or anything else charged per call. There
+the question is not whether to decode but **how much**: *I can afford to decode m
+of my N candidates — what do I get?*
+
+Decode a uniformly random *m* of the pool, run the artifact-space greedy
+selection restricted to those, and score the chosen *k* in the artifact's space.
+We report the fraction of the oracle's advantage over random that this recovers,
+
+$$\text{recovered}(m) = \frac{\text{partial}(m) - \text{random}}{\text{oracle} - \text{random}}$$
+
+which is 0 when decoding buys nothing and 1 when a partial decode is as good as
+decoding everything. The text-space selector is scored on the same scale, since
+it is what a pipeline does when it decodes nothing at all.
+
+| decoder | *k* | text-space max-min | *m* = 5% | 10% | 20% | 40% | 70% |
+|---|---|---|---|---|---|---|---|
+| **programs** (*N* = 203) | 10 | −10% | 0% | 47% | 69% | 83% | 93% |
+| | 20 | 18% | 0% | 0% | 35% | 66% | 85% |
+| | 30 | 17% | 0% | 0% | 10% | 45% | 76% |
+| | 50 | 36% | 0% | 0% | 0% | 29% | 67% |
+| **SQL** (*N* = 603) | 10 | 16% | 40% | 56% | 73% | 90% | 101% |
+| | 20 | 24% | 16% | 40% | 61% | 82% | 95% |
+| | 30 | 26% | 0% | 29% | 53% | 77% | 93% |
+| | 50 | 27% | 0% | 8% | 39% | 68% | 90% |
+
+*Percentage of the oracle's advantage over random recovered, mean of 40 seeds.*
+
+Three things a practitioner can use.
+
+**A little decoding beats a lot of embedding.** Decoding a fifth of the pool
+matches or beats text-space selection at every budget on both decoders, and
+decoding two fifths roughly doubles it. The text-space column is what the
+alternative buys, and it never exceeds 36%.
+
+**The budget that matters is relative to the pool, not to the selection.**
+Recovering 70% of the ceiling took *m* between 4.7× and 12.1× the selection
+budget across our rows, which is too wide a range to publish as a rule. Expressed
+as a share of the pool it is stable: **decoding 40% of the pool recovers 29–90%
+and decoding 70% recovers 67–101%**, with the low end of each range belonging to
+the largest selection budget. The reason is structural — a greedy selector
+choosing *k* items from a decoded sample of *m* has only *m*/*k* candidates per
+pick, so the sample must be several times the selection budget before the greedy
+choice has anything to choose between.
+
+**Select small, or decode more.** The recovered fraction falls monotonically in
+*k* at every *m*. If the decode budget is fixed and small, taking fewer items
+from it is better than taking more, which is the opposite of what a fixed-size
+corpus requirement encourages.
+
+One boundary is worth stating plainly. A collaborating measurement on a decoder
+with microsecond decoding and a knowable ceiling recovered 72–81% of the advantage
+at *m* = 40%, better than our programs decoder at the same fraction. The spread
+across decoders is real and we do not have enough of them to model it, so the
+table above should be read as the shape of the curve rather than as constants to
+plan against. Running it on your own decoder costs one afternoon and is what
+`decodergap` exists to do.
+
 ## 6. `decodergap`: the probe
 
 The results above do not compose into a rule a practitioner can apply blind,

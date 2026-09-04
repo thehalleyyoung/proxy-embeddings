@@ -169,7 +169,82 @@ class Regex:
         return pool[:k]
 
 
-ADAPTERS = {"sql": Sql(), "regex": Regex()}
+class Svg:
+    """SVG marks. Every target is constructible AND observable: the required
+    element, cell, size band and hue band are all stated, and the generator can
+    write exactly that element. This is the positive control for the rule."""
+    name = "svg"
+
+    GRID_NAMES = ["far left", "left", "centre-left", "centre-right", "right",
+                  "far right"]
+    ROW_NAMES = ["top", "upper", "upper-middle", "lower-middle", "lower",
+                 "bottom"]
+    SIZE_NAMES = ["tiny", "small", "medium", "large", "very large"]
+    HUE_NAMES = ["red", "orange", "yellow", "green", "cyan", "blue", "purple",
+                 "magenta", "grey or black or white"]
+
+    def corpus(self):
+        import domain_svg as V
+        rows = [json.loads(l) for l in
+                (V.OUT / "executed.jsonl").read_text().splitlines()]
+        seen, uniq = set(), []
+        for r in rows:
+            k = "".join(r["svg"].split())
+            if k not in seen:
+                seen.add(k)
+                uniq.append(r)
+        return [r["svg"] for r in uniq], [r["marks"] for r in uniq]
+
+    def cells(self, a):
+        return set(a)
+
+    def render(self, c):
+        tag, rest = c.split("@", 1)
+        pos, sz, hue = rest.split("|")
+        gx, gy = (int(v) for v in pos.split(","))
+        return (f"the drawing must contain a `<{tag}>` whose centre falls in the "
+                f"{self.ROW_NAMES[gy]} {self.GRID_NAMES[gx]} region of the "
+                f"viewBox (grid cell column {gx+1} of 6, row {gy+1} of 6), which "
+                f"is {self.SIZE_NAMES[int(sz[1:])]} in area, and whose fill is "
+                f"{self.HUE_NAMES[int(hue[1:])]}")
+
+    def base(self):
+        import domain_svg as V
+        return V.PROMPT
+
+    def prompt(self, req):
+        import domain_svg as V
+        return V.PROMPT.replace(
+            "Reply with the SVG only",
+            f"**Requirement: {req}.** The drawing must still be a coherent "
+            f"picture, not a single element on its own.\n"
+            "Reply with the SVG only")
+
+    def decode(self, text):
+        import domain_svg as V
+        if not V.is_safe(text)[0]:
+            return None
+        return V.marks(text)
+
+    def extract(self, t):
+        import domain_svg as V
+        return V.extract(t)
+
+    def unobserved(self, texts, arts, rng, k):
+        import domain_svg as V
+        seen = set()
+        for a in arts:
+            seen |= set(a)
+        pool = [f"{t}@{x},{y}|s{s}|h{h}"
+                for t in ("rect", "circle", "ellipse", "polygon", "path", "line")
+                for x in range(6) for y in range(6)
+                for s in range(len(V.SIZE_BANDS) + 1) for h in range(V.HUES + 1)]
+        pool = [c for c in pool if c not in seen]
+        rng.shuffle(pool)
+        return pool[:k]
+
+
+ADAPTERS = {"sql": Sql(), "regex": Regex(), "svg": Svg()}
 
 
 def out_dir(name: str) -> pathlib.Path:
