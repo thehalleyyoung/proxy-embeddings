@@ -299,6 +299,10 @@ does not merely fail to help; it moves the generator away from the right answer,
 below the rate reached with no instruction at all. The channel transmits *which*
 target, not that a target exists.
 
+![Figure 1. The lever, at an equalized generation budget. Left: a target stated in the text is reached far more often than a decoy that states a different target in identical words, on three decoders; on the two text decoders the decoy scores below saying nothing at all, so the channel carries which target rather than mere specificity. Right: compliance against how often the generator already produces the target unprompted. Dotted lines are the unconditioned prompt. The leftmost SQL point is targets the generator produced not once in its natural corpus, where both controls score zero and instruction reaches all 36. Bars and whiskers are 95% bootstrap intervals.](figures/fig_lever.png)
+
+*Figure 1. The lever, at an equalized generation budget. Left: a target stated in the text is reached far more often than a decoy that states a different target in identical words. Right: compliance against how often the generator already produces the target unprompted; dotted lines are the unconditioned prompt.*
+
 **These are the numbers at an equalized generation budget, and the first version
 was not.** Measured at 900 tokens the instructed arm returned a usable artifact
 63.2% of the time against the blind arm's 99.3% — a 36-point spread — so
@@ -1006,6 +1010,10 @@ it is what a pipeline does when it decodes nothing at all.
 
 *Percentage of the oracle's advantage over random recovered, mean of 40 seeds.*
 
+![Figure 2. What a partial decode buys. The vertical axis is the share of the artifact-space oracle's advantage over random selection that a decode budget recovers; the horizontal axis is the share of the candidate pool decoded. Dotted lines mark what text-space farthest-point selection buys on the same scale, which is what a pipeline that decodes nothing at all achieves.](figures/fig_budget.png)
+
+*Figure 2. What a partial decode buys, as a share of the oracle's advantage over random. Dotted lines are what text-space selection buys on the same scale.*
+
 Three things a practitioner can use.
 
 **A little decoding beats a lot of embedding.** Decoding a fifth of the pool
@@ -1185,9 +1193,9 @@ compositions"*. This is a second mode collapse, downstream of ours, contributed 
 the image model and by the fact that much of what varies in the text lands in the
 same visual place.
 
-![Figure 1. Sixteen renders per policy, same generator, same budget, same image model. Rows 1–2, naive prompting: a corpus with a 0.000 exact-duplicate rate and healthy lexical diversity that still returns one visual mode — magenta and cyan collage, barcodes and QR codes, Renaissance portraits and classical busts, Michelangelo hands, warning triangles and neon OPEN signs recurring across nearly every panel. Rows 3–4, max-min steering with literal and latent repulsion on both the text and vision sides: medium, palette, register and composition all move, across a medieval triptych, a botanical cabinet, a photographed sculpture installation, a torn-paper abstract and a civic notice.](figures/fig13_contact_sheet.png)
+![Figure 3. Sixteen renders per policy, same generator, same budget, same image model. Rows 1–2, naive prompting: a corpus with a 0.000 exact-duplicate rate and healthy lexical diversity that still returns one visual mode — magenta and cyan collage, barcodes and QR codes, Renaissance portraits and classical busts, Michelangelo hands, warning triangles and neon OPEN signs recurring across nearly every panel. Rows 3–4, max-min steering with literal and latent repulsion on both the text and vision sides: medium, palette, register and composition all move, across a medieval triptych, a botanical cabinet, a photographed sculpture installation, a torn-paper abstract and a civic notice.](figures/fig13_contact_sheet.png)
 
-*Figure 1. Sixteen renders per policy, same generator, same budget, same image model. Rows 1–2, naive prompting: a corpus with a 0.000 exact-duplicate rate and healthy lexical diversity that still returns one visual mode — magenta and cyan collage, barcodes and QR codes, Renaissance portraits and classical busts, Michelangelo hands, warning triangles and neon OPEN signs recurring across nearly every panel. Rows 3–4, max-min steering with literal and latent repulsion on both the text and vision sides: medium, palette, register and composition all move, across a medieval triptych, a botanical cabinet, a photographed sculpture installation, a torn-paper abstract and a civic notice.*
+*Figure 3. Sixteen renders per policy, same generator, same budget, same image model. Rows 1–2, naive prompting: a corpus with a 0.000 exact-duplicate rate and healthy lexical diversity that still returns one visual mode — magenta and cyan collage, barcodes and QR codes, Renaissance portraits and classical busts, Michelangelo hands, warning triangles and neon OPEN signs recurring across nearly every panel. Rows 3–4, max-min steering with literal and latent repulsion on both the text and vision sides: medium, palette, register and composition all move, across a medieval triptych, a botanical cabinet, a photographed sculpture installation, a torn-paper abstract and a civic notice.*
 
 ### 7.2 Audio: whether a prompt can be steered is a property of the embedder
 
@@ -1392,9 +1400,9 @@ ranked *first* is the least realized in the corpus. The image domain is where th
 proxy question becomes a conditioning question, because the image pipeline has a
 seam the poem pipeline does not.
 
-![Figure 2. Axis realization measured on the artifact. Left: on 60 max-min renders, three of seven axes identify their commanded level at or below chance, and two are undetectable on both the CLIP and pixel channels. Right: on 60 poems, every axis is realized — on the semantic channel, the prosodic channel, or both. Dashed lines mark chance and the permutation null.](figures/fig17_axis_realization.png)
+![Figure 4. Axis realization measured on the artifact. Left: on 60 max-min renders, three of seven axes identify their commanded level at or below chance, and two are undetectable on both the CLIP and pixel channels. Right: on 60 poems, every axis is realized — on the semantic channel, the prosodic channel, or both. Dashed lines mark chance and the permutation null.](figures/fig17_axis_realization.png)
 
-*Figure 2. Axis realization measured on the artifact. Left: on 60 max-min renders, three of seven axes identify their commanded level at or below chance, and two are undetectable on both the CLIP and pixel channels. Right: on 60 poems, every axis is realized — on the semantic channel, the prosodic channel, or both. Dashed lines mark chance and the permutation null.*
+*Figure 4. Axis realization measured on the artifact. Left: on 60 max-min renders, three of seven axes identify their commanded level at or below chance, and two are undetectable on both the CLIP and pixel channels. Right: on 60 poems, every axis is realized — on the semantic channel, the prosodic channel, or both. Dashed lines mark chance and the permutation null.*
 **Images, by intervention: the loss is at the render, not in the writing.** The
 image pipeline has two stages — the model that proposed the axes writes an
 instruction, and `gpt-image-1-mini` renders it — so the same manipulation can be

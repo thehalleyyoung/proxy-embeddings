@@ -299,6 +299,10 @@ does not merely fail to help; it moves the generator away from the right answer,
 below the rate reached with no instruction at all. The channel transmits *which*
 target, not that a target exists.
 
+![{{FIG:fig_lever.png}}. The lever, at an equalized generation budget. Left: a target stated in the text is reached far more often than a decoy that states a different target in identical words, on three decoders; on the two text decoders the decoy scores below saying nothing at all, so the channel carries which target rather than mere specificity. Right: compliance against how often the generator already produces the target unprompted. Dotted lines are the unconditioned prompt. The leftmost SQL point is targets the generator produced not once in its natural corpus, where both controls score zero and instruction reaches all 36. Bars and whiskers are 95% bootstrap intervals.](figures/fig_lever.png)
+
+*{{FIG:fig_lever.png}}. The lever, at an equalized generation budget. Left: a target stated in the text is reached far more often than a decoy that states a different target in identical words. Right: compliance against how often the generator already produces the target unprompted; dotted lines are the unconditioned prompt.*
+
 **These are the numbers at an equalized generation budget, and the first version
 was not.** Measured at 900 tokens the instructed arm returned a usable artifact
 63.2% of the time against the blind arm's 99.3% — a 36-point spread — so
@@ -1005,6 +1009,10 @@ it is what a pipeline does when it decodes nothing at all.
 | | 50 | 27% | 0% | 8% | 39% | 68% | 90% |
 
 *Percentage of the oracle's advantage over random recovered, mean of 40 seeds.*
+
+![{{FIG:fig_budget.png}}. What a partial decode buys. The vertical axis is the share of the artifact-space oracle's advantage over random selection that a decode budget recovers; the horizontal axis is the share of the candidate pool decoded. Dotted lines mark what text-space farthest-point selection buys on the same scale, which is what a pipeline that decodes nothing at all achieves.](figures/fig_budget.png)
+
+*{{FIG:fig_budget.png}}. What a partial decode buys, as a share of the oracle's advantage over random. Dotted lines are what text-space selection buys on the same scale.*
 
 Three things a practitioner can use.
 
