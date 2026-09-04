@@ -24,6 +24,13 @@ rather than merely transmitting specificity. Reach extends past the generator's
 own experience: on targets it has **never once produced**, compliance is 94.4%
 for expressions and 25.0% for programs, against 0.0% for both controls.
 
+**And one line of prompt recovers most of what the tail costs.** Stating an
+emergent target as a band rather than a point lifts compliance from 27.3% to
+**78.8%** in the rarest band and does nothing in the head, where it is already
+saturated. The tolerance has to be in the *ask*: relaxing the acceptance
+criterion afterwards recovers nothing, because failures are wholesale rather than
+near-misses.
+
 **Matching a distribution: it works, and it degrades predictably.** Compliance
 falls monotonically as the target moves into the generator's tail — 100%, 63.9%,
 55.6%, 30.6%, 25.0% across five rarity bands on programs — which turns "can I
@@ -387,6 +394,60 @@ counts as a hit even though the prompt forbids it. The natural corpus and the
 targets come from the same generator, so a different generator would relabel
 which targets are rare. And `retry` was measured on programs only.
 
+### 3.4 Ask for a range: the cheapest intervention in this paper
+
+Emergent targets are the expensive ones, and there is a one-line change that
+recovers most of what they cost. State the requirement as a band rather than a
+point.
+
+Same 48 integer targets, same decoder, same generator, one difference in the ask:
+*must return exactly 169* against *must return a value between 152 and 186*
+(±10% of the value, minimum ±2). Because a band is a looser success criterion as
+well as a looser ask, all four combinations of how the target is *asked* and how
+it is *scored* are reported.
+
+| asked | scored | compliance | 95% CI |
+|---|---|---|---|
+| exactly | exactly | 66.7% | [58.9, 74.4] |
+| **as a band** | **on the band** | **85.3%** | [79.1, 91.5] |
+| as a band | exactly | 32.6% | [24.8, 41.1] |
+| exactly | on the band | 67.4% | [59.7, 75.2] |
+
+And by where the target sits in the generator's distribution:
+
+| rarity | asked exactly | asked as a band | lift |
+|---|---|---|---|
+| [0.001, 0.02) | 27.3% | **78.8%** | **+51.5** |
+| [0.02, 0.10) | 55.6% | 72.2% | +16.7 |
+| [0.10, 0.30) | 95.8% | 91.7% | −4.2 |
+| [0.30, 1.01) | 94.4% | 100.0% | +5.6 |
+
+**Tolerance buys nothing in the head and 51.5 points in the tail.** In the common
+bands compliance is already saturated and a band cannot improve it; in the rare
+band it takes a target from failing three times in four to succeeding four times
+in five. That is the shape a prescription wants, because it says when to reach
+for it: loosen the targets you are struggling to hit, and leave the rest alone.
+
+The two cross terms carry the caveats, and they are the reason all four cells
+were measured.
+
+**A band is not free.** Asking for a band and then insisting on the exact value
+gives 32.6%, *below* asking exactly (66.7%). The generator spends the slack it is
+given. If the point value genuinely matters, asking for a range around it makes
+things worse, not better.
+
+**Failures are not near-misses.** Asking exactly and scoring on the band gives
+67.4%, indistinguishable from scoring it exactly (66.7%). When an exact ask fails
+on this decoder it fails wholesale rather than landing nearby. So the tolerance
+has to be in the *ask*: relaxing the acceptance criterion after generation
+recovers almost nothing, because there is almost nothing sitting just outside the
+line.
+
+That last point is the practical one. A pipeline that generates against exact
+targets and then accepts near-misses is getting the worst of both — it pays the
+exact ask's failure rate and gains none of the band's compliance. Put the
+tolerance in the prompt.
+
 ## 4. Distances: the channel as a ruler
 
 Everything in this paper so far is a statement about diversity. The measurement
@@ -651,7 +712,7 @@ budget*: decode a sample, and spend the rest of the budget where the sample says
 the behaviour is. That regime is where §5's cross-modal steering belongs, and it
 is the boundary between the two halves of this paper.
 
-### 5.3 The decode budget: what a partial decode buys
+### 5.1 The decode budget: what a partial decode buys
 
 For a cheap decoder the advice is simply to decode everything, and §5.1 shows it
 costs less than embedding. That advice is useless where the decoder is a video

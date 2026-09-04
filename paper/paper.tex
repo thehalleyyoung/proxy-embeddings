@@ -222,6 +222,14 @@ generator\textquotesingle s own experience: on targets it has
 \textbf{never once produced}, compliance is 94.4\% for expressions and
 25.0\% for programs, against 0.0\% for both controls.
 
+\textbf{And one line of prompt recovers most of what the tail costs.}
+Stating an emergent target as a band rather than a point lifts
+compliance from 27.3\% to \textbf{78.8\%} in the rarest band and does
+nothing in the head, where it is already saturated. The tolerance has to
+be in the \emph{ask}: relaxing the acceptance criterion afterwards
+recovers nothing, because failures are wholesale rather than
+near-misses.
+
 \textbf{Matching a distribution: it works, and it degrades predictably.}
 Compliance falls monotonically as the target moves into the
 generator\textquotesingle s tail --- 100\%, 63.9\%, 55.6\%, 30.6\%,
@@ -715,6 +723,80 @@ natural corpus and the targets come from the same generator, so a
 different generator would relabel which targets are rare. And
 \texttt{retry} was measured on programs only.
 
+\subsubsection{3.4 Ask for a range: the cheapest intervention in this
+paper}\label{34-ask-for-a-range-the-cheapest-intervention-in-this-paper}
+
+Emergent targets are the expensive ones, and there is a one-line change
+that recovers most of what they cost. State the requirement as a band
+rather than a point.
+
+Same 48 integer targets, same decoder, same generator, one difference in
+the ask: \emph{must return exactly 169} against \emph{must return a
+value between 152 and 186} (±10\% of the value, minimum ±2). Because a
+band is a looser success criterion as well as a looser ask, all four
+combinations of how the target is \emph{asked} and how it is
+\emph{scored} are reported.
+
+{\footnotesize
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.4040\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2159\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.1870\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.1931\linewidth-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+asked & scored & compliance & 95\% CI \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+exactly & exactly & 66.7\% & {[}58.9, 74.4{]} \\
+\textbf{as a band} & \textbf{on the band} & \textbf{85.3\%} & {[}79.1,
+91.5{]} \\
+as a band & exactly & 32.6\% & {[}24.8, 41.1{]} \\
+exactly & on the band & 67.4\% & {[}59.7, 75.2{]} \\
+\end{longtable}}
+
+And by where the target sits in the generator\textquotesingle s
+distribution:
+
+{\footnotesize
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.4404\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.1798\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.1931\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.1866\linewidth-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+rarity & asked exactly & asked as a band & lift \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{[}0.001, 0.02) & 27.3\% & \textbf{78.8\%} & \textbf{+51.5} \\
+{[}0.02, 0.10) & 55.6\% & 72.2\% & +16.7 \\
+{[}0.10, 0.30) & 95.8\% & 91.7\% & −4.2 \\
+{[}0.30, 1.01) & 94.4\% & 100.0\% & +5.6 \\
+\end{longtable}}
+
+\textbf{Tolerance buys nothing in the head and 51.5 points in the tail.}
+In the common bands compliance is already saturated and a band cannot
+improve it; in the rare band it takes a target from failing three times
+in four to succeeding four times in five. That is the shape a
+prescription wants, because it says when to reach for it: loosen the
+targets you are struggling to hit, and leave the rest alone.
+
+The two cross terms carry the caveats, and they are the reason all four
+cells were measured.
+
+\textbf{A band is not free.} Asking for a band and then insisting on the
+exact value gives 32.6\%, \emph{below} asking exactly (66.7\%). The
+generator spends the slack it is given. If the point value genuinely
+matters, asking for a range around it makes things worse, not better.
+
+\textbf{Failures are not near-misses.} Asking exactly and scoring on the
+band gives 67.4\%, indistinguishable from scoring it exactly (66.7\%).
+When an exact ask fails on this decoder it fails wholesale rather than
+landing nearby. So the tolerance has to be in the \emph{ask}: relaxing
+the acceptance criterion after generation recovers almost nothing,
+because there is almost nothing sitting just outside the line.
+
+That last point is the practical one. A pipeline that generates against
+exact targets and then accepts near-misses is getting the worst of both
+--- it pays the exact ask\textquotesingle s failure rate and gains none
+of the band\textquotesingle s compliance. Put the tolerance in the
+prompt.
+
 \subsection{4. Distances: the channel as a
 ruler}\label{4-distances-the-channel-as-a-ruler}
 
@@ -1081,8 +1163,8 @@ the rest of the budget where the sample says the behaviour is. That
 regime is where §5\textquotesingle s cross-modal steering belongs, and
 it is the boundary between the two halves of this paper.
 
-\subsubsection{5.3 The decode budget: what a partial decode
-buys}\label{53-the-decode-budget-what-a-partial-decode-buys}
+\subsubsection{5.1 The decode budget: what a partial decode
+buys}\label{51-the-decode-budget-what-a-partial-decode-buys}
 
 For a cheap decoder the advice is simply to decode everything, and §5.1
 shows it costs less than embedding. That advice is useless where the
