@@ -1,0 +1,20 @@
+{
+  "decoder": "sql",
+  "n_items": 603,
+  "decoder_near_minus_far": 0.23085855101372016,
+  "baselines": {
+    "nomic|char_tfidf": -0.0655574195037163,
+    "nomic|word_tfidf": 0.03663062722416377,
+    "char_tfidf|word_tfidf": 0.4259349997561208
+  },
+  "observed_margin": -0.19507644874240065,
+  "bootstrap_mean": -0.1746252706270238,
+  "bootstrap_ci": [
+    -0.3373720130909132,
+    0.012507836716966939
+  ],
+  "bootstrap_frac_positive": 0.05,
+  "perm_mean": -0.4270310347502176,
+  "perm_sd": 0.03393286420208063,
+  "perm_p": 0.0
+}

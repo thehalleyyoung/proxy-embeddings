@@ -394,7 +394,15 @@ the computation:
 | nomic vs *permuted* behaviour *(null)* | −0.002 | +0.023 | −0.025 |
 
 **The decoder-free controls show the shape about twice as strongly as the
-decoder does.** The conditional-mean curve is the same story: the control rises
+decoder does**, and this holds on every decoder we have measured. A second
+decoder — 603 generated SQL queries scored by the cells they return — at first
+appeared to be the exception, with a decoder profile of +0.231 against
+cross-family baselines of −0.066 and +0.037. It is not. Bootstrapping over items
+(300 resamples), its margin over its *largest* baseline is **−0.195, 95% CI
+[−0.337, +0.013]**, positive in 5.0% of resamples. On three decoders now — Python
+programs, SQL queries, and strings handed to a library — the decoder profile
+fails to clear the encoder-to-encoder baseline. The confound explains the whole
+of every correlation we have. The conditional-mean curve is the same story: the control rises
 +0.493 over the near half and +0.030 over the far half, against the decoder's
 +0.474 and +0.036 — the two curves are the same curve. Two representations that
 have never seen a program run produce a cleaner "near-field law" than the
