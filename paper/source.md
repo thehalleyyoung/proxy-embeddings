@@ -30,8 +30,9 @@ falls monotonically as the target moves into the generator's tail — 100%, 63.9
 steer this?" into a budget question. The decay is governed by the *kind* of
 target rather than by rarity as such: targets the generator can write into the
 artifact stay high at every rarity, including outside anything it has ever
-produced, and only targets that must emerge from its behaviour decay. On SQL,
-whose targets span both kinds, the curve is not even monotone.
+produced, and only targets that must emerge from its behaviour decay. Inside a
+single decoder, holding everything else fixed, the two kinds differ by **47.7
+points** [+34.8, +60.2].
 
 **Anything that reads pairwise distance: it fails, and the standard check does
 not detect the failure.** Deduplication, coreset selection, farthest-point
@@ -347,6 +348,30 @@ So the distinction that predicts reach is not rare against common but
 - An **emergent** target falls out of the artifact's behaviour rather than being
   written into it. Compliance decays with rarity — 100% to 25% on programs — and
   the budget per target must rise accordingly.
+
+**The distinction can be tested inside one decoder, and it survives.** Compared
+across decoders it is confounded with everything else that differs between a
+regex and a program. SQL supplies the within-decoder test, because its targets
+span both kinds while generator, corpus, encoder, decoder and metric are all held
+fixed. The classification is mechanical and fixed by the database schema rather
+than by any outcome: a target column that *is* a column of the base schema can be
+named in a `WHERE` clause and is constructible; anything else is an alias for a
+computed expression whose value must come out of an aggregation, and is emergent.
+
+| SQL targets | `blind` | `decoy` | `instruct` | *n* |
+|---|---|---|---|---|
+| **constructible** (base-schema column) | 16.0% | 2.5% | **79.0%** [70.4, 87.7] | 81 |
+| **emergent** (computed alias) | 5.1% | 1.0% | **31.3%** [22.2, 40.4] | 99 |
+
+The gap is **+47.7 points, 95% CI [+34.8, +60.2]**. Rarity survives as a smaller
+effect inside each class — the correlation between rarity and compliance is
++0.251 (*p* = 0.024) among constructible targets and +0.252 (*p* = 0.012) among
+emergent ones — so both variables matter and the kind of target dominates.
+
+This classification was applied after the run, though the rule that defines it
+reads only the schema. The prediction it makes for a decoder we had not yet
+measured was registered before that run rather than after; see
+`experiments/decodergap/PREREGISTRATION.md`.
 
 Rarity in the natural corpus predicts compliance *within* an emergent domain and
 predicts it poorly across domains or across target kinds, which is worth knowing
