@@ -1,70 +1,107 @@
-# Proxy Embeddings: Steering and Measuring Diversity Through a Space That Is Not the Artifact's
+# Proxy Embeddings: what a text channel can and cannot tell you about the artifact
 
 Site: https://thehalleyyoung.github.io/proxy-embeddings/ · Paper: [`paper/paper.pdf`](paper/paper.pdf)
-· Main paper: [Recursive Axis Conditioning](https://thehalleyyoung.github.io/rac/)
 
-Every diversity objective in this line of work is computed in an embedding, and
-the embedding is a proxy: for a rendered image it is a text encoder's view of the
-instruction, for a poem it is a semantic model nearly blind to metre, for an exam
-item it is a space in which the answer key does not exist. [Recursive Axis
-Conditioning](https://thehalleyyoung.github.io/rac/) assumes an embedding oracle
-and no inverse. This paper asks what follows when the oracle is a proxy for the
-artifact rather than the artifact itself, and extends the method across that
-gap: measuring the gap, steering through it, auditing conditioning at the seam
-where one model's language becomes another model's input, and balancing by
-construction what no embedding encodes.
+The strongest text-to-image, text-to-video, text-to-music and text-to-code
+systems are closed. You cannot fine-tune them, you cannot reach their latents,
+and you cannot score a candidate in the space the artifact lives in without
+paying to generate it. The only control surface is a string, and the only cheap
+measurement is an embedding of that string. Working through a **proxy** is not a
+methodological choice in that setting; it is the setting.
 
-## Headline measurements
+This repository measures what the proxy can and cannot do, on five decoders that
+are **deterministic and total**, so artifact distance is a property of the text
+alone and repeats exactly.
 
-| finding | number |
-|---|---|
-| text-embedding vs rendered-image pairwise similarity, seven arms | Pearson ***r* = 0.167–0.421**; 14.5% shared variance pooled, 8.2% within-arm |
-| prompt-to-track alignment, naive arm | MuQ-MuLan **0.68**, CLAP-fused 0.50, CLAP-music **0.18** |
-| cross-embedder agreement on track similarity | 0.22–0.84; per-arm verdicts flip |
-| image axes realized in the written instruction / in the render | **9 of 11 / 4 of 11**, mean loss 35% (Wilcoxon *p* = .005) |
-| generated exam bank, share of keys in position A | **90%** (χ² = 90.4); after uniform permutation 2.6 |
-| vision-steered arm vs text-only RAC, centered Vendi at *n* = 200 | **91.97 vs 77.67** (+18%), best arm in the domain |
-| cross-modal audio steering, CLAP Vendi on rendered instrumentals | **17.43** vs 11.5 naive, 14.1 axis-conditioned |
-| best-of-3 renders selected on pixel statistics | optical min-gap **1.24×**, CLIP min-gap −0.001 |
-| ranking under four independent representations | RAC **1st under all four**, mean Kendall τ +0.83 |
-| structural repetition (layout twins), baselines vs our arms | 0.223 vs 0.473 — the one channel where baselines win |
-| literal-space structural bans, palette twins / coverage objective | 0.78 → 0.35 / +21% |
+| domain | text | artifact |
+|---|---|---|
+| code | a Python function | its results on a fixed 140-input battery |
+| SQL | a `SELECT` | the cells it returns from a fixed database |
+| regex | a pattern | the subset of a 213-string corpus it matches |
+| math | an expression | its values on a fixed grid |
+| SVG | an XML document | the quantized marks it draws |
 
-## What's here
+## What it found
+
+The answers differ by what you ask the proxy for, and a single "is my proxy
+good" verdict would be misleading.
+
+**Hitting one specified target — the proxy works.** A target stated in the text
+and verified by decoding is hit far more often than a matched **decoy** that
+states a *different* target in identical words. On two decoders the decoy scores
+*below* saying nothing at all, so the channel transmits which target rather than
+mere specificity. It reaches targets the generator has never once produced, where
+both controls score zero and sampling-and-filtering therefore cannot reach at any
+budget.
+
+**Reach is governed by three properties of the target, not by rarity.**
+*Constructible* targets — satisfiable by writing something specific into the
+artifact — are hit at a high, nearly flat rate. *Emergent* ones, which must come
+out of the artifact's behaviour, decay into the tail. Inside one decoder, with
+everything else fixed, the gap is **+47.7 points [+34.8, +60.2]**. *Observability*
+moves accuracy separately: an unobservable target was answered 24 times out of 24
+and hit 0. *Tolerance* moves yield: stating a band rather than a point is worth
+7 to 13 points per call, and is not established as improving accuracy.
+
+**Anything that reads a pairwise distance — the proxy fails, and the standard
+check does not detect it.** Qualifying a text-space distance by correlating it
+with an artifact-space one is confounded: the identical analysis between two
+*encoders*, with no decoder anywhere, reproduces the effect more strongly. Across
+three decoders and five encoders, no decoder profile clears its encoder-to-encoder
+baseline distribution. Downstream, deduplication ranks duplicate pairs at AUC
+0.779 while 45.4% of the pairs it would reject are behaviourally far apart, and
+greedy max-min loses to random on one decoder and beats it on another.
+
+**So spend the decode budget.** For cheap decoders the artifact-space oracle
+costs less than the embeddings it replaces and buys 1.54× [1.29, 1.85] the
+coverage at small budgets. For expensive ones, decoding a fifth of the pool
+matches or beats text-space selection at every budget tested.
+
+## The tool
+
+```python
+import decodergap as dg
+
+dg.audit(texts, embed, decode, distance, coverage)   # is my distance machinery sound?
+dg.triage("the shot must be exactly 2.4 seconds")    # how should I state this target?
+dg.plan(decode_budget=2000, pool=5000, select=50)    # what does my decode budget buy?
+dg.completion_check(arms)                            # did the arms answer at equal rates?
+dg.diagnose_misses(misses, axis_distance)            # which axis am I failing on?
+```
+
+`completion_check` and `diagnose_misses` are in the tool because they each caught
+an error of ours. See below.
+
+## Seven retractions
+
+Every result here that a control overturned was overturned by a control proposed
+by whoever had not produced it. Two of the seven were headlines of this paper's
+own drafts: a "near-field law" killed by the decoder-free control, and a tolerance
+effect that turned out to be a generation budget too small for the harder arm.
+`experiments/decodergap/PREREGISTRATION.md` records a prediction registered
+before its data existed, and the fact that it failed.
+
+## Layout
 
 ```
-paper/      source.md (the manuscript), build_paper.py, figures/, and the built
-            paper.md, paper.tex, paper.pdf
-index.html  the GitHub Pages site: the paper with every figure embedded
-build_site.py, site.css, preview.sh
-code/       the scripts behind every number here (curated from the main repo)
-data/       result JSONs and the provenance registry
+paper/source.md         the manuscript; build_paper.py -> paper.md/.tex/.pdf
+build_site.py           -> index.html, figures embedded, no external assets
+experiments/decodergap/
+  decodergap.py         the tool
+  probe.py              near-field profile, selectors, dedup, reject purity
+  controls.py           the decoder-free controls
+  domain_{code,sql,regex,math,svg}.py    generate / execute / probe per decoder
+  lever.py steer.py     the target-stating experiments and their decoy arms
+  tolerance.py          the band-vs-point manipulation
+  budget.py             the partial-decode curve
+  modulus.py            decoder smoothness
+  null_test.py          bootstrap and permutation nulls
+  PREREGISTRATION.md    registered predictions and their outcomes
 ```
 
-    python3 paper/build_paper.py     # paper.md, paper.tex, paper.pdf
-    python3 build_site.py            # index.html from paper/paper.md
-    ./preview.sh                     # open the site locally
-
-## Reproducing
-
-| section | script |
-|---|---|
-| §4.2 text vs image proxy gap, contact sheet | `code/vision_compare.py`, `code/render_images.py`, `code/make_contact_sheet.py` |
-| §4.3 audio embedder dependence | `code/audio_embedders.py`, `code/audio_compare.py`, `code/audio_domain.py` |
-| §4.4 ranking under four representations | `code/rac_improve/is_diversity_identified.py`, `identifiability_v2.py` |
-| §4.5 literal vs latent | `code/metrics.py` |
-| §4.6 structural repetition and bans | `code/structural.py`, `code/image_steer5.py`–`image_steer7.py` |
-| §4.7 key position | `code/rac_improve/item_keybias.py`, `balance_keys.py` |
-| §5.1 vision-steered arm | `code/image_steer.py`, `code/vision_loop.py` |
-| §5.2 cross-modal audio steering | `code/lyria_steer.py`, `lyria_calibrate.py`, `lyria_online.py` |
-| §5.3 best-of-*K* at the render | `code/rac_improve/render_best_of_k.py`, `optical_consistent.py` |
-| §6 the seam, by intervention | `code/rac_improve/probe_image_seam.py`, `axis_realization.py`, `text_realization.py`, `item_realization.py` |
-| §7 artifact-space level vectors | `code/calculus.py` (`score_axes_realized`) |
-
-Live runs need `OPENROUTER_API_KEY`, a local Ollama with `nomic-embed-text`,
-`OPENAI_API_KEY` for images and a Gemini key for Lyria audio. Rendered images
-carry no logged seed because the image endpoint exposes none; see the paper's
-§9.
+Reproducing needs `OPENROUTER_API_KEY` and a local Ollama with
+`nomic-embed-text`. Each domain module runs `generate`, then `execute`, then
+`probe`.
 
 ## Licence
 
