@@ -319,10 +319,18 @@ conditional figure is 90.4%.
 
 *Re-prompting does help, which we previously reported that it did not.* At the
 old budget `retry` scored 61.8% against `instruct`'s 62.5% and we concluded that
-showing a model its own wrong answer buys nothing. At an adequate budget it
-scores **85.4%** against 78.5%, and 100% of the generations that answered. The
-earlier null was a second casualty of the same starvation: the retry call had no
-room to work in.
+showing a model its own wrong answer buys nothing — and, worse, drew a mechanism
+from it: that the residual failures were targets the generator could not reach
+rather than ones it missed. At an adequate budget `retry` scores **85.4%** against
+78.5%, and 100% of the generations that answered. The earlier null was a second
+casualty of the same starvation, and the mechanism drawn from it pointed the wrong
+way.
+
+Note that this is consistent with failures being wholesale in *value* space
+(§3.4). A second attempt with the wrong answer shown finds a *different
+computation*; a lenient scoring band forgives a *nearby value*. They are
+different interventions, and it is coherent for one to work on a decoder where
+the other does not.
 
 *One arm still fails the check.* SQL's spread is 17.2 points at the new budget
 (blind 99.4%, decoy 88.3%, instruct 82.2%), above the 15-point threshold this
@@ -475,16 +483,45 @@ reach them.
 gives 36.4% on programs and 21.1% on SQL, far below asking exactly (90.7% and
 55.6%). The generator spends the slack it is given. If the point value genuinely
 matters, asking for a range around it is much worse than asking for the point,
-and this is the largest and most consistent effect in the experiment.
+and this is the largest and most consistent effect in the experiment. It is
+measured on these two decoders only: the third decoder's exact-ask arm sits at
+1.7%, near a floor, so its version of this cell has nowhere to fall and cannot
+test the comparison.
 
-*Failures are mostly not near-misses.* Asking exactly and scoring on a ±10% band
-recovers 1.5 points on programs and 3.3 on SQL per call issued (1.6 and 5.3 among
-answers, intervals overlapping). Some near-misses exist on SQL and almost none on
-programs, but on both decoders relaxing the acceptance criterion after generation
-recovers substantially less than putting the tolerance in the ask does — a
-quarter to a half as much. So the tolerance belongs in the *ask*; scoring
-leniently afterwards is the weaker half of the intervention, not a substitute for
-it. §3.7 shows the opposite profile is what an unobservable criterion looks
+*Whether failures are near-misses depends on the decoder, and this is the one
+place a prescription of ours has a genuine boundary.* Asking exactly and scoring
+on a ±10% band recovers 1.5 points on programs and 3.3 on SQL. On a third
+decoder, glob patterns matched against a fixed 600-name corpus with completion
+exactly equal across arms, the same manoeuvre recovers **+43.3 points** (45.0%
+against 1.7%).
+
+| decoder | tolerance in the *ask* | relaxing the *scoring* alone |
+|---|---|---|
+| programs | +7.0 | +1.5 |
+| SQL | +13.3 | +3.3 |
+| glob patterns | +55.0 | **+43.3** |
+
+The explanation is a property of the decoder rather than of the intervention. A
+glob's target is a match *count*, and a pattern that matches 48 when asked for 47
+is one away: small edits to a pattern move the count a little, so misses land near
+the target by the structure of the space. A program's return value is not like
+that — a wrong computation gives an arbitrary number, not a nearby one — and
+neither is a SQL aggregate.
+
+> **Where the target quantity varies smoothly with the text, misses land near it
+> and lenient scoring recovers most of the benefit. Where it varies arbitrarily,
+> misses are wholesale and only the ask helps.**
+
+So the prescription is conditional, and the condition is checkable with the miss
+profile of §3.7 on generations you have already paid for: **if misses cluster near
+the target, lenient scoring is available to you; if they scatter, it is not.**
+Stating the tolerance in the ask works in every case measured. Relaxing the
+acceptance criterion afterwards is a cheaper repair that is only sometimes on the
+table.
+
+This is n = 3 with one domain on the smooth side, and the mechanism is inferred
+from the structure of the decoders rather than manipulated, so we state it as a
+boundary to check rather than a law. §3.7 shows the opposite profile is what an unobservable criterion looks
 like, and §3.8 separates the two mechanisms.
 
 **The general lesson is not about tolerance.** It is that a generation budget too
