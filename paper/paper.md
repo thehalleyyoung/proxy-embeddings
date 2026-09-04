@@ -448,6 +448,70 @@ targets and then accepts near-misses is getting the worst of both — it pays th
 exact ask's failure rate and gains none of the band's compliance. Put the
 tolerance in the prompt.
 
+### 3.5 Three axes, and what to do about each
+
+The reach of the lever is governed by three properties of the target, and they
+are separable. Each was isolated by a different measurement, and one of them was
+isolated by a failure.
+
+**Is the target constructible or emergent?** Can the generator satisfy it by
+writing a specific token into the artifact, or must it find a computation whose
+behaviour lands somewhere? Inside one decoder, holding everything else fixed,
+this is worth **+47.7 points** [+34.8, +60.2] (§3.3).
+
+**Is the target observable to the generator?** Can it check its own compliance,
+or is the success criterion computed somewhere it cannot see? A collaborating
+measurement on a glob-pattern decoder isolated this axis directly: asked to match
+a count over a 600-name corpus it could not see, compliance was 45.8%; shown the
+corpus, **90.0%**, with nothing else changed.
+
+**Is the target a point or a band?** Stating an emergent target as a range rather
+than an exact value is worth **+51.5 points** in the rarest band and nothing in
+the head (§3.4).
+
+The three compose, and the worst corner is the one that matters commercially. A
+practitioner steering a closed-weight video model is usually asking for something
+emergent (a quality that comes out of the generation rather than being nameable
+in it), unobservable (they cannot see the model's output distribution, and the
+model cannot see their acceptance criterion), and stated exactly (*this shot must
+be 2.4 seconds*). Our own estimate for the middle case is 31.3%, and the honest
+extrapolation to the worst corner is *below* that, not at it.
+
+Which yields a short procedure, in the order the interventions are cheap:
+
+1. **Restate the target as a band** wherever the task tolerates one. One line of
+   prompt, no extra generation, +51.5 points where it is needed and nothing where
+   it is not. But put the tolerance in the ask — relaxing acceptance afterwards
+   recovers nothing, because failures are wholesale rather than near-misses.
+2. **Make the criterion observable.** Put the thing you are scoring against into
+   the prompt if it will fit. This is what moved the glob decoder from 45.8% to
+   90.0%, and it costs context rather than calls.
+3. **Decompose emergent targets into constructible ones** where you can. *A red
+   door on the left of frame* is constructible; *the pacing of this edit rhythm*
+   is emergent. If a target can be restated as something the generator writes
+   rather than something it must search for, restate it.
+4. **Budget the remainder.** What is left is emergent, unobservable and exact,
+   and for those the compliance rate is low enough that the question becomes how
+   many attempts you can afford — which is §5.
+
+Both cross-terms in §3.4 were measured rather than inferred, and the design is
+what makes the prescription safe: without *asked exactly, scored on the band* a
+reader would reasonably assume they could get the benefit by loosening their
+evaluation instead of their prompt, and they would get nothing.
+
+**A caution we earned.** We registered a prediction that a fifth decoder, SVG,
+would be the clean positive control for the first axis: every target is a mark
+the generator can simply draw. Compliance was **18.6%** against a registered floor
+of 70%, and by our own falsifier that test does not support the distinction
+(§3.6). The most likely reason is the second axis, and it is a mistake worth
+naming because it is easy to repeat: an SVG target in our scoring is a
+*conjunction of four quantized properties*, three of which are our measurement
+apparatus rather than anything the generator can compute. It cannot tell whether
+the circle it drew crosses the area-fraction threshold separating our size bands.
+We built the unobservability into the scoring and then called it a positive
+control. **If you quantize your acceptance criterion, you have made your target
+unobservable, however constructible it looked.**
+
 ## 4. Distances: the channel as a ruler
 
 Everything in this paper so far is a statement about diversity. The measurement
