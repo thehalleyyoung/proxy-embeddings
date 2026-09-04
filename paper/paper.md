@@ -406,12 +406,16 @@ Same 48 integer targets, same decoder, same generator, one difference in the ask
 well as a looser ask, all four combinations of how the target is *asked* and how
 it is *scored* are reported.
 
-| asked | scored | compliance | 95% CI |
+| asked | scored | programs | SQL (emergent targets) |
 |---|---|---|---|
-| exactly | exactly | 66.7% | [58.9, 74.4] |
-| **as a band** | **on the band** | **85.3%** | [79.1, 91.5] |
-| as a band | exactly | 32.6% | [24.8, 41.1] |
-| exactly | on the band | 67.4% | [59.7, 75.2] |
+| exactly | exactly | 66.7% [58.9, 74.4] | 35.6% [25.6, 45.6] |
+| **as a band** | **on the band** | **85.3%** [79.1, 91.5] | **60.0%** [50.0, 70.0] |
+| as a band | exactly | 32.6% [24.8, 41.1] | 12.2% [5.6, 18.9] |
+| exactly | on the band | 67.4% [59.7, 75.2] | 37.8% [27.8, 47.8] |
+
+*Two decoders and two artifact spaces. The SQL arm is restricted to emergent
+targets by the schema rule of §3.3, since a band around a city name is
+meaningless.*
 
 And by where the target sits in the generator's distribution:
 
@@ -432,16 +436,18 @@ The two cross terms carry the caveats, and they are the reason all four cells
 were measured.
 
 **A band is not free.** Asking for a band and then insisting on the exact value
-gives 32.6%, *below* asking exactly (66.7%). The generator spends the slack it is
-given. If the point value genuinely matters, asking for a range around it makes
-things worse, not better.
+gives 32.6% on programs and 12.2% on SQL, in both cases *below* asking exactly
+(66.7% and 35.6%). The generator spends the slack it is given. If the point value
+genuinely matters, asking for a range around it makes things worse.
 
 **Failures are not near-misses.** Asking exactly and scoring on the band gives
-67.4%, indistinguishable from scoring it exactly (66.7%). When an exact ask fails
-on this decoder it fails wholesale rather than landing nearby. So the tolerance
+67.4% against 66.7% scored exactly on programs, and 37.8% against 35.6% on SQL —
+a difference of 0.7 and 2.2 points. When an exact ask fails on an emergent target
+it fails wholesale rather than landing nearby, on both decoders. So the tolerance
 has to be in the *ask*: relaxing the acceptance criterion after generation
 recovers almost nothing, because there is almost nothing sitting just outside the
-line.
+line. §3.7 shows this is a property of *emergent* targets specifically, and that
+the opposite failure profile is what an unobservable criterion looks like.
 
 That last point is the practical one. A pipeline that generates against exact
 targets and then accepts near-misses is getting the worst of both — it pays the
@@ -510,7 +516,82 @@ apparatus rather than anything the generator can compute. It cannot tell whether
 the circle it drew crosses the area-fraction threshold separating our size bands.
 We built the unobservability into the scoring and then called it a positive
 control. **If you quantize your acceptance criterion, you have made your target
-unobservable, however constructible it looked.**
+unobservable, however constructible it looked.** The miss distances confirm it:
+73.3% of the misses in which the required element was drawn at all are within one
+band of the target on all three quantized axes (§3.6).
+
+### 3.6 A registered prediction that failed, and what the failure measured
+
+We registered, before generating any data, that a fifth decoder would be a clean
+positive control for §3.3. SVG marks looked maximally constructible: a required
+`<circle>` in a named grid cell with a named size and colour is satisfied by
+drawing that circle. The registration set a floor of 70% compliance, predicted
+approximate flatness in rarity, and named its own falsifier.
+
+| registered | observed | |
+|---|---|---|
+| `instruct` ≥ 70% | **18.6%** [12.2, 25.0] | **failed** |
+| approximately flat in rarity | 13.9 / 11.1 / 30.6 / 16.7 / 25.0 | **failed** |
+| `decoy` near the floor, below `instruct` | 3.2% vs 18.6% | held |
+
+By the registered falsifier, **this test does not support the
+constructible/emergent distinction**, and we report it that way rather than
+adjusting the prediction. The distinction rests on §3.3's within-decoder result,
+not on this.
+
+**What went wrong is the second axis, and it was our doing.** Every other
+decoder's target is one property. An SVG target in our scoring is a *conjunction
+of four quantized properties* — tag, grid cell (1 of 36), size band (1 of 5), hue
+band (1 of 9) — and three of those quantizations are our measurement apparatus.
+The generator is told "column 5 of 6, medium in area, blue". It cannot compute
+whether the circle it drew has an area fraction above the 0.05 threshold
+separating our size bands, or whether its blue falls in our hue bin 5 or 6. We
+built the unobservability into the scoring and then called it a positive control.
+
+**The miss distances say so, and they discriminate where a rescore could not.**
+A tolerance rescore lifts compliance under the rival explanation too, if enough
+mass happens to sit nearby. So we recorded the marks each generation actually
+produced and measured how far the misses fell, on each axis separately, starting
+with the one that cannot be explained by quantization at all: was the required
+element drawn?
+
+| | |
+|---|---|
+| misses in which the required tag was drawn at all | **76.5%** (101 of 132) |
+| grid-cell distance, over those | median **0**; 79% in the exact cell, 11% adjacent |
+| size-band distance | median 1; 47% exact, 39% off by one |
+| hue-band distance | median 0; 50% exact, 36% off by one |
+| **within one band on all three axes** | **73.3%** of tag-present misses |
+
+The generator draws the right element, in the right cell, in roughly the right
+colour and size — and our scoring rejects it for being one size band out. So SVG
+turns out to test **observability rather than constructibility**. That changes
+what the domain is evidence for; it does not retroactively make it evidence for
+the prediction it failed.
+
+### 3.7 Miss distance tells you which axis you are failing on
+
+Putting the two failure profiles side by side gives something neither produced
+alone, and it is directly usable.
+
+| decoder | how failures fail | |
+|---|---|---|
+| **programs** (emergent targets) | **wholesale** | asking exactly and scoring on a ±10% band gives 67.4%, indistinguishable from scoring exactly (66.7%) — almost nothing sits just outside the line |
+| **SVG** (unobservably quantized targets) | **by a hair** | 73.3% of tag-present misses are within one band on all three axes |
+
+The shape of the miss distribution is therefore a *diagnostic for which axis is
+binding*, and it costs one pass over generations you have already paid for:
+
+- **Misses cluster just outside the criterion.** Your acceptance test is at a
+  resolution the generator cannot verify. Widen the criterion or state the
+  tolerance — the artifact is already almost right.
+- **Misses are spread out, or the required element is absent.** The target is
+  emergent, and tolerance will not save it. Decompose it into something
+  constructible, or budget for the attempt rate.
+
+These prescriptions point in opposite directions, and a single compliance number
+cannot tell you which one applies. Both of ours read 18.6% and 66.7% — neither
+number says whether to widen the criterion or rewrite the target.
 
 ## 4. Distances: the channel as a ruler
 
@@ -894,6 +975,13 @@ checks were each isolated by a separate experiment, and the intervention it
 suggests for an emergent exact target is the one worth +51.5 points in the tail.
 It also warns, on every target, to check observability separately, because that
 is the axis we lost a registered prediction to.
+
+**`diagnose_misses`** reads §3.7 off generations you have already paid for. Given
+the failures and a function returning how far each fell on each axis of your
+acceptance criterion, it returns the profile and a verdict: *unobservable
+criterion* when the misses cluster within one step on every axis, *emergent* when
+they are spread or the required thing is absent. On our SVG failures it returns
+the first, at 73.3% within one step and the required element present in 76.5%.
 
 **`plan`** turns a decode budget into an expected recovery, interpolating the
 curves of §5.3, and warns when the budget is fewer than about three decoded

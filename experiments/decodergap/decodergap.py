@@ -233,6 +233,56 @@ def triage(target: str) -> Triage:
     return Triage(target, kind, exact, notes, sug)
 
 
+# -------------------------------------------------------------- 2b. misses
+
+def diagnose_misses(misses, axis_distance) -> dict:
+    """Which axis is binding? Read it off the shape of the miss distribution.
+
+    `misses` is any iterable of failed generations; `axis_distance(m) -> dict`
+    returns, for one miss, how far it fell on each axis of the acceptance
+    criterion, plus the key `present` saying whether the required thing appeared
+    at all.
+
+    The two failure profiles measured in this work point to opposite repairs and
+    a single compliance number cannot distinguish them:
+
+      misses just outside the criterion  -> the criterion is at a resolution the
+                                            generator cannot verify; widen it or
+                                            state the tolerance
+      misses spread out, or absent       -> the target is emergent; tolerance
+                                            will not save it, decompose it or
+                                            budget for the attempt rate
+    """
+    rows = [axis_distance(m) for m in misses]
+    if not rows:
+        return {"n": 0}
+    axes = [k for k in rows[0] if k != "present"]
+    present = float(np.mean([bool(r.get("present", True)) for r in rows]))
+    near = [r for r in rows if r.get("present", True)]
+    out = {"n": len(rows), "required_thing_present": present, "axes": {}}
+    for a in axes:
+        v = [r[a] for r in near if r.get(a) is not None]
+        if v:
+            out["axes"][a] = {"median": float(np.median(v)),
+                              "frac_exact": float(np.mean(np.array(v) == 0)),
+                              "frac_within_1": float(np.mean(np.array(v) <= 1))}
+    if near and axes:
+        out["frac_within_1_on_all_axes"] = float(np.mean(
+            [all((r.get(a) or 0) <= 1 for a in axes) for r in near]))
+    w = out.get("frac_within_1_on_all_axes", 0.0)
+    if present < 0.5:
+        out["verdict"] = "EMERGENT: the required thing is usually not produced at all"
+    elif w >= 0.5:
+        out["verdict"] = ("UNOBSERVABLE CRITERION: most misses are within one step "
+                          "of the target on every axis, so the artifact is already "
+                          "nearly right and the acceptance test is finer than the "
+                          "generator can verify")
+    else:
+        out["verdict"] = ("EMERGENT: misses are spread rather than adjacent, so "
+                          "widening the criterion will not recover them")
+    return out
+
+
 # ------------------------------------------------------------------- 3. plan
 
 def plan(decode_budget: int, pool: int, select: int) -> str:
