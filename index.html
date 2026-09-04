@@ -673,60 +673,67 @@ seeds, same decoder, same generator, one difference in the ask:</p>
 <tr>
 <th>asked</th>
 <th>scored</th>
-<th>per call issued</th>
-<th>of those that answered</th>
+<th>programs: per call / of answers</th>
+<th>SQL: per call / of answers</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>exactly</td>
 <td>exactly</td>
-<td>90.7%</td>
-<td>95.9% [91.8, 99.2]</td>
+<td>90.7% / 95.9% [91.8, 99.2]</td>
+<td>55.6% / 87.7% [78.9, 94.7]</td>
 </tr>
 <tr>
 <td><strong>as a band</strong></td>
 <td><strong>on the band</strong></td>
-<td><strong>97.7%</strong></td>
-<td><strong>98.4%</strong> [96.1, 100.0]</td>
+<td><strong>97.7% / 98.4%</strong> [96.1, 100.0]</td>
+<td><strong>68.9% / 91.2%</strong> [83.8, 97.1]</td>
 </tr>
 <tr>
 <td>as a band</td>
 <td>exactly</td>
-<td>36.4%</td>
-<td>36.7% [28.1, 45.3]</td>
+<td>36.4% / 36.7% [28.1, 45.3]</td>
+<td>21.1% / 27.9% [17.6, 38.2]</td>
 </tr>
 <tr>
 <td>exactly</td>
 <td>on the band</td>
-<td>92.2%</td>
-<td>97.5% [94.3, 100.0]</td>
+<td>92.2% / 97.5% [94.3, 100.0]</td>
+<td>58.9% / 93.0% [86.0, 98.2]</td>
 </tr>
 </tbody>
 </table></div>
-<p>The tolerance benefit is <strong>+7.0 points per call issued</strong>
-and <strong>+2.5 points among generations that answered</strong>, with
-overlapping intervals on the second. So a band helps, modestly, and we
-cannot separate how much of even that is a residual return-rate effect
-from how much is accuracy. The honest statement is that it is worth
-about seven points of yield and is not established as making the
+<p><em>Completion spreads after equalizing: 4.7 points on programs, 12.2
+on SQL, both under the 15-point threshold.</em></p>
+<p>The tolerance benefit is <strong>+7.0 and +13.3 points per call
+issued</strong> on the two decoders, and <strong>+2.5 and +3.5 points
+among generations that answered</strong>, with overlapping intervals on
+both of the second pair. So a band helps, modestly, and we cannot
+separate how much of even that is a residual return-rate effect from how
+much is accuracy. The honest statement is that it is worth roughly seven
+to thirteen points of yield and is not established as making the
 artifact more likely to be right.</p>
 <p><strong>Both cross-terms survive, and they carry the
 prescription.</strong> These compare two <em>scorings</em> of one set of
 generations rather than two arms, so attrition cannot reach them.</p>
 <p><em>A band is not free.</em> Asking for a band and then insisting on
-the exact value gives 36.4%, far below asking exactly (90.7%). The
-generator spends the slack it is given. If the point value genuinely
-matters, asking for a range around it is much worse than asking for the
-point.</p>
-<p><em>Failures are not near-misses.</em> Asking exactly and scoring on
-a ±10% band gives 92.2% against 90.7% scored exactly — 1.5 points. When
-an exact ask fails on an emergent target it fails wholesale rather than
-landing nearby. So the tolerance has to be in the <em>ask</em>: relaxing
-the acceptance criterion after generation recovers almost nothing,
-because there is almost nothing sitting just outside the line. §3.7
-shows the opposite profile is what an unobservable criterion looks like,
-and §3.8 separates the two mechanisms.</p>
+the exact value gives 36.4% on programs and 21.1% on SQL, far below
+asking exactly (90.7% and 55.6%). The generator spends the slack it is
+given. If the point value genuinely matters, asking for a range around
+it is much worse than asking for the point, and this is the largest and
+most consistent effect in the experiment.</p>
+<p><em>Failures are mostly not near-misses.</em> Asking exactly and
+scoring on a ±10% band recovers 1.5 points on programs and 3.3 on SQL
+per call issued (1.6 and 5.3 among answers, intervals overlapping). Some
+near-misses exist on SQL and almost none on programs, but on both
+decoders relaxing the acceptance criterion after generation recovers
+substantially less than putting the tolerance in the ask does — a
+quarter to a half as much. So the tolerance belongs in the <em>ask</em>;
+scoring leniently afterwards is the weaker half of the intervention, not
+a substitute for it. §3.7 shows the opposite profile is what an
+unobservable criterion looks like, and §3.8 separates the two
+mechanisms.</p>
 <p><strong>The general lesson is not about tolerance.</strong> It is
 that a generation budget too small for the harder arm is
 indistinguishable, in the output, from the harder arm being harder.

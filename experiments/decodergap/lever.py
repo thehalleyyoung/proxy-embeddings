@@ -248,7 +248,7 @@ ADAPTERS = {"sql": Sql(), "regex": Regex(), "svg": Svg()}
 
 
 def out_dir(name: str) -> pathlib.Path:
-    d = HERE / "runs" / f"lever_{name}"
+    d = HERE / "runs" / f"lever2_{name}"
     d.mkdir(parents=True, exist_ok=True)
     return d
 
@@ -298,10 +298,10 @@ def _one(args) -> dict:
         else:
             prompt = A.prompt(t["req"])
         txt = chat([{"role": "user", "content": prompt}],
-                   temperature=1.0, max_tokens=1400)
+                   temperature=1.0, max_tokens=2600)
         if not (txt or "").strip():
             txt = chat([{"role": "user", "content": prompt}],
-                       temperature=1.0, max_tokens=2600)
+                       temperature=1.0, max_tokens=4000)
         item = A.extract(txt or "")
         if item:
             a = A.decode(item)

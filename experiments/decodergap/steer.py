@@ -50,7 +50,7 @@ from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 
 HERE = pathlib.Path(__file__).resolve().parent
-OUT = HERE / "runs" / "steer"
+OUT = HERE / "runs" / "steer2"
 OUT.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent.parent / "code"))
@@ -194,7 +194,10 @@ def _one(args) -> dict:
         else:
             prompt = instruct_prompt(t)
         txt = chat([{"role": "user", "content": prompt}],
-                   temperature=1.0, max_tokens=900)
+                   temperature=1.0, max_tokens=2600)
+        if not (txt or "").strip():
+            txt = chat([{"role": "user", "content": prompt}],
+                       temperature=1.0, max_tokens=4000)
         src = C.extract(txt or "")
         if src and C.is_safe(src)[0]:
             fp = C.run_one(src)
@@ -203,7 +206,7 @@ def _one(args) -> dict:
                 rec["hit"] = (fp[t["input_idx"]] == t["want"])
         if arm == "retry" and not rec.get("hit") and rec.get("got"):
             txt = chat([{"role": "user", "content": retry_prompt(t, rec["got"])}],
-                       temperature=1.0, max_tokens=900)
+                       temperature=1.0, max_tokens=2600)
             src = C.extract(txt or "")
             if src and C.is_safe(src)[0]:
                 fp = C.run_one(src)
