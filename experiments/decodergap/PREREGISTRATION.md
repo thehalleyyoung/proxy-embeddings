@@ -125,3 +125,40 @@ compliance sharply; if the misses are wholesale, it should not.** The re-run
 records the marks each generation actually produced so the miss distance can be
 measured rather than assumed. Whatever that returns is reported next to this
 failure, not in place of it.
+
+---
+
+## Registered before scoring the lever re-run at the equalized budget
+
+The lever result — the paper's headline — was originally measured at a 900-token
+generation budget under which the arms did not complete equally: `instruct`
+returned a usable artifact 63.2% of the time against `blind`'s 99.3%, a 36-point
+spread. Intent-to-treat figures compared across arms under that spread are not
+comparable, so both lever experiments are re-run at 2,600 tokens with one retry,
+into new directories, leaving the originals auditable.
+
+Three outcomes, registered before the data are read:
+
+1. **ITT grows, conditional roughly unchanged.** The expected result. Attrition
+   ran against the instructed arm, so equalizing completion should widen the
+   intent-to-treat gap while leaving the conditional figures (98.9% programs,
+   79.2% SQL) near where they were, since those already conditioned on answering.
+
+2. **ITT and conditional both roughly unchanged.** Budget was not the binding
+   constraint on the lever, and the original figures stand as reported.
+
+3. **ITT grows and conditional FALLS.** Named by a collaborating session and not
+   by us. This would mean the extra budget lets *marginal* attempts through —
+   generations that previously ran out while struggling and now emit a wrong
+   answer — converting non-returns into misses, which raises the denominator of
+   the conditional figure without raising its numerator. If we see this, the
+   original 98.9% was partly **survivorship**: only the confident attempts got
+   far enough to emit. That would not undermine the lever, but it would mean the
+   conditional number — the one a practitioner uses when they can retry —
+   overpromises, and we would report the equalized conditional figure as the
+   honest one and say why it fell.
+
+The falsifier for the lever itself is unchanged and separate: if `instruct` does
+not exceed `decoy` by an interval-excluding margin at the equalized budget, on
+both decoders, the lever result does not survive and the paper's positive half
+goes with it.

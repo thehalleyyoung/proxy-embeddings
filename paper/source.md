@@ -1539,6 +1539,30 @@ inconvenient. Under the rule that a decoder must clear the whole baseline
 We would not have accepted the discounted baseline from anyone else, which is the
 usual sign.
 
+### 10.1 Why the failure list is long
+
+Every result in this paper that a control overturned was overturned by a control
+proposed by whoever had not produced the result. That is the only structural
+thing we did differently, and it accounts for the length of the list above better
+than any property of the individual claims does.
+
+The pattern is worth naming because it is cheap to copy and does not require two
+people. Each of the seven retractions has the same shape: a result was produced,
+it was interesting, and the person holding it did not think of the control that
+would break it — not from carelessness but because the control that breaks a
+result is usually orthogonal to the reasoning that produced it. The
+decoder-free control was not a refinement of the near-field analysis; it was a
+different question about the same table. The completion check was not a better
+statistic for the tolerance comparison; it was a look at a column nobody was
+reading.
+
+The operational version, for a single author: **before believing a result, write
+down what would have to be true for it to be an artifact, and check that, rather
+than checking the result harder.** Both of the headline retractions here came
+from a check of the first kind. None of the five confirmations we ran of the
+second kind found anything, because a result is generally robust to being
+re-examined in the terms that produced it.
+
 ## 11. Conclusion
 
 You can address the generator in one modality and you need the output in
