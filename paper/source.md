@@ -27,10 +27,11 @@ for expressions and 25.0% for programs, against 0.0% for both controls.
 **Matching a distribution: it works, and it degrades predictably.** Compliance
 falls monotonically as the target moves into the generator's tail — 100%, 63.9%,
 55.6%, 30.6%, 25.0% across five rarity bands on programs — which turns "can I
-steer this?" into a budget question with a curve behind it. The fall is a
-property of the *kind* of target rather than of rarity as such: targets a
-generator can write into the artifact stay near 100% at every rarity, and only
-targets that must emerge from its behaviour decay.
+steer this?" into a budget question. The decay is governed by the *kind* of
+target rather than by rarity as such: targets the generator can write into the
+artifact stay high at every rarity, including outside anything it has ever
+produced, and only targets that must emerge from its behaviour decay. On SQL,
+whose targets span both kinds, the curve is not even monotone.
 
 **Anything that reads pairwise distance: it fails, and the standard check does
 not detect the failure.** Deduplication, coreset selection, farthest-point
@@ -261,15 +262,16 @@ by decoding rather than by asking the model.
 
 Four arms at one generator call each, on two decoders:
 
-| arm | what the prompt says | programs | regular expressions |
-|---|---|---|---|
-| `blind` | the fixed prompt; the target is never mentioned | 18.1% [12.5, 24.3] | 2.2% [0.0, 5.6] |
-| `decoy` | a *different* target, stated in identical form | **6.9%** [2.8, 11.1] | **4.4%** [1.1, 8.9] |
-| `instruct` | the target | **62.5%** [54.2, 70.1] | **97.8%** [94.4, 100.0] |
-| `retry` | `instruct`, then re-prompt showing the wrong value | 61.8% [54.2, 69.4] | — |
+| arm | what the prompt says | programs | SQL | regular expressions |
+|---|---|---|---|---|
+| `blind` | the fixed prompt; the target is never mentioned | 18.1% [12.5, 24.3] | 10.0% [6.1, 14.4] | 2.2% [0.0, 5.6] |
+| `decoy` | a *different* target, stated in identical form | **6.9%** [2.8, 11.1] | **1.7%** [0.0, 3.9] | **4.4%** [1.1, 8.9] |
+| `instruct` | the target | **62.5%** [54.2, 70.1] | **52.8%** [45.0, 60.0] | **97.8%** [94.4, 100.0] |
+| `retry` | `instruct`, then re-prompt showing the wrong value | 61.8% [54.2, 69.4] | — | — |
 
-*Compliance with 95% bootstrap intervals; 60 targets × 3 seeds on programs, 30 ×
-3 on expressions.*
+*Compliance with 95% bootstrap intervals; 60 targets × 3 seeds on programs and on
+SQL, 30 × 3 on expressions. Every interval for `instruct` is disjoint from its
+decoy's.*
 
 The decoy arm is what makes this a result rather than an observation. Adding any
 concrete requirement to a prompt changes what a generator produces, so `instruct`
@@ -296,51 +298,63 @@ being steered rather than assumed. The rarest band is constructed rather than
 sampled: properties the generator produced **not once** in the natural corpus, but
 which are reachable in principle.
 
-| rarity of the target | programs: blind / decoy / **instruct** | expressions: blind / decoy / **instruct** |
-|---|---|---|
-| **never produced** | 0.0% / 0.0% / **25.0%** | 0.0% / 2.8% / **94.4%** |
-| [0.001, 0.02) | 2.8% / 2.8% / **30.6%** | 0.0% / 8.3% / **100.0%** |
-| [0.02, 0.10) | 5.6% / 2.8% / **55.6%** | 8.3% / 0.0% / **100.0%** |
-| [0.10, 0.30) | 5.6% / 5.6% / **63.9%** | 0.0% / 0.0% / **100.0%** |
-| [0.30, 1.01) | 58.3% / 16.7% / **100.0%** | 33.3% / 0.0% / **100.0%** |
+| rarity of the target | programs | SQL | expressions |
+|---|---|---|---|
+| **never produced** | 0.0 / 0.0 / **25.0** | 0.0 / 0.0 / **72.2** | 0.0 / 2.8 / **94.4** |
+| [0.001, 0.02) | 2.8 / 2.8 / **30.6** | 0.0 / 0.0 / **25.0** | 0.0 / 8.3 / **100.0** |
+| [0.02, 0.10) | 5.6 / 2.8 / **55.6** | 0.0 / 0.0 / **44.4** | 8.3 / 0.0 / **100.0** |
+| [0.10, 0.30) | 5.6 / 5.6 / **63.9** | 8.3 / 0.0 / **36.1** | 0.0 / 0.0 / **100.0** |
+| [0.30, 1.01) | 58.3 / 16.7 / **100.0** | 41.7 / 8.3 / **86.1** | 33.3 / 0.0 / **100.0** |
+
+*Percentages, as blind / decoy / **instruct**.*
 
 **The lever reaches outside the generator's demonstrated range.** On properties
 never once produced under the unconditioned prompt, both controls score zero on
-programs and instruction reaches a quarter of them; on expressions instruction
-reaches 94.4% where blind prompting reaches none. A pipeline restricted to
+programs and on SQL, while instruction reaches 25.0%, 72.2% and 94.4% on the
+three decoders. A pipeline restricted to
 sampling and filtering cannot obtain these artifacts at any budget, because the
 rate it is filtering is zero. Asking obtains them.
 
-### 3.3 What governs how far it reaches
+### 3.3 What governs how far it reaches: constructible against emergent
 
-The two decoders disagree by a factor of four in the tail and the reason is not
-rarity. It is what kind of thing the target is.
+The three decoders disagree by a factor of four in the tail, and SQL's curve is
+not even monotone in rarity — 72.2% on never-produced targets against 25.0% one
+band up. Rarity is therefore not the governing variable. What the target *is*
+governs it.
 
-A regular expression required to match `2024-01-31` can be *written* to match it:
-the requirement decomposes into the syntax the generator is already producing, so
-compliance is near-total everywhere, and the natural-corpus rarity of the target
-is nearly irrelevant. A program required to return exactly 169 on a given
-thirteen-element list cannot be written that way. The value has to *come out* of
-whatever the function computes, and the generator has to find a computation that
-both is a plausible general-purpose function and lands on that number. That is a
-search, not a transcription, and it fails most of the time in the tail.
+A regular expression required to match `2024-01-31` can be **written** to match
+it: the requirement decomposes into syntax the generator is already producing.
+A SQL query required to surface `city=Lyon` can have a `WHERE` clause added.
+Neither requires the generator to discover anything, which is why compliance is
+high and nearly flat in rarity, and why SQL's never-produced band — column values
+that exist in the database but that no generated query happened to return — is
+its *easiest* band rather than its hardest.
 
-So the useful distinction for a practitioner is not rare against common but
+A program required to return exactly 169 on a given thirteen-element list cannot
+be written that way. The value has to *come out* of whatever the function
+computes, and the generator has to find a computation that is both a plausible
+general-purpose function and lands on that number. That is a search, and it fails
+most of the time in the tail. SQL's mid-rarity bands behave the same way, because
+those targets are aggregate values — sums, counts, averages — that emerge from a
+computation rather than being nameable in a clause.
+
+So the distinction that predicts reach is not rare against common but
 **constructible against emergent**:
 
-- A **constructible** target is one the generator can satisfy by writing
-  something specific into the artifact. Compliance is high and roughly flat in
-  rarity. Aim freely.
-- An **emergent** target is one that falls out of the artifact's behaviour rather
-  than being written into it. Compliance falls with rarity — 100% to 25% here —
-  and the budget per target has to rise accordingly.
+- A **constructible** target is satisfied by writing something specific into the
+  artifact. Compliance is high and roughly flat in rarity, including outside
+  anything the generator has produced. Aim freely.
+- An **emergent** target falls out of the artifact's behaviour rather than being
+  written into it. Compliance decays with rarity — 100% to 25% on programs — and
+  the budget per target must rise accordingly.
 
-Rarity in the natural corpus is a good predictor *within* an emergent domain and
-a poor one across domains, which is worth knowing before planning a budget from
-one domain's curve. The generalization to the closed-weight setting is direct:
-"this shot must contain a red door on the left" is constructible; "this shot must
-have the pacing of a specific edit rhythm" is emergent, and the second needs the
-budget the curve implies.
+Rarity in the natural corpus predicts compliance *within* an emergent domain and
+predicts it poorly across domains or across target kinds, which is worth knowing
+before planning a budget from one curve. The generalization to the closed-weight
+setting is direct: *a red door on the left of frame* is constructible; *the
+pacing of this edit rhythm* is emergent, and the second needs the budget the
+decay curve implies. Before spending on a target, ask which kind it is — the
+answer is usually obvious, and it changes the budget by a factor of several.
 
 Three caveats belong with these numbers. Compliance is checked on the commanded
 property only, so an artifact that satisfies the target by special-casing it

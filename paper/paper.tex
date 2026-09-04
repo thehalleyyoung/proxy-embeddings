@@ -226,10 +226,12 @@ generator\textquotesingle s own experience: on targets it has
 Compliance falls monotonically as the target moves into the
 generator\textquotesingle s tail --- 100\%, 63.9\%, 55.6\%, 30.6\%,
 25.0\% across five rarity bands on programs --- which turns "can I steer
-this?" into a budget question with a curve behind it. The fall is a
-property of the \emph{kind} of target rather than of rarity as such:
-targets a generator can write into the artifact stay near 100\% at every
-rarity, and only targets that must emerge from its behaviour decay.
+this?" into a budget question. The decay is governed by the \emph{kind}
+of target rather than by rarity as such: targets the generator can write
+into the artifact stay high at every rarity, including outside anything
+it has ever produced, and only targets that must emerge from its
+behaviour decay. On SQL, whose targets span both kinds, the curve is not
+even monotone.
 
 \textbf{Anything that reads pairwise distance: it fails, and the
 standard check does not detect the failure.} Deduplication, coreset
@@ -531,25 +533,28 @@ is settled by decoding rather than by asking the model.
 Four arms at one generator call each, on two decoders:
 
 {\footnotesize
-\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.3165\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2723\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2040\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2072\linewidth-2\tabcolsep\relax}@{}}
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.2629\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2262\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.1695\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.1695\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.1721\linewidth-2\tabcolsep\relax}@{}}
 \toprule\noalign{}
-arm & what the prompt says & programs & regular expressions \\
+arm & what the prompt says & programs & SQL & regular expressions \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
 \texttt{blind} & the fixed prompt; the target is never mentioned &
-18.1\% {[}12.5, 24.3{]} & 2.2\% {[}0.0, 5.6{]} \\
+18.1\% {[}12.5, 24.3{]} & 10.0\% {[}6.1, 14.4{]} & 2.2\% {[}0.0,
+5.6{]} \\
 \texttt{decoy} & a \emph{different} target, stated in identical form &
-\textbf{6.9\%} {[}2.8, 11.1{]} & \textbf{4.4\%} {[}1.1, 8.9{]} \\
+\textbf{6.9\%} {[}2.8, 11.1{]} & \textbf{1.7\%} {[}0.0, 3.9{]} &
+\textbf{4.4\%} {[}1.1, 8.9{]} \\
 \texttt{instruct} & the target & \textbf{62.5\%} {[}54.2, 70.1{]} &
-\textbf{97.8\%} {[}94.4, 100.0{]} \\
+\textbf{52.8\%} {[}45.0, 60.0{]} & \textbf{97.8\%} {[}94.4, 100.0{]} \\
 \texttt{retry} & \texttt{instruct}, then re-prompt showing the wrong
-value & 61.8\% {[}54.2, 69.4{]} & --- \\
+value & 61.8\% {[}54.2, 69.4{]} & --- & --- \\
 \end{longtable}}
 
 \emph{Compliance with 95\% bootstrap intervals; 60 targets × 3 seeds on
-programs, 30 × 3 on expressions.}
+programs and on SQL, 30 × 3 on expressions. Every interval for
+\texttt{instruct} is disjoint from its decoy\textquotesingle s.}
 
 The decoy arm is what makes this a result rather than an observation.
 Adding any concrete requirement to a prompt changes what a generator
@@ -581,74 +586,90 @@ than sampled: properties the generator produced \textbf{not once} in the
 natural corpus, but which are reachable in principle.
 
 {\footnotesize
-\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.4101\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2900\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2999\linewidth-2\tabcolsep\relax}@{}}
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.3730\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2128\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2051\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2090\linewidth-2\tabcolsep\relax}@{}}
 \toprule\noalign{}
-rarity of the target & programs: blind / decoy / \textbf{instruct} &
-expressions: blind / decoy / \textbf{instruct} \\
+rarity of the target & programs & SQL & expressions \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{never produced} & 0.0\% / 0.0\% / \textbf{25.0\%} & 0.0\% /
-2.8\% / \textbf{94.4\%} \\
-{[}0.001, 0.02) & 2.8\% / 2.8\% / \textbf{30.6\%} & 0.0\% / 8.3\% /
-\textbf{100.0\%} \\
-{[}0.02, 0.10) & 5.6\% / 2.8\% / \textbf{55.6\%} & 8.3\% / 0.0\% /
-\textbf{100.0\%} \\
-{[}0.10, 0.30) & 5.6\% / 5.6\% / \textbf{63.9\%} & 0.0\% / 0.0\% /
-\textbf{100.0\%} \\
-{[}0.30, 1.01) & 58.3\% / 16.7\% / \textbf{100.0\%} & 33.3\% / 0.0\% /
-\textbf{100.0\%} \\
+\textbf{never produced} & 0.0 / 0.0 / \textbf{25.0} & 0.0 / 0.0 /
+\textbf{72.2} & 0.0 / 2.8 / \textbf{94.4} \\
+{[}0.001, 0.02) & 2.8 / 2.8 / \textbf{30.6} & 0.0 / 0.0 / \textbf{25.0}
+& 0.0 / 8.3 / \textbf{100.0} \\
+{[}0.02, 0.10) & 5.6 / 2.8 / \textbf{55.6} & 0.0 / 0.0 / \textbf{44.4} &
+8.3 / 0.0 / \textbf{100.0} \\
+{[}0.10, 0.30) & 5.6 / 5.6 / \textbf{63.9} & 8.3 / 0.0 / \textbf{36.1} &
+0.0 / 0.0 / \textbf{100.0} \\
+{[}0.30, 1.01) & 58.3 / 16.7 / \textbf{100.0} & 41.7 / 8.3 /
+\textbf{86.1} & 33.3 / 0.0 / \textbf{100.0} \\
 \end{longtable}}
+
+\emph{Percentages, as blind / decoy / \textbf{instruct}.}
 
 \textbf{The lever reaches outside the generator\textquotesingle s
 demonstrated range.} On properties never once produced under the
-unconditioned prompt, both controls score zero on programs and
-instruction reaches a quarter of them; on expressions instruction
-reaches 94.4\% where blind prompting reaches none. A pipeline restricted
-to sampling and filtering cannot obtain these artifacts at any budget,
-because the rate it is filtering is zero. Asking obtains them.
+unconditioned prompt, both controls score zero on programs and on SQL,
+while instruction reaches 25.0\%, 72.2\% and 94.4\% on the three
+decoders. A pipeline restricted to sampling and filtering cannot obtain
+these artifacts at any budget, because the rate it is filtering is zero.
+Asking obtains them.
 
-\subsubsection{3.3 What governs how far it
-reaches}\label{33-what-governs-how-far-it-reaches}
+\subsubsection{3.3 What governs how far it reaches: constructible
+against
+emergent}\label{33-what-governs-how-far-it-reaches-constructible-against-emergent}
 
-The two decoders disagree by a factor of four in the tail and the reason
-is not rarity. It is what kind of thing the target is.
+The three decoders disagree by a factor of four in the tail, and
+SQL\textquotesingle s curve is not even monotone in rarity --- 72.2\% on
+never-produced targets against 25.0\% one band up. Rarity is therefore
+not the governing variable. What the target \emph{is} governs it.
 
 A regular expression required to match \texttt{2024-01-31} can be
-\emph{written} to match it: the requirement decomposes into the syntax
-the generator is already producing, so compliance is near-total
-everywhere, and the natural-corpus rarity of the target is nearly
-irrelevant. A program required to return exactly 169 on a given
-thirteen-element list cannot be written that way. The value has to
-\emph{come out} of whatever the function computes, and the generator has
-to find a computation that both is a plausible general-purpose function
-and lands on that number. That is a search, not a transcription, and it
-fails most of the time in the tail.
+\textbf{written} to match it: the requirement decomposes into syntax the
+generator is already producing. A SQL query required to surface
+\texttt{city=Lyon} can have a \texttt{WHERE} clause added. Neither
+requires the generator to discover anything, which is why compliance is
+high and nearly flat in rarity, and why SQL\textquotesingle s
+never-produced band --- column values that exist in the database but
+that no generated query happened to return --- is its \emph{easiest}
+band rather than its hardest.
 
-So the useful distinction for a practitioner is not rare against common
-but \textbf{constructible against emergent}:
+A program required to return exactly 169 on a given thirteen-element
+list cannot be written that way. The value has to \emph{come out} of
+whatever the function computes, and the generator has to find a
+computation that is both a plausible general-purpose function and lands
+on that number. That is a search, and it fails most of the time in the
+tail. SQL\textquotesingle s mid-rarity bands behave the same way,
+because those targets are aggregate values --- sums, counts, averages
+--- that emerge from a computation rather than being nameable in a
+clause.
+
+So the distinction that predicts reach is not rare against common but
+\textbf{constructible against emergent}:
 
 \begin{itemize}
 \tightlist
 \item
-  A \textbf{constructible} target is one the generator can satisfy by
-  writing something specific into the artifact. Compliance is high and
-  roughly flat in rarity. Aim freely.
+  A \textbf{constructible} target is satisfied by writing something
+  specific into the artifact. Compliance is high and roughly flat in
+  rarity, including outside anything the generator has produced. Aim
+  freely.
 \item
-  An \textbf{emergent} target is one that falls out of the
+  An \textbf{emergent} target falls out of the
   artifact\textquotesingle s behaviour rather than being written into
-  it. Compliance falls with rarity --- 100\% to 25\% here --- and the
-  budget per target has to rise accordingly.
+  it. Compliance decays with rarity --- 100\% to 25\% on programs ---
+  and the budget per target must rise accordingly.
 \end{itemize}
 
-Rarity in the natural corpus is a good predictor \emph{within} an
-emergent domain and a poor one across domains, which is worth knowing
-before planning a budget from one domain\textquotesingle s curve. The
-generalization to the closed-weight setting is direct: "this shot must
-contain a red door on the left" is constructible; "this shot must have
-the pacing of a specific edit rhythm" is emergent, and the second needs
-the budget the curve implies.
+Rarity in the natural corpus predicts compliance \emph{within} an
+emergent domain and predicts it poorly across domains or across target
+kinds, which is worth knowing before planning a budget from one curve.
+The generalization to the closed-weight setting is direct: \emph{a red
+door on the left of frame} is constructible; \emph{the pacing of this
+edit rhythm} is emergent, and the second needs the budget the decay
+curve implies. Before spending on a target, ask which kind it is --- the
+answer is usually obvious, and it changes the budget by a factor of
+several.
 
 Three caveats belong with these numbers. Compliance is checked on the
 commanded property only, so an artifact that satisfies the target by

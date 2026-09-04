@@ -66,7 +66,7 @@ h2,h3{scroll-margin-top:1.5rem}
 </head>
 <body>
 <div class="layout">
-<nav class="toc" aria-label="Contents"><h2>Contents</h2><ol><li class=""><a class="sec" href="#1-introduction">1. Introduction</a></li><li class=""><a class="sec" href="#2-setup">2. Setup</a></li><li class=""><a class="sec" href="#3-individual-targets-the-channel-as-a-lever">3. Individual targets: the channel as a lever</a></li><li class="sub"><a class="" href="#31-stating-the-target-and-verifying-by-decoding">3.1 Stating the target, and verifying by decoding</a></li><li class="sub"><a class="" href="#32-reaching-what-the-generator-has-never-produced">3.2 Reaching what the generator has never produced</a></li><li class="sub"><a class="" href="#33-what-governs-how-far-it-reaches">3.3 What governs how far it reaches</a></li><li class=""><a class="sec" href="#4-distances-the-channel-as-a-ruler">4. Distances: the channel as a ruler</a></li><li class="sub"><a class="" href="#41-decoders-that-leave-nothing-to-interpretation">4.1 Decoders that leave nothing to interpretation</a></li><li class="sub"><a class="" href="#42-the-profile-that-looks-like-a-finding">4.2 The profile that looks like a finding</a></li><li class="sub"><a class="" href="#43-the-control-two-encoders-no-decoder">4.3 The control: two encoders, no decoder</a></li><li class=""><a class="sec" href="#5-measure-with-the-decoder-it-is-cheaper-than-the-channel">5. Measure with the decoder: it is cheaper than the channel</a></li><li class=""><a class="sec" href="#6-decodergap-the-probe">6. decodergap: the probe</a></li><li class=""><a class="sec" href="#7-when-the-decoder-is-expensive">7. When the decoder is expensive</a></li><li class="sub"><a class="" href="#71-text-diversity-is-nearly-blind-to-image-diversity">7.1 Text diversity is nearly blind to image diversity</a></li><li class="sub"><a class="" href="#73-the-ranking-does-not-depend-on-the-viewpoint">7.3 The ranking does not depend on the viewpoint</a></li><li class="sub"><a class="" href="#74-a-class-of-repetition-the-embedding-misses">7.4 A class of repetition the embedding misses</a></li><li class="sub"><a class="" href="#75-a-defect-no-diversity-measure-can-see">7.5 A defect no diversity measure can see</a></li><li class="sub"><a class="" href="#76-steering-through-the-proxy-where-it-is-all-you-have">7.6 Steering through the proxy where it is all you have</a></li><li class="sub"><a class="" href="#77-conditioning-across-the-seam">7.7 Conditioning across the seam</a></li><li class=""><a class="sec" href="#8-practice">8. Practice</a></li><li class=""><a class="sec" href="#9-limitations">9. Limitations</a></li><li class=""><a class="sec" href="#10-what-this-cost-us-to-learn">10. What this cost us to learn</a></li><li class=""><a class="sec" href="#11-conclusion">11. Conclusion</a></li></ol></nav>
+<nav class="toc" aria-label="Contents"><h2>Contents</h2><ol><li class=""><a class="sec" href="#1-introduction">1. Introduction</a></li><li class=""><a class="sec" href="#2-setup">2. Setup</a></li><li class=""><a class="sec" href="#3-individual-targets-the-channel-as-a-lever">3. Individual targets: the channel as a lever</a></li><li class="sub"><a class="" href="#31-stating-the-target-and-verifying-by-decoding">3.1 Stating the target, and verifying by decoding</a></li><li class="sub"><a class="" href="#32-reaching-what-the-generator-has-never-produced">3.2 Reaching what the generator has never produced</a></li><li class=""><a class="sec" href="#4-distances-the-channel-as-a-ruler">4. Distances: the channel as a ruler</a></li><li class="sub"><a class="" href="#41-decoders-that-leave-nothing-to-interpretation">4.1 Decoders that leave nothing to interpretation</a></li><li class="sub"><a class="" href="#42-the-profile-that-looks-like-a-finding">4.2 The profile that looks like a finding</a></li><li class="sub"><a class="" href="#43-the-control-two-encoders-no-decoder">4.3 The control: two encoders, no decoder</a></li><li class=""><a class="sec" href="#5-measure-with-the-decoder-it-is-cheaper-than-the-channel">5. Measure with the decoder: it is cheaper than the channel</a></li><li class=""><a class="sec" href="#6-decodergap-the-probe">6. decodergap: the probe</a></li><li class=""><a class="sec" href="#7-when-the-decoder-is-expensive">7. When the decoder is expensive</a></li><li class="sub"><a class="" href="#71-text-diversity-is-nearly-blind-to-image-diversity">7.1 Text diversity is nearly blind to image diversity</a></li><li class="sub"><a class="" href="#73-the-ranking-does-not-depend-on-the-viewpoint">7.3 The ranking does not depend on the viewpoint</a></li><li class="sub"><a class="" href="#74-a-class-of-repetition-the-embedding-misses">7.4 A class of repetition the embedding misses</a></li><li class="sub"><a class="" href="#75-a-defect-no-diversity-measure-can-see">7.5 A defect no diversity measure can see</a></li><li class="sub"><a class="" href="#76-steering-through-the-proxy-where-it-is-all-you-have">7.6 Steering through the proxy where it is all you have</a></li><li class="sub"><a class="" href="#77-conditioning-across-the-seam">7.7 Conditioning across the seam</a></li><li class=""><a class="sec" href="#8-practice">8. Practice</a></li><li class=""><a class="sec" href="#9-limitations">9. Limitations</a></li><li class=""><a class="sec" href="#10-what-this-cost-us-to-learn">10. What this cost us to learn</a></li><li class=""><a class="sec" href="#11-conclusion">11. Conclusion</a></li></ol></nav>
 <main>
 <div class="banner">Paper: <a href="paper/paper.pdf">PDF</a> &middot; <a href="paper/paper.tex">LaTeX</a> &middot; <a href="https://github.com/thehalleyyoung/proxy-embeddings">code &amp; data</a> &middot; <a href="https://thehalleyyoung.github.io/rac/">main paper: Recursive Axis Conditioning</a></div>
 <h1
@@ -105,10 +105,12 @@ programs, against 0.0% for both controls.</p>
 predictably.</strong> Compliance falls monotonically as the target moves
 into the generator's tail — 100%, 63.9%, 55.6%, 30.6%, 25.0% across five
 rarity bands on programs — which turns "can I steer this?" into a budget
-question with a curve behind it. The fall is a property of the
-<em>kind</em> of target rather than of rarity as such: targets a
-generator can write into the artifact stay near 100% at every rarity,
-and only targets that must emerge from its behaviour decay.</p>
+question. The decay is governed by the <em>kind</em> of target rather
+than by rarity as such: targets the generator can write into the
+artifact stay high at every rarity, including outside anything it has
+ever produced, and only targets that must emerge from its behaviour
+decay. On SQL, whose targets span both kinds, the curve is not even
+monotone.</p>
 <p><strong>Anything that reads pairwise distance: it fails, and the
 standard check does not detect the failure.</strong> Deduplication,
 coreset selection, farthest-point diversity, retrieval and contamination
@@ -387,6 +389,7 @@ by decoding rather than by asking the model.</p>
 <th>arm</th>
 <th>what the prompt says</th>
 <th>programs</th>
+<th>SQL</th>
 <th>regular expressions</th>
 </tr>
 </thead>
@@ -395,18 +398,21 @@ by decoding rather than by asking the model.</p>
 <td><code>blind</code></td>
 <td>the fixed prompt; the target is never mentioned</td>
 <td>18.1% [12.5, 24.3]</td>
+<td>10.0% [6.1, 14.4]</td>
 <td>2.2% [0.0, 5.6]</td>
 </tr>
 <tr>
 <td><code>decoy</code></td>
 <td>a <em>different</em> target, stated in identical form</td>
 <td><strong>6.9%</strong> [2.8, 11.1]</td>
+<td><strong>1.7%</strong> [0.0, 3.9]</td>
 <td><strong>4.4%</strong> [1.1, 8.9]</td>
 </tr>
 <tr>
 <td><code>instruct</code></td>
 <td>the target</td>
 <td><strong>62.5%</strong> [54.2, 70.1]</td>
+<td><strong>52.8%</strong> [45.0, 60.0]</td>
 <td><strong>97.8%</strong> [94.4, 100.0]</td>
 </tr>
 <tr>
@@ -414,11 +420,13 @@ by decoding rather than by asking the model.</p>
 <td><code>instruct</code>, then re-prompt showing the wrong value</td>
 <td>61.8% [54.2, 69.4]</td>
 <td>—</td>
+<td>—</td>
 </tr>
 </tbody>
 </table></div>
 <p><em>Compliance with 95% bootstrap intervals; 60 targets × 3 seeds on
-programs, 30 × 3 on expressions.</em></p>
+programs and on SQL, 30 × 3 on expressions. Every interval for
+<code>instruct</code> is disjoint from its decoy's.</em></p>
 <p>The decoy arm is what makes this a result rather than an observation.
 Adding any concrete requirement to a prompt changes what a generator
 produces, so <code>instruct</code> beating <code>blind</code> would be
@@ -447,77 +455,98 @@ the natural corpus, but which are reachable in principle.</p>
 <thead>
 <tr>
 <th>rarity of the target</th>
-<th>programs: blind / decoy / <strong>instruct</strong></th>
-<th>expressions: blind / decoy / <strong>instruct</strong></th>
+<th>programs</th>
+<th>SQL</th>
+<th>expressions</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>never produced</strong></td>
-<td>0.0% / 0.0% / <strong>25.0%</strong></td>
-<td>0.0% / 2.8% / <strong>94.4%</strong></td>
+<td>0.0 / 0.0 / <strong>25.0</strong></td>
+<td>0.0 / 0.0 / <strong>72.2</strong></td>
+<td>0.0 / 2.8 / <strong>94.4</strong></td>
 </tr>
 <tr>
 <td>[0.001, 0.02)</td>
-<td>2.8% / 2.8% / <strong>30.6%</strong></td>
-<td>0.0% / 8.3% / <strong>100.0%</strong></td>
+<td>2.8 / 2.8 / <strong>30.6</strong></td>
+<td>0.0 / 0.0 / <strong>25.0</strong></td>
+<td>0.0 / 8.3 / <strong>100.0</strong></td>
 </tr>
 <tr>
 <td>[0.02, 0.10)</td>
-<td>5.6% / 2.8% / <strong>55.6%</strong></td>
-<td>8.3% / 0.0% / <strong>100.0%</strong></td>
+<td>5.6 / 2.8 / <strong>55.6</strong></td>
+<td>0.0 / 0.0 / <strong>44.4</strong></td>
+<td>8.3 / 0.0 / <strong>100.0</strong></td>
 </tr>
 <tr>
 <td>[0.10, 0.30)</td>
-<td>5.6% / 5.6% / <strong>63.9%</strong></td>
-<td>0.0% / 0.0% / <strong>100.0%</strong></td>
+<td>5.6 / 5.6 / <strong>63.9</strong></td>
+<td>8.3 / 0.0 / <strong>36.1</strong></td>
+<td>0.0 / 0.0 / <strong>100.0</strong></td>
 </tr>
 <tr>
 <td>[0.30, 1.01)</td>
-<td>58.3% / 16.7% / <strong>100.0%</strong></td>
-<td>33.3% / 0.0% / <strong>100.0%</strong></td>
+<td>58.3 / 16.7 / <strong>100.0</strong></td>
+<td>41.7 / 8.3 / <strong>86.1</strong></td>
+<td>33.3 / 0.0 / <strong>100.0</strong></td>
 </tr>
 </tbody>
 </table></div>
+<p><em>Percentages, as blind / decoy /
+<strong>instruct</strong>.</em></p>
 <p><strong>The lever reaches outside the generator's demonstrated
 range.</strong> On properties never once produced under the
-unconditioned prompt, both controls score zero on programs and
-instruction reaches a quarter of them; on expressions instruction
-reaches 94.4% where blind prompting reaches none. A pipeline restricted
-to sampling and filtering cannot obtain these artifacts at any budget,
-because the rate it is filtering is zero. Asking obtains them.</p>
-<h3 id="33-what-governs-how-far-it-reaches">3.3 What governs how far it
-reaches</h3>
-<p>The two decoders disagree by a factor of four in the tail and the
-reason is not rarity. It is what kind of thing the target is.</p>
+unconditioned prompt, both controls score zero on programs and on SQL,
+while instruction reaches 25.0%, 72.2% and 94.4% on the three decoders.
+A pipeline restricted to sampling and filtering cannot obtain these
+artifacts at any budget, because the rate it is filtering is zero.
+Asking obtains them.</p>
+<h3
+id="33-what-governs-how-far-it-reaches-constructible-against-emergent">3.3
+What governs how far it reaches: constructible against emergent</h3>
+<p>The three decoders disagree by a factor of four in the tail, and
+SQL's curve is not even monotone in rarity — 72.2% on never-produced
+targets against 25.0% one band up. Rarity is therefore not the governing
+variable. What the target <em>is</em> governs it.</p>
 <p>A regular expression required to match <code>2024-01-31</code> can be
-<em>written</em> to match it: the requirement decomposes into the syntax
-the generator is already producing, so compliance is near-total
-everywhere, and the natural-corpus rarity of the target is nearly
-irrelevant. A program required to return exactly 169 on a given
-thirteen-element list cannot be written that way. The value has to
-<em>come out</em> of whatever the function computes, and the generator
-has to find a computation that both is a plausible general-purpose
-function and lands on that number. That is a search, not a
-transcription, and it fails most of the time in the tail.</p>
-<p>So the useful distinction for a practitioner is not rare against
-common but <strong>constructible against emergent</strong>:</p>
+<strong>written</strong> to match it: the requirement decomposes into
+syntax the generator is already producing. A SQL query required to
+surface <code>city=Lyon</code> can have a <code>WHERE</code> clause
+added. Neither requires the generator to discover anything, which is why
+compliance is high and nearly flat in rarity, and why SQL's
+never-produced band — column values that exist in the database but that
+no generated query happened to return — is its <em>easiest</em> band
+rather than its hardest.</p>
+<p>A program required to return exactly 169 on a given thirteen-element
+list cannot be written that way. The value has to <em>come out</em> of
+whatever the function computes, and the generator has to find a
+computation that is both a plausible general-purpose function and lands
+on that number. That is a search, and it fails most of the time in the
+tail. SQL's mid-rarity bands behave the same way, because those targets
+are aggregate values — sums, counts, averages — that emerge from a
+computation rather than being nameable in a clause.</p>
+<p>So the distinction that predicts reach is not rare against common but
+<strong>constructible against emergent</strong>:</p>
 <ul>
-<li>A <strong>constructible</strong> target is one the generator can
-satisfy by writing something specific into the artifact. Compliance is
-high and roughly flat in rarity. Aim freely.</li>
-<li>An <strong>emergent</strong> target is one that falls out of the
-artifact's behaviour rather than being written into it. Compliance falls
-with rarity — 100% to 25% here — and the budget per target has to rise
+<li>A <strong>constructible</strong> target is satisfied by writing
+something specific into the artifact. Compliance is high and roughly
+flat in rarity, including outside anything the generator has produced.
+Aim freely.</li>
+<li>An <strong>emergent</strong> target falls out of the artifact's
+behaviour rather than being written into it. Compliance decays with
+rarity — 100% to 25% on programs — and the budget per target must rise
 accordingly.</li>
 </ul>
-<p>Rarity in the natural corpus is a good predictor <em>within</em> an
-emergent domain and a poor one across domains, which is worth knowing
-before planning a budget from one domain's curve. The generalization to
-the closed-weight setting is direct: "this shot must contain a red door
-on the left" is constructible; "this shot must have the pacing of a
-specific edit rhythm" is emergent, and the second needs the budget the
-curve implies.</p>
+<p>Rarity in the natural corpus predicts compliance <em>within</em> an
+emergent domain and predicts it poorly across domains or across target
+kinds, which is worth knowing before planning a budget from one curve.
+The generalization to the closed-weight setting is direct: <em>a red
+door on the left of frame</em> is constructible; <em>the pacing of this
+edit rhythm</em> is emergent, and the second needs the budget the decay
+curve implies. Before spending on a target, ask which kind it is — the
+answer is usually obvious, and it changes the budget by a factor of
+several.</p>
 <p>Three caveats belong with these numbers. Compliance is checked on the
 commanded property only, so an artifact that satisfies the target by
 special-casing it counts as a hit even though the prompt forbids it. The
