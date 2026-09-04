@@ -1327,68 +1327,79 @@ Running it on your own decoder costs one afternoon and is what
 \texttt{decodergap} exists to do.
 
 \subsection{\texorpdfstring{6. \texttt{decodergap}: the
-probe}{6. decodergap: the probe}}\label{6-decodergap-the-probe}
+tool}{6. decodergap: the tool}}\label{6-decodergap-the-tool}
 
-The results above do not compose into a rule a practitioner can apply
-blind, because the one decision whose sign varies --- far-field
-selection --- varies \emph{by decoder}, and nothing visible in the text
-says which case you are in. What they compose into is a measurement, and
-the measurement is cheap enough to run before any pipeline decision is
-committed.
-
-\texttt{decodergap} takes three things: a corpus, an embedding function,
-and a decode function returning anything with a distance on it. It
-returns the near-field profile, the two deduplication verdicts, and the
-selector comparison against the artifact-space oracle.
+The results above do not compose into a rule that can be applied blind.
+Whether text-space selection helps varies in sign by decoder; whether a
+target can be steered depends on three properties of the target; and how
+much decoding to buy depends on a curve that differs across decoders by
+enough that we publish it as a shape rather than as constants. What they
+compose into is a set of measurements cheap enough to run before a
+pipeline commits, and \texttt{decodergap} is those three measurements
+behind three calls.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ImportTok{from}\NormalTok{ decodergap }\ImportTok{import}\NormalTok{ probe}
+\ImportTok{import}\NormalTok{ decodergap }\ImportTok{as}\NormalTok{ dg}
 
-\NormalTok{report }\OperatorTok{=}\NormalTok{ probe(}
-\NormalTok{    texts     }\OperatorTok{=}\NormalTok{ corpus,                    }\CommentTok{\# what you generated}
-\NormalTok{    embed     }\OperatorTok{=}\NormalTok{ my\_embedder,               }\CommentTok{\# what you were going to select in}
-\NormalTok{    decode    }\OperatorTok{=} \KeywordTok{lambda}\NormalTok{ s: run(s, battery), }\CommentTok{\# what the item actually becomes}
-\NormalTok{    distance  }\OperatorTok{=}\NormalTok{ jaccard,                   }\CommentTok{\# a distance on the decoded artifact}
-\NormalTok{    coverage  }\OperatorTok{=}\NormalTok{ distinct\_cells,            }\CommentTok{\# what a subset is meant to buy}
-\NormalTok{)}
-\NormalTok{report.verdicts[}\StringTok{"deduplication\_aggregate"}\NormalTok{]   }\CommentTok{\# SUPPORTED | UNSUPPORTED}
-\NormalTok{report.verdicts[}\StringTok{"deduplication\_per\_item"}\NormalTok{]    }\CommentTok{\# SUPPORTED | NOT SUPPORTED}
-\NormalTok{report.verdicts[}\StringTok{"max\_min\_selection"}\NormalTok{]         }\CommentTok{\# SAFE | UNSAFE, and vs the oracle}
+\CommentTok{\# 1. Is my text{-}space DISTANCE machinery sound for this decoder?}
+\NormalTok{rep }\OperatorTok{=}\NormalTok{ dg.audit(texts, embed, decode, distance, coverage)}
+\BuiltInTok{print}\NormalTok{(rep.summary())}
+
+\CommentTok{\# 2. How should I state a target I want the artifact to satisfy?}
+\BuiltInTok{print}\NormalTok{(dg.triage(}\StringTok{"the shot must be exactly 2.4 seconds long"}\NormalTok{))}
+
+\CommentTok{\# 3. I can afford to decode m of N candidates. What do I get?}
+\BuiltInTok{print}\NormalTok{(dg.plan(decode\_budget}\OperatorTok{=}\DecValTok{2000}\NormalTok{, pool}\OperatorTok{=}\DecValTok{5000}\NormalTok{, select}\OperatorTok{=}\DecValTok{50}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
-Three design decisions carry the tool, and each is a finding from above
-rather than a preference.
+\textbf{\texttt{audit}} runs §4 on your corpus: the near-field profile,
+the decoder-free control, both deduplication verdicts and the selector
+comparison against the artifact-space oracle. Three design decisions in
+it are findings rather than preferences.
 
-\textbf{It never reports a correlation without its decoder-free
-control.} The profile of §4.2 looks like a finding and is reproduced
-twice as strongly by two encoders that never saw a program run (§4.3).
-Any proxy-qualification number the tool emits is accompanied by the
-encoder-to-encoder baseline it has to beat, and by the permutation null
-that shows whether any association exists at all.
+\emph{It never reports a correlation without its decoder-free control.}
+The profile of §4.2 looks like a finding and is reproduced more strongly
+by two encoders that never saw a decoder (§4.3). Every
+proxy-qualification number the tool emits is accompanied by the
+encoder-to-encoder baselines it has to clear, and it must clear the
+whole distribution rather than a member of it --- selecting which
+baseline to compare against is how we lost a result of our own (§10).
 
-\textbf{It issues two deduplication verdicts, not one.} The aggregate
-verdict answers \emph{can this radius rank duplicate pairs at all}; the
-per-item verdict answers \emph{of the pairs a filter at this radius
-would reject, how many are behaviourally far apart}. On both decoders
-measured here the first passes and the second fails, at 45.4\% and
-41.6\%. A tool that emitted a single "dedup: safe" would be licensing
-the decision its own data refuses.
+\emph{It issues two deduplication verdicts.} The aggregate verdict asks
+whether a radius can rank duplicate pairs at all; the per-item verdict
+asks what fraction of the pairs it would reject are behaviourally far
+apart. On both decoders measured the first passes and the second fails,
+at 45.4\% and 41.6\%.
 
-\textbf{It scores every selector in the artifact\textquotesingle s space
+\emph{It scores every selector in the artifact\textquotesingle s space
 and against the oracle}, so a text-space selector cannot win by agreeing
 with the representation it selected in, and beating random is not
 mistaken for doing well.
 
-It also refuses to recommend a filter radius. We swept the threshold
-over the 5th to 40th percentiles of each corpus\textquotesingle s own
-distance distribution at four budgets: the best cell on the
-\texttt{ipaddress} decoder is +20.7 arcs over random at \emph{t} = 10th
-percentile and \emph{k} = 10, and by \emph{k} = 50 every threshold
-loses. Any single-budget experiment would have produced a
-shippable-looking constant. The sweep is reported in full, including the
-cells that lose, and no constant is offered.
+It declines to recommend a filter radius. We swept the threshold over
+the 5th to 40th percentiles at four budgets: the best cell is +20.7 arcs
+over random at one budget, and by \emph{k} = 50 every threshold loses.
+Any single-budget experiment would have produced a shippable-looking
+constant.
+
+\textbf{\texttt{triage}} classifies a target on the three axes of §3.5
+from its wording and says what to do about it. It is a heuristic over
+the phrasing rather than a measurement, so it is a prompt for the
+practitioner\textquotesingle s judgement --- but the axes it checks were
+each isolated by a separate experiment, and the intervention it suggests
+for an emergent exact target is the one worth +51.5 points in the tail.
+It also warns, on every target, to check observability separately,
+because that is the axis we lost a registered prediction to.
+
+\textbf{\texttt{plan}} turns a decode budget into an expected recovery,
+interpolating the curves of §5.3, and warns when the budget is fewer
+than about three decoded candidates per pick --- the regime where greedy
+selection has nothing to choose between and recovers close to nothing.
+Its constants are two decoders\textquotesingle{} worth of measurement
+and are meant to be replaced: running \texttt{audit} on your own decoder
+substitutes yours.
 
 \subsection{7. When the decoder is
 expensive}\label{7-when-the-decoder-is-expensive}

@@ -837,61 +837,70 @@ table above should be read as the shape of the curve rather than as constants to
 plan against. Running it on your own decoder costs one afternoon and is what
 `decodergap` exists to do.
 
-## 6. `decodergap`: the probe
+## 6. `decodergap`: the tool
 
-The results above do not compose into a rule a practitioner can apply blind,
-because the one decision whose sign varies — far-field selection — varies *by
-decoder*, and nothing visible in the text says which case you are in. What they
-compose into is a measurement, and the measurement is cheap enough to run before
-any pipeline decision is committed.
-
-`decodergap` takes three things: a corpus, an embedding function, and a decode
-function returning anything with a distance on it. It returns the near-field
-profile, the two deduplication verdicts, and the selector comparison against the
-artifact-space oracle.
+The results above do not compose into a rule that can be applied blind. Whether
+text-space selection helps varies in sign by decoder; whether a target can be
+steered depends on three properties of the target; and how much decoding to buy
+depends on a curve that differs across decoders by enough that we publish it as a
+shape rather than as constants. What they compose into is a set of measurements
+cheap enough to run before a pipeline commits, and `decodergap` is those three
+measurements behind three calls.
 
 ```python
-from decodergap import probe
+import decodergap as dg
 
-report = probe(
-    texts     = corpus,                    # what you generated
-    embed     = my_embedder,               # what you were going to select in
-    decode    = lambda s: run(s, battery), # what the item actually becomes
-    distance  = jaccard,                   # a distance on the decoded artifact
-    coverage  = distinct_cells,            # what a subset is meant to buy
-)
-report.verdicts["deduplication_aggregate"]   # SUPPORTED | UNSUPPORTED
-report.verdicts["deduplication_per_item"]    # SUPPORTED | NOT SUPPORTED
-report.verdicts["max_min_selection"]         # SAFE | UNSAFE, and vs the oracle
+# 1. Is my text-space DISTANCE machinery sound for this decoder?
+rep = dg.audit(texts, embed, decode, distance, coverage)
+print(rep.summary())
+
+# 2. How should I state a target I want the artifact to satisfy?
+print(dg.triage("the shot must be exactly 2.4 seconds long"))
+
+# 3. I can afford to decode m of N candidates. What do I get?
+print(dg.plan(decode_budget=2000, pool=5000, select=50))
 ```
 
-Three design decisions carry the tool, and each is a finding from above rather
-than a preference.
+**`audit`** runs §4 on your corpus: the near-field profile, the decoder-free
+control, both deduplication verdicts and the selector comparison against the
+artifact-space oracle. Three design decisions in it are findings rather than
+preferences.
 
-**It never reports a correlation without its decoder-free control.** The profile
-of §4.2 looks like a finding and is reproduced twice as strongly by two encoders
-that never saw a program run (§4.3). Any proxy-qualification number the tool
-emits is accompanied by the encoder-to-encoder baseline it has to beat, and by
-the permutation null that shows whether any association exists at all.
+*It never reports a correlation without its decoder-free control.* The profile of
+§4.2 looks like a finding and is reproduced more strongly by two encoders that
+never saw a decoder (§4.3). Every proxy-qualification number the tool emits is
+accompanied by the encoder-to-encoder baselines it has to clear, and it must
+clear the whole distribution rather than a member of it — selecting which
+baseline to compare against is how we lost a result of our own (§10).
 
-**It issues two deduplication verdicts, not one.** The aggregate verdict answers
-*can this radius rank duplicate pairs at all*; the per-item verdict answers *of
-the pairs a filter at this radius would reject, how many are behaviourally far
-apart*. On both decoders measured here the first passes and the second fails, at
-45.4% and 41.6%. A tool that emitted a single "dedup: safe" would be licensing
-the decision its own data refuses.
+*It issues two deduplication verdicts.* The aggregate verdict asks whether a
+radius can rank duplicate pairs at all; the per-item verdict asks what fraction
+of the pairs it would reject are behaviourally far apart. On both decoders
+measured the first passes and the second fails, at 45.4% and 41.6%.
 
-**It scores every selector in the artifact's space and against the oracle**, so a
-text-space selector cannot win by agreeing with the representation it selected
-in, and beating random is not mistaken for doing well.
+*It scores every selector in the artifact's space and against the oracle*, so a
+text-space selector cannot win by agreeing with the representation it selected in,
+and beating random is not mistaken for doing well.
 
-It also refuses to recommend a filter radius. We swept the threshold over the
-5th to 40th percentiles of each corpus's own distance distribution at four
-budgets: the best cell on the `ipaddress` decoder is +20.7 arcs over random at
-*t* = 10th percentile and *k* = 10, and by *k* = 50 every threshold loses. Any
-single-budget experiment would have produced a shippable-looking constant. The
-sweep is reported in full, including the cells that lose, and no constant is
-offered.
+It declines to recommend a filter radius. We swept the threshold over the 5th to
+40th percentiles at four budgets: the best cell is +20.7 arcs over random at one
+budget, and by *k* = 50 every threshold loses. Any single-budget experiment would
+have produced a shippable-looking constant.
+
+**`triage`** classifies a target on the three axes of §3.5 from its wording and
+says what to do about it. It is a heuristic over the phrasing rather than a
+measurement, so it is a prompt for the practitioner's judgement — but the axes it
+checks were each isolated by a separate experiment, and the intervention it
+suggests for an emergent exact target is the one worth +51.5 points in the tail.
+It also warns, on every target, to check observability separately, because that
+is the axis we lost a registered prediction to.
+
+**`plan`** turns a decode budget into an expected recovery, interpolating the
+curves of §5.3, and warns when the budget is fewer than about three decoded
+candidates per pick — the regime where greedy selection has nothing to choose
+between and recovers close to nothing. Its constants are two decoders' worth of
+measurement and are meant to be replaced: running `audit` on your own decoder
+substitutes yours.
 
 ## 7. When the decoder is expensive
 
