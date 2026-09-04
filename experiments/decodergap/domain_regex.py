@@ -105,7 +105,10 @@ def generate(n: int) -> None:
     def one(i: int) -> dict:
         try:
             t = chat([{"role": "user", "content": PROMPT}],
-                     temperature=1.0, max_tokens=180)
+                     temperature=1.0, max_tokens=1200)
+            if not (t or "").strip():   # reasoning models can spend the whole
+                t = chat([{"role": "user", "content": PROMPT}],  # budget thinking
+                         temperature=1.0, max_tokens=2600)
         except Exception as e:
             return {"i": i, "error": str(e)[:200]}
         p = extract(t or "")

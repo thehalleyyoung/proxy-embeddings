@@ -166,18 +166,22 @@ def run_query(q: str, limit: int = 200) -> list[str] | None:
         con.close()
     except Exception:
         return None
-    out = []
+    # The artifact is the DATA the query surfaces, recorded as the set of
+    # (column, value) cells rather than as whole rows. Whole-row strings are
+    # degenerate here: two queries that select different column combinations
+    # never share a row even when they read the same records, so row-level
+    # Jaccard saturates at 1 for almost every pair and measures the SELECT list
+    # rather than the data. Cells do not saturate and answer the question a
+    # generated query suite is really being scored on -- which of the database
+    # did these queries between them reach.
+    out = set()
     for r in rows:
-        vals = []
-        for v in r:
+        for c, v in zip(cols or range(len(r)), r):
             if isinstance(v, float):
-                vals.append(f"{v:.6g}")
+                s = f"{v:.6g}"
             else:
-                vals.append("NULL" if v is None else str(v))
-        out.append("|".join(vals))
-    # column names are part of what the query returns, but their order is not
-    # something the corpus should be scored on, so the row payload carries the
-    # data and the header is recorded separately.
+                s = "NULL" if v is None else str(v)
+            out.add(f"{c}={s}")
     return sorted(out) if out else ["<empty>"]
 
 

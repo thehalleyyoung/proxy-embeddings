@@ -51,7 +51,38 @@ def load_code():
         if k not in seen:
             seen.add(k)
             uniq.append(r)
-    return [r["src"] for r in uniq], [r["fp"] for r in uniq], C
+    return ([r["src"] for r in uniq],
+            C.behavioural_distance([r["fp"] for r in uniq]))
+
+
+def load_sql():
+    import domain_sql as S
+    rows = [json.loads(l) for l in
+            (S.OUT / "executed.jsonl").read_text().splitlines()]
+    seen, uniq = set(), []
+    for r in rows:
+        k = " ".join(r["sql"].split()).lower()
+        if k not in seen:
+            seen.add(k)
+            uniq.append(r)
+    return ([r["sql"] for r in uniq],
+            S.result_distance([r["rows"] for r in uniq]))
+
+
+def load_regex():
+    import domain_regex as R
+    rows = [json.loads(l) for l in
+            (R.OUT / "executed.jsonl").read_text().splitlines()]
+    seen, uniq = set(), []
+    for r in rows:
+        if r["pattern"] not in seen:
+            seen.add(r["pattern"])
+            uniq.append(r)
+    return ([r["pattern"] for r in uniq],
+            R.language_distance([r["hits"] for r in uniq]))
+
+
+LOADERS = {"code": load_code, "sql": load_sql, "regex": load_regex}
 
 
 def char_tfidf(texts: list[str]) -> np.ndarray:
@@ -138,10 +169,9 @@ def conditional_mean(TD: np.ndarray, AD: np.ndarray, n_bins: int = 20) -> dict:
 
 def main() -> None:
     from pipeline import embed
-    srcs, fps, C = load_code()
-    print(f"{len(srcs)} distinct programs")
-
-    AD = C.behavioural_distance(fps)
+    which = sys.argv[1] if len(sys.argv) > 1 else "code"
+    srcs, AD = LOADERS[which]()
+    print(f"[{which}] {len(srcs)} distinct items")
     E_nomic = embed(srcs)
     TD_nomic = P.pairwise_cosine(E_nomic)
     TD_char = P.pairwise_cosine(char_tfidf(srcs))
@@ -174,7 +204,7 @@ def main() -> None:
     print("\n  the same curve for the encoder-vs-encoder control:")
     out["cond_mean_control"] = conditional_mean(TD_nomic, TD_char)
 
-    (HERE / "runs" / "controls.json").write_text(json.dumps(out, indent=2, default=float))
+    (HERE / "runs" / f"controls_{which}.json").write_text(json.dumps(out, indent=2, default=float))
     print("\nwrote runs/controls.json")
 
     print("\n=== VERDICT ===")
