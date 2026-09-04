@@ -5,3 +5,5 @@ __pycache__/
 *.out
 *.toc
 .DS_Store
+experiments/decodergap/runs/**/*.db
+experiments/decodergap/runs/**/gen.log

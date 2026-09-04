@@ -1,0 +1,8 @@
+{
+  "code_decode_ms": 29.119728125078836,
+  "code_battery": 140,
+  "sql_decode_error": "[Errno 2] No such file or directory: '/Users/halley/Documents/Infinite Horizon Diversity/proxy-embeddings/experiments/de",
+  "regex_decode_error": "[Errno 2] No such file or directory: '/Users/halley/Documents/Infinite Horizon Diversity/proxy-embeddings/experiments/de",
+  "embed_ms_batched64": 107.8596067656008,
+  "embed_ms_single": 1488.1507239379062
+}

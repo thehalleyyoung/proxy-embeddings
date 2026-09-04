@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Proxy Embeddings: Steering and Measuring Diversity Through a Space That Is Not the Artifact's</title>
+<title>Proxy Embeddings: Why You Cannot Validate a Proxy by Correlating It With the Artifact</title>
 <style>:root{color-scheme:light dark;--bg:#fff;--fg:#1b1b1b;--muted:#5d5d5d;--rule:#e3e3e3;
 --accent:#1f5fa9;--code:#f5f5f5;--stripe:#fafafa;--figbg:#fff}
 @media (prefers-color-scheme:dark){:root{--bg:#13151a;--fg:#e7e7e7;--muted:#a2a6ad;
@@ -66,138 +66,201 @@ h2,h3{scroll-margin-top:1.5rem}
 </head>
 <body>
 <div class="layout">
-<nav class="toc" aria-label="Contents"><h2>Contents</h2><ol><li class=""><a class="sec" href="#1-introduction">1. Introduction</a></li><li class=""><a class="sec" href="#2-the-oracle-is-a-proxy">2. The oracle is a proxy</a></li><li class=""><a class="sec" href="#3-setup">3. Setup</a></li><li class=""><a class="sec" href="#4-what-the-proxy-sees">4. What the proxy sees</a></li><li class="sub"><a class="" href="#41-audit-in-a-channel-the-proxy-never-sees">4.1 Audit in a channel the proxy never sees</a></li><li class="sub"><a class="" href="#42-text-diversity-is-nearly-blind-to-image-diversity">4.2 Text diversity is nearly blind to image diversity</a></li><li class="sub"><a class="" href="#44-the-ranking-does-not-depend-on-the-viewpoint">4.4 The ranking does not depend on the viewpoint</a></li><li class="sub"><a class="" href="#45-literal-and-latent-diversity-move-in-opposite-directions">4.5 Literal and latent diversity move in opposite directions</a></li><li class="sub"><a class="" href="#46-a-class-of-repetition-the-embedding-misses">4.6 A class of repetition the embedding misses</a></li><li class="sub"><a class="" href="#47-a-defect-no-diversity-measure-can-see">4.7 A defect no diversity measure can see</a></li><li class=""><a class="sec" href="#5-steering-through-the-proxy">5. Steering through the proxy</a></li><li class="sub"><a class="" href="#51-images-closing-the-loop-where-the-product-lives">5.1 Images: closing the loop where the product lives</a></li><li class="sub"><a class="" href="#52-audio-cross-modal-steering-through-an-audio-embedder">5.2 Audio: cross-modal steering through an audio embedder</a></li><li class=""><a class="sec" href="#6-conditioning-across-the-seam">6. Conditioning across the seam</a></li><li class=""><a class="sec" href="#7-scoring-axes-in-the-artifacts-space">7. Scoring axes in the artifact's space</a></li><li class=""><a class="sec" href="#8-practice">8. Practice</a></li><li class=""><a class="sec" href="#9-limitations">9. Limitations</a></li><li class=""><a class="sec" href="#10-conclusion">10. Conclusion</a></li></ol></nav>
+<nav class="toc" aria-label="Contents"><h2>Contents</h2><ol><li class=""><a class="sec" href="#1-introduction">1. Introduction</a></li><li class=""><a class="sec" href="#2-the-oracle-is-a-proxy">2. The oracle is a proxy</a></li><li class=""><a class="sec" href="#3-setup">3. Setup</a></li><li class="sub"><a class="" href="#41-decoders-that-leave-nothing-to-interpretation">4.1 Decoders that leave nothing to interpretation</a></li><li class="sub"><a class="" href="#42-the-profile-that-looks-like-a-finding">4.2 The profile that looks like a finding</a></li><li class="sub"><a class="" href="#43-the-control-two-encoders-no-decoder">4.3 The control: two encoders, no decoder</a></li><li class=""><a class="sec" href="#5-what-the-proxy-sees">5. What the proxy sees</a></li><li class="sub"><a class="" href="#51-audit-in-a-channel-the-proxy-never-sees">5.1 Audit in a channel the proxy never sees</a></li><li class="sub"><a class="" href="#52-text-diversity-is-nearly-blind-to-image-diversity">5.2 Text diversity is nearly blind to image diversity</a></li><li class="sub"><a class="" href="#54-the-ranking-does-not-depend-on-the-viewpoint">5.4 The ranking does not depend on the viewpoint</a></li><li class="sub"><a class="" href="#55-literal-and-latent-diversity-move-in-opposite-directions">5.5 Literal and latent diversity move in opposite directions</a></li><li class="sub"><a class="" href="#56-a-class-of-repetition-the-embedding-misses">5.6 A class of repetition the embedding misses</a></li><li class="sub"><a class="" href="#57-a-defect-no-diversity-measure-can-see">5.7 A defect no diversity measure can see</a></li><li class=""><a class="sec" href="#6-steering-through-the-proxy">6. Steering through the proxy</a></li><li class="sub"><a class="" href="#61-images-closing-the-loop-where-the-product-lives">6.1 Images: closing the loop where the product lives</a></li><li class="sub"><a class="" href="#62-audio-cross-modal-steering-through-an-audio-embedder">6.2 Audio: cross-modal steering through an audio embedder</a></li><li class=""><a class="sec" href="#7-conditioning-across-the-seam">7. Conditioning across the seam</a></li><li class=""><a class="sec" href="#8-scoring-axes-in-the-artifacts-space">8. Scoring axes in the artifact's space</a></li><li class=""><a class="sec" href="#10-decodergap-the-probe">10. decodergap: the probe</a></li><li class=""><a class="sec" href="#11-practice">11. Practice</a></li><li class=""><a class="sec" href="#12-limitations">12. Limitations</a></li><li class=""><a class="sec" href="#13-conclusion">13. Conclusion</a></li></ol></nav>
 <main>
 <div class="banner">Paper: <a href="paper/paper.pdf">PDF</a> &middot; <a href="paper/paper.tex">LaTeX</a> &middot; <a href="https://github.com/thehalleyyoung/proxy-embeddings">code &amp; data</a> &middot; <a href="https://thehalleyyoung.github.io/rac/">main paper: Recursive Axis Conditioning</a></div>
 <h1
-id="proxy-embeddings-steering-and-measuring-diversity-through-a-space-that-is-not-the-artifacts">Proxy
-Embeddings: Steering and Measuring Diversity Through a Space That Is Not
-the Artifact's</h1>
+id="proxy-embeddings-why-you-cannot-validate-a-proxy-by-correlating-it-with-the-artifact">Proxy
+Embeddings: Why You Cannot Validate a Proxy by Correlating It With the
+Artifact</h1>
 <hr />
 <h2 id="abstract">Abstract</h2>
-<p>Every diversity objective in this line of work is computed in an
-embedding, and the embedding is a proxy: for a rendered image it is a
-text encoder's view of the instruction, for a poem it is a semantic
-model nearly blind to metre, for an exam item it is a space in which the
-answer key does not exist. Recursive Axis Conditioning (RAC) assumes an
-embedding oracle and no inverse; this paper asks what follows when the
-oracle is a proxy for the artifact rather than the artifact itself, and
-extends the method across that gap.</p>
-<p>We measure the gap in three modalities. Pairwise similarity of image
-instructions in text-embedding space predicts pairwise similarity of the
-rendered pictures at <strong>Pearson <em>r</em> between 0.167 and
-0.421</strong> across seven arms — 14.5% shared variance pooled, 8.2%
-within-arm — and instructions with a 0.000 duplicate rate render to one
-visual mode. In audio, <strong>whether a prompt can be steered before
-rendering is a property of the embedder</strong>: prompt-to-track
-alignment is 0.68 under MuQ-MuLan and 0.18 under CLAP-music, per-arm
-verdicts flip between embedders, and each nominates a different
-most-redundant pair. Conditioning itself degrades at the seam where one
-model's language becomes another model's input: <strong>nine of eleven
-image axes are realized in the written instruction and four of eleven in
-the render</strong>, a mean loss of 35%. And an embedding is blind to
-every property it does not encode, including ones that decide usability
-— <strong>90% of a generated exam bank's keys sit in position A</strong>
-and no diversity measure moves.</p>
-<p>Three things survive the gap. <em>Steering through the proxy</em>:
-rendering a bounded sample, embedding it in the artifact's own space and
-mapping its crowded directions back into the text space gives the best
-arm in the image domain (+18% centered Vendi over text-only steering at
-matched <em>n</em>) and raises mean-centered CLAP Vendi on rendered
-instrumentals from 11.5 to 17.43. <em>Selecting on the channel the
-objective cannot see</em>: best-of-3 renders chosen on pixel statistics
-raise optical min-gap 1.24× at no cost in CLIP. And <em>the ranking does
-not depend on the viewpoint</em>: under four independent
-representations, three of which the method never optimizes, RAC ranks
-first under every one, at a mean Kendall τ of +0.83. The prescriptions
-are short: name the embedder, measure at the artifact, audit in a
-channel the objective never optimizes, and balance by construction what
-the embedding cannot see.</p>
+<p>A synthetic-data pipeline embeds text and then acts on the distances:
+drop the near-duplicates, keep the most different items, retrieve
+neighbours, screen for contamination. Every one of those decisions bets
+that proximity in the embedding stands in for proximity in the thing the
+text becomes — a program that runs, a query that returns rows, a picture
+that gets rendered. The usual way to check the bet is to decode a sample
+and report a correlation.</p>
+<p><strong>That check does not work, and we can say exactly
+why.</strong> On 553 generated Python programs decoded by execution on a
+fixed 140-input battery, text distance and behavioural distance
+correlate at +0.451 among the closest decile of pairs and +0.065 among
+the farthest — an apparently sharp result saying that embeddings track
+behaviour among near-duplicates and carry nothing beyond them. Running
+the identical analysis between two <em>encoders</em>, with no decoder
+anywhere, gives <strong>+0.742 to +0.781</strong> for the same
+near-minus-far quantity: <strong>the decoder-free control shows the
+effect about twice as strongly as the decoder does.</strong> The
+conditional-mean curves coincide. The shape is a property of comparing
+two distance matrices, not of the artifact. A permutation null does
+flatten (−0.025), so a real text-to-behaviour association exists; what
+does not exist is evidence for the mechanism the profile appears to
+show.</p>
+<p>This is the check the field runs when it proposes an embedding proxy
+for something expensive, frequently with the observation that agreement
+is strongest among similar items. We give the control that should
+accompany it, and the positive alternative: <strong>validate a proxy by
+running the decision, not by correlating the distances.</strong> Scored
+that way, on decoders that are deterministic and total, three decisions
+come apart cleanly.</p>
+<p><strong>Deduplication is a corpus instrument, not an item
+gate.</strong> Duplicate-pair detection runs at AUC 0.779, but at the
+tightest radius tested <strong>45.4% of the pairs a filter would reject
+are behaviourally far apart</strong> (41.6% on a second decoder), so a
+filter defensible for contamination screening is not defensible per
+item, and no threshold fixes it.</p>
+<p><strong>Diversity selection has no stable sign.</strong> Greedy
+max-min loses to random at every budget on one decoder and beats it from
+<em>k</em> = 20 on another. It cannot be predicted from the embedding
+and has to be measured.</p>
+<p><strong>Both signs lose to the artifact-space oracle, which is
+cheaper than the proxy.</strong> The oracle reaches at <em>k</em> = 30
+what the best text-space selector needs <em>k</em> = 100 to reach.
+Decoding a generated program in its own operating-system process costs
+29.1 ms against 107.9 ms for a batched local embedding; tracing an
+<code>ipaddress</code> call costs 0.98 ms against 685 ms. For
+deterministic decoders the oracle is not the option a practitioner
+cannot afford but the one they did not think to run.</p>
+<p>Text-level deduplication performed perfectly on this corpus removes
+63% of it and leaves it <strong>5.2× redundant in the space that
+matters</strong>: 203 distinct programs, 39 distinct behaviours.</p>
+<p>We ship all of it as <code>decodergap</code>, which reports the
+decoder-free control beside every correlation and scores each decision
+in the artifact's own space. Alongside this we report the same question
+where decoding is genuinely expensive — rendered images and audio —
+where text-embedding similarity explains 14.5% of the variance in
+rendered-image similarity, whether a prompt can be steered at all is a
+property of the embedder, and a third of the conditioning is lost at the
+seam where one model's language becomes another model's input.</p>
 <hr />
 <h2 id="1-introduction">1. Introduction</h2>
-<p>Recursive Axis Conditioning (RAC) is a generation loop that improves
-a chosen diversity measure: it asks the generator to name the
-language-valued axes along which its own outputs can differ, ranks them,
-takes their most-different levels, splits an exhausted axis into finer
-sub-axes, and keeps one of <em>K</em> candidates by the measure. The
-companion paper, <em>Recursive Axis Conditioning for Diverse Synthetic
-Data Generation</em>, builds that loop, measures it against the released
-state of the art — first of twelve corpora on coverage of a held-out
-human reference at a twentieth of Alpaca's budget, an exam bank with no
-enemy pair at a blind-adjudicated radius — and states the theory that
-bounds it. Everything in it rests on one assumption: an <em>embedding
-oracle</em> <em>E</em> that maps an item to a point in
+<p>A generated corpus is almost never the thing anyone wants. It is a
+step towards the thing: the program that will run, the query that will
+return rows, the picture that will be rendered, the model that will be
+fine-tuned. Between the text and the artifact sits a
+<strong>decoder</strong> — a compiler, an interpreter, a database
+engine, a diffusion model — and the pipeline that produced the text does
+not consult it. It embeds the text and makes its decisions there.</p>
+<p>Those decisions are the standard furniture of the field. Deduplicate
+at a similarity threshold. Keep the <em>k</em> most mutually distant
+items. Retrieve the nearest neighbours of a query. Check an evaluation
+set against a training set for leakage. Each is a claim that the
+embedding's geometry stands in for the artifact's, and each is made by
+pipelines that never test it, because testing it appears to require
+decoding everything, which appears to be expensive.</p>
+<p>This paper tests it. The companion paper, <em>Recursive Axis
+Conditioning for Diverse Synthetic Data Generation</em>, builds a
+generation loop on an explicit assumption — an embedding oracle
+<em>E</em> mapping an item to a point in
 ℝ<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi></mi><mi>D</mi></msup><annotation encoding="application/x-tex">^{D}</annotation></semantics></math>,
-with no inverse. Every axis is scored in <em>E</em>, every candidate is
-selected in <em>E</em>, and every diversity number is a statistic of
-<em>E</em>.</p>
-<p>This paper is about the word <em>oracle</em>. In two of the
-companion's five domains the thing being made is not text at all. An
-image instruction is written by one model and rendered by another; a
-music prompt becomes a two-minute instrumental. The text embedder never
-sees the picture or hears the track, so what it measures is a
-<em>proxy</em> for the artifact the reader receives — and even where the
-artifact is text, <code>nomic-embed-text</code> is a semantic model
-nearly blind to metre, rhyme and line length, and no embedding at all
-encodes where an exam item's answer key sits among its options. The
-oracle is always a proxy. The question is how far it is from the
-artifact, what falls into the gap, and what a method that only ever sees
-the proxy can do about it.</p>
-<p>We answer in four parts. <strong>What the proxy sees</strong> (§4):
-text-embedding similarity between image instructions predicts
-rendered-image similarity at Pearson <em>r</em> between 0.167 and 0.421,
-so most of the visual variance is unexplained by anything a text-side
-method optimizes; in audio, whether a prompt can be steered before
-rendering is a property of the embedder, with prompt-to-track alignment
-of 0.68 under MuQ-MuLan against 0.18 under CLAP-music; literal and
-latent diversity of one corpus move in opposite directions as it grows;
-a whole class of visual repetition — tiled grids, shared palettes,
-recoloured compositions — is invisible to embedding metrics and visible
-to a 16×16 luminance map; and a generated exam bank whose keys sit 90%
-in position A scores identically on every diversity measure to a
-balanced one. Against that, the <em>ranking</em> of methods does survive
-the choice of viewpoint: under four independent representations, three
-of which the method never optimizes, RAC ranks first under every one.
-<strong>Steering through the proxy</strong> (§5): rendering a bounded
-sample, embedding it in the artifact's own space and mapping its crowded
-directions back into the text space gives the best image arm at matched
-<em>n</em> and, through an audio embedder, raises mean-centered CLAP
-Vendi on rendered tracks from 11.5 to 17.43; and when a pipeline pays
-for extra renders, choosing among them on the channel the objective
+with no inverse — and every axis it scores, every candidate it selects
+and every number it reports is a statistic of <em>E</em>. This paper is
+about the word <em>oracle</em>. In two of that paper's five domains the
+artifact is not text at all, and even where it is, the embedder is blind
+to metre, to compositional template, and to where an exam item's answer
+key sits among its options. The oracle is always a proxy. What we add
+here is that the question generalizes far past diversity, and that in
+the domains where the decoder is deterministic it has a clean and
+repeatable answer.</p>
+<p>What we found first was a boundary that looked clean: embeddings
+appearing to be <strong>near-field instruments</strong>, separating
+near-duplicates from everything else and saying little about which of
+two already-distinct items is more distinct. That would have explained a
+great deal — why deduplication reliably works, why diversity selection
+reliably disappoints. It did not survive its own control. The near-field
+shape appears just as strongly between two encoders that have never seen
+the artifact, so it is a property of comparing distance matrices rather
+than a fact about decoders, and we report it here as the confound it is
+rather than the mechanism we wanted.</p>
+<p>What survives is more useful and less comfortable. Correlating an
+embedding against an artifact measurement is not a valid way to qualify
+a proxy, and the alternative is to run the decision itself and score it
+where the artifact lives. Done that way the decisions separate:
+deduplication survives at corpus scale and fails per item, diversity
+selection changes sign between decoders, and the artifact-space oracle
+beats both while costing less than the embeddings it replaces.</p>
+<p>Choosing deterministic decoders also removes a bound that no amount
+of care removes otherwise. The image endpoint used by the companion
+paper exposes no seed, so no render can be repeated and render noise
+cannot be separated from what is being measured; every artifact-space
+number there is a statement about an unlogged seed distribution. A
+Python program on a fixed battery, a query against a fixed database, a
+pattern against a fixed corpus of strings: each repeats exactly, so
+artifact distance is a property of the text alone.</p>
+<p>The paper is in two halves. §4 runs the control that invalidates
+correlational proxy validation and then measures the three decisions
+directly on deterministic decoders, §9 measures what decoding costs
+against what embedding costs, and §10 describes the probe we ship. The
+second half is the expensive-decoder case, where a render or a
+two-minute audio generation sits between the text and the artifact and
+the oracle is genuinely out of reach. <strong>What the proxy
+sees</strong> (§5): text-embedding similarity between image instructions
+predicts rendered-image similarity at Pearson <em>r</em> between 0.167
+and 0.421, so most of the visual variance is unexplained by anything a
+text-side method optimizes; in audio, whether a prompt can be steered
+before rendering is a property of the embedder, with prompt-to-track
+alignment of 0.68 under MuQ-MuLan against 0.18 under CLAP-music; literal
+and latent diversity of one corpus move in opposite directions as it
+grows; a whole class of visual repetition — tiled grids, shared
+palettes, recoloured compositions — is invisible to embedding metrics
+and visible to a 16×16 luminance map; and a generated exam bank whose
+keys sit 90% in position A scores identically on every diversity measure
+to a balanced one. Against that, the <em>ranking</em> of methods does
+survive the choice of viewpoint: under four independent representations,
+three of which the method never optimizes, RAC ranks first under every
+one. <strong>Steering through the proxy</strong> (§6): rendering a
+bounded sample, embedding it in the artifact's own space and mapping its
+crowded directions back into the text space gives the best image arm at
+matched <em>n</em> and, through an audio embedder, raises mean-centered
+CLAP Vendi on rendered tracks from 11.5 to 17.43; and when a pipeline
+pays for extra renders, choosing among them on the channel the objective
 cannot see buys 1.24× on that channel at zero cost in CLIP.
-<strong>Conditioning across the seam</strong> (§6): by intervention,
+<strong>Conditioning across the seam</strong> (§7): by intervention,
 nine of eleven image axes are realized in the written instruction and
 four of eleven in the render, a mean loss of 35% of the effect at the
 boundary where one model's language becomes another model's input.
-<strong>Scoring in the artifact's space</strong> (§7): the obvious way
+<strong>Scoring in the artifact's space</strong> (§8): the obvious way
 to make axis scoring empirical — replace level descriptions with the
 centroid of what each level produced — is a marginal mean where a
 partial effect is needed, and it is the companion's manipulation-based
 repair that makes artifact-space scoring usable at all.</p>
 <p>The contributions, in the order we would defend them:</p>
 <ul>
-<li><strong>A measured proxy gap in three modalities</strong> (§4.2,
-§4.3), with the pooled and within-arm shared variance stated separately
+<li><strong>A confound in proxy validation</strong> (§4.3): the
+near-field agreement profile that appears to qualify an embedding as a
+proxy is reproduced, more strongly, by two encoders with no decoder
+involved. With the control that should accompany any such correlation,
+and the permutation null that shows what a real association looks
+like.</li>
+<li><strong>A decision-by-decision verdict</strong> (§4.5–§4.7), each a
+direct measurement that the confound does not touch: deduplication
+supported at corpus scale and refused per item at a 45.4% false-positive
+rate, diversity selection sign-unstable between decoders, and 5.2×
+behavioural redundancy surviving perfect text-level deduplication.</li>
+<li><strong>The cost inversion</strong> (§9): for deterministic decoders
+the artifact-space oracle is cheaper than embedding the corpus, by 3.7×
+in the least favourable measurement we can make and by three orders of
+magnitude in the most.</li>
+<li><strong><code>decodergap</code></strong> (§10), the probe that
+reports all of the above for a corpus, an embedder and a decode
+function, and that declines to recommend a threshold.</li>
+<li><strong>A measured proxy gap in three modalities</strong> (§5.2,
+§5.3), with the pooled and within-arm shared variance stated separately
 and the embedder named in every audio number.</li>
 <li><strong>Cross-modal steering as an extension of the loop</strong>
-(§5.1, §5.2): the same ledger that repels what the model keeps
+(§6.1, §6.2): the same ledger that repels what the model keeps
 <em>saying</em> also repels what it keeps <em>showing</em>, through a
 least-squares bridge from the artifact's embedding into the text
 embedding the loop already optimizes.</li>
-<li><strong>The seam result</strong> (§6): conditioning strength
+<li><strong>The seam result</strong> (§7): conditioning strength
 degrades where the generator changes hands, established by manipulation
-rather than correlation, with the instrument's share of the loss
-separated from the renderer's.</li>
-<li><strong>Two failures no embedding can see</strong> (§4.6, §4.7),
-with the audit that finds each and the repair that needs no embedding —
-a structural ban block for compositional repetition, and a uniform key
-permutation that needs no answer key.</li>
-<li><strong>Robustness of the ranking to the viewpoint</strong> (§4.4):
-four independent representations agree at a mean Kendall τ of +0.83, and
-the method the companion paper proposes ranks first under all four.</li>
-<li><strong>A short practice</strong> (§8): name the embedder, measure
-at the artifact, audit in a channel the objective never optimizes, and
-balance by construction what the embedding cannot see.</li>
+rather than correlation.</li>
+<li><strong>Two failures no embedding can see</strong> (§5.6, §5.7),
+with the repair for each that needs no embedding.</li>
+<li><strong>Robustness of the ranking to the viewpoint</strong> (§5.4):
+four independent representations agree at a mean Kendall τ of
++0.83.</li>
 </ul>
 <h2 id="2-the-oracle-is-a-proxy">2. The oracle is a proxy</h2>
 <p>We assume throughout:</p>
@@ -244,7 +307,7 @@ orthogonality term climbs, and median nearest-neighbour distance
 <em>is</em> the min-gap term. Those wins should be read as confirmation
 that the optimizer works, not as independent evidence. The independent
 evidence is the literal measures, which the method never observes, and
-the out-of-objective channels of §4.1, which live downstream of a
+the out-of-objective channels of §5.1, which live downstream of a
 rendering step or in a feature space nothing in the loop touches. Sorted
 by how much weight they can bear: embedding-space measures are partly
 circular; literal-space measures are independent; rendered-artifact and
@@ -254,7 +317,7 @@ argument.</p>
 rendered by a model the embedder never sees, even the most independent
 text-side measure is a measure of the <em>instruction</em>, and whether
 the instruction's diversity reaches the picture is an empirical question
-— with, it turns out, a discouraging answer (§4.2). The companion paper
+— with, it turns out, a discouraging answer (§5.2). The companion paper
 states five practices that follow from naming the objective; this paper
 is where the last three are tested.</p>
 <ol type="1">
@@ -271,9 +334,9 @@ means nothing without it.</li>
 <li><strong>Measure at the level of the artifact you ship.</strong>
 Text-embedding similarity explains 14.5% of the variance in whether
 rendered images look alike, pooled across seven rendered arms, and 8.2%
-within-arm (the companion paper's §4.2).</li>
+within-arm (§5.2).</li>
 <li><strong>Audit in a channel the objective never optimizes</strong>
-(§4.1, §4.7; the companion paper's §8.3). It is the only measurement in
+(§5.1, §5.7; the companion paper's §8.3). It is the only measurement in
 this paper that cannot be a restatement of the selection rule, and it is
 where both the strongest positive result and the largest undetected
 defect were found.</li>
@@ -341,8 +404,7 @@ personas × attributes, sampled uniformly</td>
 </tr>
 <tr>
 <td><code>rac+vision</code></td>
-<td>RAC, plus steering on the <em>rendered image</em> (the companion
-paper's §4.2)</td>
+<td>RAC, plus steering on the <em>rendered image</em> (§6.1)</td>
 </tr>
 </tbody>
 </table></div>
@@ -383,20 +445,435 @@ they cluster rather than by how much they reach.</li>
 <li><strong>A judged threshold</strong>, where an application defines
 the failure (the companion paper's §7.4).</li>
 <li><strong>Measures on the rendered artifact</strong>, and
-<strong>measures in a channel the loop never optimizes</strong> (§4.1),
+<strong>measures in a channel the loop never optimizes</strong> (§5.1),
 which are the ones that cannot be circular. <strong>Scale and
 cost.</strong> The text corpora comprise 43,171 real generations for
 roughly $8.50 of OpenRouter spend, plus 1,796 rendered images across
 sixteen image arms and up to three quality tiers, a further 285 renders
-for the two render-side probes of §5.3 and §6, 100 rendered Lyria
+for the two render-side probes of §6.3 and §7, 100 rendered Lyria
 instrumentals, and 236 adjudicated exam-item pairs. Both
 <code>naive</code> arms reach <em>n</em> = 10,000; the reimplemented
 baselines reach 2,500 each. Every comparison is reported at a matched
 <em>n</em> that all compared arms actually reached. Total API spend
 across the project is roughly $40.</li>
 </ul>
-<h2 id="4-what-the-proxy-sees">4. What the proxy sees</h2>
-<h3 id="41-audit-in-a-channel-the-proxy-never-sees">4.1 Audit in a
+<h2
+id="4-a-proxy-cannot-be-validated-by-correlating-it-with-the-artifact">4.
+A proxy cannot be validated by correlating it with the artifact</h2>
+<p>Everything in this paper so far is a statement about diversity. The
+measurement underneath it is not. A pipeline that embeds text and acts
+on the distances is making a bet that has nothing to do with diversity
+in particular: that proximity in the embedding stands in for proximity
+in the artifact. Deduplication makes it, contamination screening makes
+it, nearest-neighbour retrieval makes it, coreset selection and active
+learning make it.</p>
+<p>The natural way to check the bet is to decode a sample, compute a
+distance in the artifact's space, and correlate. This section shows that
+this check does not work — not that it is noisy, but that it returns the
+same answer when the artifact is replaced by something with no
+connection to it — and then measures the three decisions directly
+instead, which is what survives.</p>
+<h3 id="41-decoders-that-leave-nothing-to-interpretation">4.1 Decoders
+that leave nothing to interpretation</h3>
+<p>An image is rendered by a model, which is why every artifact-space
+number in the companion paper is a statement about an unlogged seed
+distribution: the endpoint exposes no seed, so a render cannot be
+repeated and render noise cannot be separated from the quantity being
+measured. That bound is structural.</p>
+<p>It is removed by choosing decoders that are <em>deterministic and
+total</em>. A Python program run on a fixed battery of inputs, a SQL
+query run against a fixed database, a regular expression matched against
+a fixed corpus of strings: each maps text to an artifact with no
+sampling anywhere, so artifact distance is a property of the text alone
+and repeats exactly. These are also among the largest synthetic-data
+industries there are.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>domain</th>
+<th>text</th>
+<th>artifact</th>
+<th>artifact distance</th>
+<th>coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>code</strong></td>
+<td>a Python function <code>f(xs)</code></td>
+<td>its results on a fixed 140-input battery</td>
+<td>fraction of the battery on which two programs disagree</td>
+<td>distinct (input, result) cells</td>
+</tr>
+<tr>
+<td><strong>SQL</strong></td>
+<td>a <code>SELECT</code> against a fixed schema</td>
+<td>the rows it returns</td>
+<td>Jaccard distance between result-row sets</td>
+<td>distinct rows retrieved</td>
+</tr>
+<tr>
+<td><strong>regex</strong></td>
+<td>a pattern</td>
+<td>the subset of a 210-string probe corpus it matches</td>
+<td>Jaccard distance between matched sets</td>
+<td>distinct strings matched</td>
+</tr>
+<tr>
+<td><strong>library inputs</strong></td>
+<td>a string handed to <code>ipaddress</code></td>
+<td>the arcs of the library it executes</td>
+<td>Jaccard distance between arc sets</td>
+<td>distinct arcs reached</td>
+</tr>
+</tbody>
+</table></div>
+<p>None of these distances is computed with reference to an embedding,
+so each can adjudicate an embedding rather than agree with it. The first
+is the corpus used below: 553 generated Python programs, of which 203
+are distinct sources, which between them exhibit <strong>39 distinct
+behaviours</strong>.</p>
+<h3 id="42-the-profile-that-looks-like-a-finding">4.2 The profile that
+looks like a finding</h3>
+<p>Correlating text distance against behavioural distance
+<em>within</em> each decile of text distance, rather than pooling,
+produces a table that appears to say something sharp:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>decile of text distance</th>
+<th>width</th>
+<th>pairs</th>
+<th>corr. with behavioural distance</th>
+<th>mean behavioural distance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1 (closest)</strong></td>
+<td>0.140</td>
+<td>2,051</td>
+<td><strong>+0.451</strong></td>
+<td>0.549</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.032</td>
+<td>2,050</td>
+<td>+0.112</td>
+<td>0.827</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.022</td>
+<td>2,050</td>
+<td>+0.010</td>
+<td>0.877</td>
+</tr>
+<tr>
+<td>4–9</td>
+<td>0.014–0.018</td>
+<td>12,301</td>
+<td>−0.040 … +0.062</td>
+<td>0.878–0.909</td>
+</tr>
+<tr>
+<td><strong>10 (farthest)</strong></td>
+<td>0.104</td>
+<td>2,051</td>
+<td><strong>+0.065</strong></td>
+<td>0.916</td>
+</tr>
+<tr>
+<td>pooled</td>
+<td></td>
+<td>20,503</td>
+<td>+0.364</td>
+<td>0.853</td>
+</tr>
+</tbody>
+</table></div>
+<p>Read on its own this says: the embedding tracks behaviour among
+near-duplicates and stops carrying information beyond them. The
+conditional mean of behavioural distance given text distance says the
+same thing without any correlation at all, rising <strong>+0.474 across
+the near half of the distance range and +0.036 across the far
+half</strong>. Every diversity selector in the literature draws its
+picks from the top decile.</p>
+<p>We believed this, and it is wrong.</p>
+<h3 id="43-the-control-two-encoders-no-decoder">4.3 The control: two
+encoders, no decoder</h3>
+<p>The profile compares one distance matrix to another and reports that
+they agree more among close pairs. Nothing in that description mentions
+a decoder. If any two distance matrices over the same points agree
+preferentially in the near field, the shape is a property of the
+comparison and the decoder is doing no work at all.</p>
+<p>Running the identical profile between two <em>encoders</em>, with no
+decoder anywhere in the computation:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>comparison</th>
+<th>near-field corr.</th>
+<th>far-field corr.</th>
+<th><strong>near − far</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nomic vs behaviour <em>(the claim)</em></td>
+<td>+0.451</td>
+<td>+0.065</td>
+<td><strong>+0.386</strong></td>
+</tr>
+<tr>
+<td>char TF-IDF vs behaviour</td>
+<td>+0.474</td>
+<td>−0.002</td>
+<td>+0.476</td>
+</tr>
+<tr>
+<td>word TF-IDF vs behaviour</td>
+<td>+0.513</td>
+<td>−0.053</td>
+<td>+0.567</td>
+</tr>
+<tr>
+<td><strong>nomic vs char TF-IDF</strong> <em>(control)</em></td>
+<td>+0.742</td>
+<td>−0.003</td>
+<td><strong>+0.745</strong></td>
+</tr>
+<tr>
+<td><strong>nomic vs word TF-IDF</strong> <em>(control)</em></td>
+<td>+0.750</td>
+<td>+0.007</td>
+<td><strong>+0.742</strong></td>
+</tr>
+<tr>
+<td><strong>char TF-IDF vs word TF-IDF</strong> <em>(control)</em></td>
+<td>+0.898</td>
+<td>+0.117</td>
+<td><strong>+0.781</strong></td>
+</tr>
+<tr>
+<td>nomic vs <em>permuted</em> behaviour <em>(null)</em></td>
+<td>−0.002</td>
+<td>+0.023</td>
+<td>−0.025</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>The decoder-free controls show the shape about twice as
+strongly as the decoder does.</strong> The conditional-mean curve is the
+same story: the control rises +0.493 over the near half and +0.030 over
+the far half, against the decoder's +0.474 and +0.036 — the two curves
+are the same curve. Two representations that have never seen a program
+run produce a cleaner "near-field law" than the comparison against what
+the programs actually do.</p>
+<p>A third of the effect is bookkeeping. Equal-count deciles have very
+unequal widths — the first spans 0.140 of the distance range and the
+eighth spans 0.014 — and a within-bin correlation is attenuated by the
+bin's own spread. On equal-width bins the profile is +0.288, +0.056,
++0.114, +0.191, +0.061, −0.004, +0.014, +0.030, +0.070, −0.080: still
+more signal at the low end than the high end, and nothing like the
+monotone decline the decile table displays.</p>
+<p>One control does pass, and it is the one that matters for what
+remains. Permuting the artifacts across items — breaking the
+text-to-behaviour correspondence while leaving both marginal distance
+distributions exactly intact — flattens everything to −0.025
+near-minus-far and −0.003 pooled, against +0.364 unpermuted.
+<strong>There is a real association between what a program looks like
+and what it does.</strong> What there is no evidence for is the shape we
+read into it.</p>
+<h3
+id="44-the-consequence-correlational-proxy-validation-is-confounded">4.4
+The consequence: correlational proxy validation is confounded</h3>
+<p>This generalizes past our own mistake, because the check we ran is
+the check the field runs. A paper that proposes an embedding-based proxy
+for something expensive — human preference, rendered quality, downstream
+accuracy, behavioural diversity — validates it by decoding a sample and
+reporting a correlation, and frequently reports that the correlation is
+strongest among similar items. That last observation is not evidence. It
+appears between two arbitrary encoders that have never seen the
+outcome.</p>
+<p>The prescription is cheap and almost nobody follows it:</p>
+<blockquote>
+<p><strong>Report a decoder-free control beside any proxy-validation
+correlation.</strong> Correlate your embedding against a second,
+unrelated representation of the same corpus. Whatever agreement survives
+<em>above</em> that control is the part your artifact measurement
+contributed. On the corpus here, that residue is negative: the decoder
+profile is weaker than the encoder-to-encoder baseline.</p>
+</blockquote>
+<p>And the positive form: <strong>validate a proxy by running the
+decision, not by correlating the distances.</strong> A correlation is a
+summary of a geometry; a decision is a thing that either works or does
+not, is scored in the artifact's space, and has no confound of this
+kind. The rest of this section does that for the three decisions a
+synthetic-data pipeline actually makes.</p>
+<h3
+id="45-decision-1--deduplication-is-a-corpus-instrument-not-an-item-gate">4.5
+Decision 1 — deduplication is a corpus instrument, not an item gate</h3>
+<p>Deduplication reads the closest pairs, which is where whatever signal
+exists is concentrated, and at corpus scale it works: duplicate-pair
+detection on the code corpus runs at <strong>AUC 0.779</strong> against
+the ground-truth label <em>identical on the whole battery</em>.</p>
+<p>Per item it does not. Among the pairs a near-duplicate filter would
+reject, the fraction that are behaviourally <em>far apart</em> (distance
+&gt; 0.5):</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>filter radius</th>
+<th>pairs rejected</th>
+<th>of those, still behaviourally far</th>
+<th>mean behavioural distance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5th pctile</td>
+<td>1,026</td>
+<td><strong>45.4%</strong></td>
+<td>0.419</td>
+</tr>
+<tr>
+<td>10th</td>
+<td>2,051</td>
+<td>62.2%</td>
+<td>0.549</td>
+</tr>
+<tr>
+<td>20th</td>
+<td>4,101</td>
+<td>76.8%</td>
+<td>0.688</td>
+</tr>
+<tr>
+<td>30th</td>
+<td>6,151</td>
+<td>83.0%</td>
+<td>0.751</td>
+</tr>
+<tr>
+<td>40th</td>
+<td>8,201</td>
+<td>86.3%</td>
+<td>0.784</td>
+</tr>
+<tr>
+<td><em>pool-wide</em></td>
+<td></td>
+<td></td>
+<td><em>0.853</em></td>
+</tr>
+</tbody>
+</table></div>
+<p>At the tightest radius, nearly half of what the filter discards
+behaves unlike the item it was discarded for resembling; the best radius
+available reaches F1 0.449 (precision 0.452, recall 0.446). A second
+decoder — 202 strings scored by the <code>ipaddress</code> arcs they
+execute — gives 41.6% at the same quantile against a pool-wide mean of
+0.672.</p>
+<p>This is a direct measurement of the decision, so the §4.3 control
+does not touch it. Threshold tuning does not fix it either, because the
+error is in the strength of the evidence rather than the location of the
+boundary. <strong>A text-space duplicate filter is defensible as a
+corpus-level instrument — a duplicate rate, a contamination screen — and
+not as a per-item accept/reject.</strong></p>
+<h3
+id="46-decision-2--diversity-selection-has-no-stable-sign-and-both-signs-lose-to-the-oracle">4.6
+Decision 2 — diversity selection has no stable sign, and both signs lose
+to the oracle</h3>
+<p>Farthest-point traversal draws its picks from the top decile. What
+that costs turns out to depend on the decoder, and not in a way anything
+visible in the text predicts. On the <code>ipaddress</code> decoder,
+greedy max-min is worse than random at every budget in every
+representation, by 54 to 82 arcs. On the code corpus it is worse than
+random at <em>k</em> = 10 and better from <em>k</em> = 20 on:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th><em>k</em></th>
+<th>random</th>
+<th>max-min</th>
+<th>best near-duplicate filter</th>
+<th><strong>artifact-space oracle</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>815</td>
+<td>743</td>
+<td>849</td>
+<td><strong>1,336</strong></td>
+</tr>
+<tr>
+<td>20</td>
+<td>1,119</td>
+<td>1,296</td>
+<td>1,267</td>
+<td><strong>2,047</strong></td>
+</tr>
+<tr>
+<td>30</td>
+<td>1,355</td>
+<td>1,509</td>
+<td>1,517</td>
+<td><strong>2,365</strong></td>
+</tr>
+<tr>
+<td>50</td>
+<td>1,549</td>
+<td>1,864</td>
+<td>1,809</td>
+<td><strong>2,414</strong></td>
+</tr>
+<tr>
+<td>100</td>
+<td>1,891</td>
+<td>2,358</td>
+<td>2,113</td>
+<td><strong>2,414</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Behaviour cells covered, mean of 20 seeds; the oracle is greedy
+marginal coverage computed in the artifact's own space.</em></p>
+<p>Two things follow. <strong>Whether text-space diversity selection
+helps is a property of the decoder and is not predictable from the
+embedding</strong> — two decoders, the same selector, opposite signs.
+And <strong>the gap that matters is against the oracle, not against
+random</strong>: the best text-space selector at <em>k</em> = 10 buys
+849 cells where the oracle buys 1,336, the oracle reaches at <em>k</em>
+= 30 what text-space selection needs <em>k</em> = 100 to reach, and it
+saturates the pool at <em>k</em> = 50 where no text-space arm saturates
+at all. Text-space selection leaves between a third and a half of the
+reachable behaviour unbought at small budgets whether or not it beats
+random.</p>
+<p>The oracle is normally waved away as the thing one cannot afford. §9
+measures what it costs.</p>
+<h3
+id="47-decision-3--the-redundancy-that-no-text-space-instrument-reaches">4.7
+Decision 3 — the redundancy that no text-space instrument reaches</h3>
+<p>The corpus itself makes the case for measuring the artifact more
+compactly than any correlation does. Naive repeated prompting produced
+553 programs. Removing byte-identical sources — the deduplication step
+every pipeline performs — leaves <strong>203</strong>. Those 203
+distinct programs exhibit <strong>39 distinct behaviours</strong>.</p>
+<p>So text-level deduplication, performed perfectly, removes 63% of the
+corpus and leaves it <strong>5.2× redundant in the space that
+matters</strong>. The residue is not subtle paraphrase. One pair of
+programs in it implements the longest-increasing- subsequence length by
+patience sorting with a binary search, and the other by the quadratic
+dynamic program; they share almost no tokens, and they agree on all 140
+battery inputs. No embedding-space threshold reaches that pair without
+also discarding most of the corpus, and running both programs takes
+microseconds.</p>
+<h2 id="5-what-the-proxy-sees">5. What the proxy sees</h2>
+<h3 id="51-audit-in-a-channel-the-proxy-never-sees">5.1 Audit in a
 channel the proxy never sees</h3>
 <p>The strongest evidence available for any embedding-optimized method
 is a channel that is <em>causally downstream of the artifact and
@@ -434,7 +911,7 @@ of sixty baseline renders lowers CLIP Vendi monotonically, 43.81 to
 penalized rather than rewarded for admitting degraded images.</p>
 <p>The rest of this section is what such channels reveal that the proxy
 does not.</p>
-<h3 id="42-text-diversity-is-nearly-blind-to-image-diversity">4.2 Text
+<h3 id="52-text-diversity-is-nearly-blind-to-image-diversity">5.2 Text
 diversity is nearly blind to image diversity</h3>
 <p>We rendered the first 199 DALL·E instructions from the naive corpus
 and embedded them with CLIP. Pairwise cosine similarity in
@@ -481,7 +958,7 @@ composition all move, across a medieval triptych, a botanical cabinet, a
 photographed sculpture installation, a torn-paper abstract and a civic
 notice.</em></p>
 <h3
-id="43-audio-whether-a-prompt-can-be-steered-is-a-property-of-the-embedder">4.3
+id="53-audio-whether-a-prompt-can-be-steered-is-a-property-of-the-embedder">5.3
 Audio: whether a prompt can be steered is a property of the
 embedder</h3>
 <p>The more portable finding is that whether a prompt can be steered
@@ -525,7 +1002,7 @@ contracts have a length ceiling as well — compliance with a requested
 section sequence is exact at prompt lengths near 560 characters, 0.11 at
 a mean of 658, and zero by ~1,600 — so a structural contract for music
 must be short or it is noise.</p>
-<h3 id="44-the-ranking-does-not-depend-on-the-viewpoint">4.4 The ranking
+<h3 id="54-the-ranking-does-not-depend-on-the-viewpoint">5.4 The ranking
 does not depend on the viewpoint</h3>
 <p>A max-min score is a distance in a chosen embedding, so a natural
 worry is that it names a property of the embedder rather than of the
@@ -552,7 +1029,7 @@ mean tau is +0.67 and RAC is still first under all four. Naive sampling
 and high-temperature sampling score exactly zero on prosody and on
 stylometry — at least one item in twenty has an exact neighbour in those
 channels.</p>
-<h3 id="45-literal-and-latent-diversity-move-in-opposite-directions">4.5
+<h3 id="55-literal-and-latent-diversity-move-in-opposite-directions">5.5
 Literal and latent diversity move in opposite directions</h3>
 <p>Literal and latent diversity move in opposite directions in one
 corpus, which is why both are reported throughout. Measuring the DALL·E
@@ -615,7 +1092,7 @@ alt="Figure 2. The decoupling, normalized to each series&#39; value at n = 5. Li
 5. Literal diversity falls monotonically while latent diversity rises:
 two measurements of two different quantities that one word, "diversity",
 has been covering for.</em></p>
-<h3 id="46-a-class-of-repetition-the-embedding-misses">4.6 A class of
+<h3 id="56-a-class-of-repetition-the-embedding-misses">5.6 A class of
 repetition the embedding misses</h3>
 <p>One comparison in the artifact channel runs against the method, and
 it belongs here. Embedding metrics miss an entire class of visual
@@ -639,9 +1116,9 @@ spread and structural repetition are both measured on pixels and point
 in opposite directions: our corpora occupy a wider region of that space
 while repeating their compositional scaffolding more often within
 it.</p>
-<h3 id="47-a-defect-no-diversity-measure-can-see">4.7 A defect no
+<h3 id="57-a-defect-no-diversity-measure-can-see">5.7 A defect no
 diversity measure can see</h3>
-<p>The audits of §6 ask whether the axes reach the artifact. This one
+<p>The audits of §7 ask whether the axes reach the artifact. This one
 asks whether the resulting bank is <em>usable</em>. For a test bank, key
 position is a hard requirement: correct answers must be distributed
 across option positions, because an examinee who notices an imbalance
@@ -723,8 +1200,8 @@ exists to span, it is latent rather than semantic, and nothing in the
 objective can see it. Measuring diversity well is not the same as
 measuring fitness for purpose, and the gap between them is not visible
 from inside the objective.</p>
-<h2 id="5-steering-through-the-proxy">5. Steering through the proxy</h2>
-<h3 id="51-images-closing-the-loop-where-the-product-lives">5.1 Images:
+<h2 id="6-steering-through-the-proxy">6. Steering through the proxy</h2>
+<h3 id="61-images-closing-the-loop-where-the-product-lives">6.1 Images:
 closing the loop where the product lives</h3>
 <p>The vision-steered arm closes the loop where the product lives. It
 renders a bounded sample of accepted instructions, embeds them with
@@ -736,8 +1213,7 @@ push away from visual redundancy it cannot itself perceive; and mined
 ledger as the textual ones. It is the paper's mechanism applied one
 level down — the ledger already repels against what the model keeps
 saying, and now also against what it keeps showing — and it is the best
-arm in the companion paper's competitive comparison (its the companion
-paper's §7.2).</p>
+arm in the companion paper's competitive comparison (its §7.2).</p>
 <p>The margin is measurable in the space the loop optimizes and visible
 on the page. At matched <em>n</em> = 200 in the DALL·E domain, the
 text-only RAC arm scores centered Vendi 77.67 and median
@@ -745,11 +1221,11 @@ nearest-neighbour distance 0.171; the vision-steered arm scores 91.97
 and 0.192, an 18% gain in centered Vendi, and leads every column of the
 seven-arm comparison — distinct-2 0.699 against 0.660, 4-gram
 self-repetition 0.040 against 0.068, <em>n</em>-gram Vendi 170.9 against
-167.0. The contact sheet of §4.2 shows the same thing without a number:
+167.0. The contact sheet of §5.2 shows the same thing without a number:
 rows 3–4, steered on both the text and the vision side, move medium,
 palette, register and composition where rows 1–2 return one visual
 mode.</p>
-<h3 id="52-audio-cross-modal-steering-through-an-audio-embedder">5.2
+<h3 id="62-audio-cross-modal-steering-through-an-audio-embedder">6.2
 Audio: cross-modal steering through an audio embedder</h3>
 <p>At matched <em>n</em>, matched prompt length and the same generator,
 the conditioned music arm reaches centered Vendi 43.03 against naive's
@@ -763,14 +1239,14 @@ CLAP space and mean-centered CLAP Vendi is 17.43 against 11.5 for naive
 prompts and 14.1 for axis-conditioned prompts under the same
 embedder.</p>
 <p>The rendered arm was steered through CLAP and is measured in CLAP.
-§4.3's alignment table says the same loop through MuQ-MuLan would have a
+§5.3's alignment table says the same loop through MuQ-MuLan would have a
 steering gradient nearly four times as strong on the naive arm (0.68
 against 0.18), which is the experiment we would run next; the
-prescription — steer music with MuQ-MuLan rather than CLAP — is §4.3's,
-and the loop is the image one of §5.1 with the audio tower in place of
+prescription — steer music with MuQ-MuLan rather than CLAP — is §5.3's,
+and the loop is the image one of §6.1 with the audio tower in place of
 CLIP.</p>
 <h3
-id="53-best-of-k-at-the-render-select-on-the-channel-the-objective-cannot-see">5.3
+id="63-best-of-k-at-the-render-select-on-the-channel-the-objective-cannot-see">6.3
 Best-of-<em>K</em> at the render: select on the channel the objective
 cannot see</h3>
 <p>The companion paper measures best-of-<em>K</em> on the written
@@ -779,7 +1255,7 @@ nearest-neighbour distance by 20% in three of three seeds, at a cost of
 a third of a craft point. The same question at the <em>render</em> has a
 sharper answer, because the two channels have very different effective
 dimensions. Best-of-<em>K</em> on the written candidate happens before
-the handoff and §6 locates the loss after it, so we also ran <em>K</em>
+the handoff and §7 locates the loss after it, so we also ran <em>K</em>
 = 3 renders behind each of 60 fixed instructions and kept the render
 maximizing min distance to the accepted set — once in CLIP, once in
 optical statistics, over the same candidates. Selecting on optics raises
@@ -797,7 +1273,7 @@ rule: oversampling buys far more in a low-dimensional channel than in a
 high-dimensional one, and <strong>if a pipeline is going to pay for
 extra renders, it should select them on the channel the objective cannot
 see.</strong></p>
-<h2 id="6-conditioning-across-the-seam">6. Conditioning across the
+<h2 id="7-conditioning-across-the-seam">7. Conditioning across the
 seam</h2>
 <p>The companion paper audits whether a commanded axis level shows up in
 the artifact (its §8.1), by manipulation rather than correlation: hold a
@@ -843,7 +1319,7 @@ usable conditioning — the conditioning is there, in the prompt, and
 measurable — but of that conditioning to survive a generator that never
 saw the axis set.</p>
 <p>Part of the apparent loss is the instrument rather than the renderer,
-and this is the §4.1 lesson arriving from the other direction. The four
+and this is the §5.1 lesson arriving from the other direction. The four
 perceptual axes attenuate most in CLIP and are precisely the axes CLIP
 is least equipped to register: measured on pixels instead, <em>Lighting
 direction</em> reads 0.229 against 0.092 in CLIP, <em>Shot scale</em>
@@ -858,14 +1334,14 @@ conditioning never leaves the system that understands it. An image axis
 is written by that model into a prompt and handed to a different model,
 which never saw the axis set, shares no latent space with it, and is
 under no obligation to honour a distinction like <em>copies outrank an
-absent original</em>. the companion paper's §4.2 measured this seam from
-the outside as a proxy gap; the intervention measures it from the
-inside. <strong>Conditioning strength degrades at the boundary where the
+absent original</em>. §5.2 measured this seam from the outside as a
+proxy gap; the intervention measures it from the inside.
+<strong>Conditioning strength degrades at the boundary where the
 generator changes hands</strong>, so the modality-agnostic claim holds
 for the calculus — which needs only an embedding — and not for the
 conditioning, which needs a generator that reads the same language the
 axes are written in.</p>
-<h2 id="7-scoring-axes-in-the-artifacts-space">7. Scoring axes in the
+<h2 id="8-scoring-axes-in-the-artifacts-space">8. Scoring axes in the
 artifact's space</h2>
 <p>The companion paper scores a candidate axis by four factors — spread,
 transversality, independence and headroom (its §5.2) — all computed from
@@ -902,7 +1378,7 @@ it is what makes artifact-space scoring usable: with it the strong axis
 ranks first on all 24 seeds of a ground-truth test where the attribution
 form ranked the inert axis first in 17 of 24. What belongs here is the
 consequence for a proxy. Level vectors read in the artifact's own
-embedding are only as good as that embedding's grip on the axis. §6
+embedding are only as good as that embedding's grip on the axis. §7
 shows the four perceptual image axes attenuate most in CLIP and are
 precisely the axes CLIP is least equipped to register — <em>Lighting
 direction</em> reads 0.229 on pixels against 0.092 in CLIP — so an axis
@@ -910,60 +1386,220 @@ commanding optics can be scored as inert in the very space that was
 adopted to make the scoring honest. Where a designed feature channel
 exists for the artifact, the realization factor should be computed there
 as well, and the axis kept if either channel finds it.</p>
-<h2 id="8-practice">8. Practice</h2>
+<h2
+id="9-decode-instead-the-oracle-is-usually-cheaper-than-the-proxy">9.
+Decode instead: the oracle is usually cheaper than the proxy</h2>
+<p>The argument for computing distances on text rather than on the
+artifact is always the same, and it is never stated as an argument
+because it is assumed: decoding is expensive, embedding is cheap, so one
+embeds. For a rendered image or a two-minute instrumental that is true.
+For the decoders in this section it is false, and by a wide margin.</p>
+<p>Measured on one laptop, per item:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>operation</th>
+<th>ms per item</th>
+<th>relative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>decode: string → <code>ipaddress</code> arcs, plain execution</td>
+<td><strong>0.11</strong></td>
+<td>1×</td>
+</tr>
+<tr>
+<td>decode: same, with <code>sys.settrace</code> instrumentation</td>
+<td><strong>0.98</strong></td>
+<td>9×</td>
+</tr>
+<tr>
+<td>decode: Python program → 140-input battery, <strong>each in a fresh
+OS process</strong></td>
+<td><strong>29.1</strong></td>
+<td>265×</td>
+</tr>
+<tr>
+<td>embed: <code>nomic-embed-text</code>, local Ollama, batched</td>
+<td>107.9</td>
+<td>981×</td>
+</tr>
+<tr>
+<td>embed: <code>nomic-embed-text</code>, local Ollama, one at a
+time</td>
+<td>1,488.2</td>
+<td>13,529×</td>
+</tr>
+<tr>
+<td>embed: character TF-IDF, local, batched</td>
+<td>18.3</td>
+<td>166×</td>
+</tr>
+</tbody>
+</table></div>
+<p>The code row is deliberately the least favourable decode measurement
+we can honestly make: every generated program is run in a <em>separate
+operating-system process</em> for isolation, so Python interpreter
+start-up dominates and the actual execution is a rounding error. Even
+so, decoding is <strong>3.7× cheaper than a batched local
+embedding</strong> and <strong>51× cheaper than embedding items one at a
+time</strong>, which is what a streaming pipeline does. Where the
+decoder does not need process isolation the margin is three orders of
+magnitude.</p>
+<p>Two honest qualifications. Instrumentation, not the program, is the
+dominant decode cost — tracing costs 9× plain execution — so a decoder
+whose instrumentation is heavy needs its own measurement rather than an
+inherited ratio. And the embedding figures are for a <em>local</em>
+model with no network hop and no per-token charge, which is the best
+case for the text-space route; a hosted embedding endpoint is slower and
+has a price.</p>
+<p>The conclusion is not rhetorical. <strong>For a deterministic decoder
+that runs in milliseconds, the artifact-space oracle is not the
+expensive option a practitioner forgoes. It is the cheap option they did
+not think to run</strong>, and it recovers between 1.02× and 1.64× the
+coverage of the best text-space selector at matched budget (§4.6),
+reaching at <em>k</em> = 30 what text-space selection needs <em>k</em> =
+100 to reach.</p>
+<p>Where decoding genuinely is expensive — rendered images, audio,
+anything behind a paid endpoint — the fallback is not a text-space
+selector but a <em>partial decode budget</em>: decode a sample, and
+spend the rest of the budget where the sample says the behaviour is.
+That regime is where §6's cross-modal steering belongs, and it is the
+boundary between the two halves of this paper.</p>
+<h2 id="10-decodergap-the-probe">10. <code>decodergap</code>: the
+probe</h2>
+<p>The results above do not compose into a rule a practitioner can apply
+blind, because the one decision whose sign varies — far-field selection
+— varies <em>by decoder</em>, and nothing visible in the text says which
+case you are in. What they compose into is a measurement, and the
+measurement is cheap enough to run before any pipeline decision is
+committed.</p>
+<p><code>decodergap</code> takes three things: a corpus, an embedding
+function, and a decode function returning anything with a distance on
+it. It returns the near-field profile, the two deduplication verdicts,
+and the selector comparison against the artifact-space oracle.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> decodergap <span class="im">import</span> probe</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> probe(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    texts     <span class="op">=</span> corpus,                    <span class="co"># what you generated</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    embed     <span class="op">=</span> my_embedder,               <span class="co"># what you were going to select in</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    decode    <span class="op">=</span> <span class="kw">lambda</span> s: run(s, battery), <span class="co"># what the item actually becomes</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    distance  <span class="op">=</span> jaccard,                   <span class="co"># a distance on the decoded artifact</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    coverage  <span class="op">=</span> distinct_cells,            <span class="co"># what a subset is meant to buy</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>report.verdicts[<span class="st">&quot;deduplication_aggregate&quot;</span>]   <span class="co"># SUPPORTED | UNSUPPORTED</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>report.verdicts[<span class="st">&quot;deduplication_per_item&quot;</span>]    <span class="co"># SUPPORTED | NOT SUPPORTED</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>report.verdicts[<span class="st">&quot;max_min_selection&quot;</span>]         <span class="co"># SAFE | UNSAFE, and vs the oracle</span></span></code></pre></div>
+<p>Three design decisions carry the tool, and each is a finding from
+above rather than a preference.</p>
+<p><strong>It never reports a correlation without its decoder-free
+control.</strong> The profile of §4.2 looks like a finding and is
+reproduced twice as strongly by two encoders that never saw a program
+run (§4.3). Any proxy-qualification number the tool emits is accompanied
+by the encoder-to-encoder baseline it has to beat, and by the
+permutation null that shows whether any association exists at all.</p>
+<p><strong>It issues two deduplication verdicts, not one.</strong> The
+aggregate verdict answers <em>can this radius rank duplicate pairs at
+all</em>; the per-item verdict answers <em>of the pairs a filter at this
+radius would reject, how many are behaviourally far apart</em>. On both
+decoders measured here the first passes and the second fails, at 45.4%
+and 41.6%. A tool that emitted a single "dedup: safe" would be licensing
+the decision its own data refuses.</p>
+<p><strong>It scores every selector in the artifact's space and against
+the oracle</strong>, so a text-space selector cannot win by agreeing
+with the representation it selected in, and beating random is not
+mistaken for doing well.</p>
+<p>It also refuses to recommend a filter radius. We swept the threshold
+over the 5th to 40th percentiles of each corpus's own distance
+distribution at four budgets: the best cell on the
+<code>ipaddress</code> decoder is +20.7 arcs over random at <em>t</em> =
+10th percentile and <em>k</em> = 10, and by <em>k</em> = 50 every
+threshold loses. Any single-budget experiment would have produced a
+shippable-looking constant. The sweep is reported in full, including the
+cells that lose, and no constant is offered.</p>
+<h2 id="11-practice">11. Practice</h2>
 <p>The prescriptions are short, and each is attached to the measurement
-that motivates it.</p>
+that motivates it. The first four are the ones we would keep if we could
+keep four.</p>
 <ol type="1">
+<li><strong>Never report a proxy-validation correlation without a
+decoder-free control.</strong> Correlate your embedding against a
+second, unrelated representation of the same corpus, and against a
+permuted version of your artifact measurement. Whatever agreement
+survives above the first is what the artifact contributed; the second
+tells you whether any association exists. On our corpus the
+encoder-to-encoder baseline was <strong>twice</strong> the decoder
+signal (§4.3), which retires the finding we had.</li>
+<li><strong>Qualify a proxy by running the decision, not by correlating
+the distances.</strong> A correlation summarizes a geometry and inherits
+that geometry's confounds. A decision is scored in the artifact's space
+and either works or does not: what fraction of the pairs your filter
+drops are genuinely duplicates, how much artifact coverage your selector
+buys against the oracle.</li>
+<li><strong>Split every deduplication claim into a corpus claim and an
+item claim.</strong> They have different evidence and on both decoders
+here they get different verdicts: AUC 0.779 for ranking duplicate pairs,
+and 45.4% of rejected pairs behaviourally far apart at the tightest
+radius (§4.5). Contamination screening is defensible; a per-item gate is
+not.</li>
+<li><strong>If your decoder is deterministic and fast, do not select in
+text space at all.</strong> Decoding cost 29.1 ms per item against 107.9
+ms to embed one, in the least favourable measurement we could construct
+(§9), and the artifact-space oracle reached at <em>k</em> = 30 what
+text-space selection needed <em>k</em> = 100 to reach (§4.6). The oracle
+is the cheap option, not the expensive one.</li>
 <li><strong>Name the embedder, and publish the pairwise-similarity
 distribution it operates on.</strong> Per-arm audio verdicts flip
 between embedders and each nominates a different most-redundant pair
-(§4.3); mean pairwise cosine was 0.883 in one text corpus and 0.444 in
+(§5.3); mean pairwise cosine was 0.883 in one text corpus and 0.444 in
 another under the same embedder. A diversity number without its embedder
 and its similarity distribution is not a number.</li>
 <li><strong>Count exact duplicates before computing anything, and report
 the literal and the latent separately.</strong> They move in opposite
-directions in the same corpus (§4.5), and a 74% duplicate rate makes
+directions in the same corpus (§5.5), and a 74% duplicate rate makes
 every distance statistic a statistic about duplication.</li>
 <li><strong>Measure at the level of the artifact you ship.</strong>
 Text-embedding similarity explains 14.5% of the variance in whether
 rendered images look alike, pooled across seven arms, and 8.2%
-within-arm (§4.2). If the artifact is rendered, the objective belongs in
+within-arm (§5.2). If the artifact is rendered, the objective belongs in
 the space the artifact occupies.</li>
 <li><strong>Audit in at least one channel the objective never
 optimizes</strong>, with a distance statistic rather than a spectral one
-(§4.1). It is the only measurement that cannot be a restatement of the
+(§5.1). It is the only measurement that cannot be a restatement of the
 selection rule, and it is where the strongest positive result and the
 largest undetected defect in this line of work were both found.</li>
 <li><strong>When a render is in the loop, steer through it.</strong>
 Render a bounded sample, embed it in the artifact's space, and bridge
 its crowded directions back into the text space the loop optimizes
-(§5.1); steer audio through an embedder whose text and audio towers
-agree (§5.2).</li>
+(§6.1); steer audio through an embedder whose text and audio towers
+agree (§6.2).</li>
 <li><strong>Spend extra renders on the low-dimensional channel.</strong>
 Best-of-<em>K</em> buys
 <em>K</em><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi></mi><mrow><mn>1</mn><mi>/</mi><mi>m</mi></mrow></msup><annotation encoding="application/x-tex">^{1/m}</annotation></semantics></math>;
 selecting renders on nine pixel statistics buys 1.24× at <em>K</em> = 3
-where selecting on CLIP buys 1.04× (§5.3).</li>
+where selecting on CLIP buys 1.04× (§6.3).</li>
 <li><strong>Measure axis realization at the artifact, by intervention,
-wherever the generator changes hands</strong> (§6). Where the seam
+wherever the generator changes hands</strong> (§7). Where the seam
 exists, a third of the conditioning does not cross it.</li>
 <li><strong>Balance by construction what the embedding cannot
 see.</strong> Key position, difficulty, compositional template: none is
 encoded, none is optimized, and each decides usability. A uniform
 permutation of options needs no answer key and takes χ² from 90.4 to 2.6
-(§4.7); a structural ban block halves palette twins (§4.6).</li>
+(§5.7); a structural ban block halves palette twins (§5.6).</li>
 <li><strong>Read the output.</strong> A corpus can be diverse along
 every dimension you thought to measure and uniform along the one you did
 not.</li>
 </ol>
-<h2 id="9-limitations">9. Limitations</h2>
+<h2 id="12-limitations">12. Limitations</h2>
 <ul>
 <li><strong>One text embedder.</strong> All text geometry is
-<code>nomic-embed-text</code> with cosine distance. §4.4 shows the
+<code>nomic-embed-text</code> with cosine distance. §5.4 shows the
 <em>ranking</em> of methods survives four representations; whether the
 <em>magnitudes</em> transfer is untested, and the companion paper's
 coverage and packing numbers inherit that.</li>
-<li><strong>A joint embedder varies both towers at once.</strong> §4.3
+<li><strong>A joint embedder varies both towers at once.</strong> §5.3
 changes one knob — the model supplying both the text tower and the audio
 tower — so it shows that the alignment moves and cannot say which side
 moves it. Crossing text-side and artifact-side encoders independently on
@@ -972,12 +1608,12 @@ fixed bytes is the decomposition this paper does not contain.</li>
 endpoint exposes no seed parameter, so no render in this paper can be
 regenerated, and render stochasticity cannot be separated from the
 quantity being measured. Every artifact-space number here — the proxy
-correlations of §4.2, the realization of §6, the render selection of
-§5.3 — is a statement about an unlogged seed distribution, and a
+correlations of §5.2, the realization of §7, the render selection of
+§6.3 — is a statement about an unlogged seed distribution, and a
 repeat-draw floor at a logged seed is the missing measurement.</li>
 <li><strong>Several image results are single-seed.</strong> The image
 arms are one seed each at <em>n</em> = 60; the vision-steered arm's
-margin in §5.1 is one run at <em>n</em> = 200; the audio steering arm is
+margin in §6.1 is one run at <em>n</em> = 200; the audio steering arm is
 one run of 100 tracks.</li>
 <li><strong>Judge bias is unmeasured.</strong> Vision and language-model
 judges name attractors, classify blueprint areas and read device forms;
@@ -994,7 +1630,7 @@ objective by 21% and do not close the structural deficit; the
 vision-steered arm is the best arm in the image domain and still renders
 through a model that never saw the axes.</li>
 </ul>
-<h2 id="10-conclusion">10. Conclusion</h2>
+<h2 id="13-conclusion">13. Conclusion</h2>
 <p>An embedding oracle is the only thing the loop can see, and it is
 always a proxy. In the two domains where the artifact is rendered by a
 model the embedder never meets, the proxy explains a seventh of the

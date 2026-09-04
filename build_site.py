@@ -12,7 +12,7 @@ import base64, pathlib, re, subprocess
 
 HERE = pathlib.Path(__file__).resolve().parent
 
-TITLE = "Proxy Embeddings: Steering and Measuring Diversity Through a Space That Is Not the Artifact's"
+TITLE = "Proxy Embeddings: Why You Cannot Validate a Proxy by Correlating It With the Artifact"
 REPO_URL = "https://github.com/thehalleyyoung/proxy-embeddings"
 COMPANION_URL = "https://thehalleyyoung.github.io/rac/"
 COMPANION_LABEL = "main paper: Recursive Axis Conditioning"

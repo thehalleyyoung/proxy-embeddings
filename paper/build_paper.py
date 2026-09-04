@@ -17,7 +17,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 
-TITLE = "Proxy Embeddings: Steering and Measuring Diversity Through a Space That Is Not the Artifact's"
+TITLE = "Proxy Embeddings: Why You Cannot Validate a Proxy by Correlating It With the Artifact"
 
 PREAMBLE = r"""
 % ICLR-style page: 5.5in text block on US letter, Times, 10pt
