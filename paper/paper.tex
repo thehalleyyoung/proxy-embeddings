@@ -560,6 +560,34 @@ arm & what the prompt says & programs & SQL & regular expressions \\
 value & 61.8\% {[}54.2, 69.4{]} & --- & --- \\
 \end{longtable}}
 
+Counting a generation that returned nothing as a failure, which is what
+a practitioner issuing one call per target experiences. The arms do not
+complete at equal rates --- on programs the blind prompt returned a
+usable program 99.3\% of the time against
+\texttt{instruct}\textquotesingle s 63.2\% --- so the same numbers
+conditional on the model having answered are:
+
+{\footnotesize
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.4349\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2847\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2804\linewidth-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+arm & programs & SQL \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{blind} & 18.2\% {[}11.9, 24.5{]} & 11.2\% {[}6.9, 16.2{]} \\
+\texttt{decoy} & 12.5\% {[}6.2, 20.0{]} & 2.5\% {[}0.0, 5.9{]} \\
+\texttt{instruct} & \textbf{98.9\%} {[}96.7, 100.0{]} & \textbf{79.2\%}
+{[}71.7, 86.7{]} \\
+\end{longtable}}
+
+The attrition runs \emph{against} the result --- instructed generations
+are the ones that most often come back empty --- so the intent-to-treat
+figures understate the lever and both framings support it. Conditional
+on answering at all, a stated target is hit essentially always on
+programs. Only the intent-to-treat figures are quoted elsewhere in this
+paper, because they are the conservative ones.
+
 \emph{Compliance with 95\% bootstrap intervals; 60 targets × 3 seeds on
 programs and on SQL, 30 × 3 on expressions. Every interval for
 \texttt{instruct} is disjoint from its decoy\textquotesingle s.}
@@ -756,7 +784,57 @@ exactly & on the band & 67.4\% {[}59.7, 75.2{]} & 37.8\% {[}27.8,
 
 \emph{Two decoders and two artifact spaces. The SQL arm is restricted to
 emergent targets by the schema rule of §3.3, since a band around a city
-name is meaningless.}
+name is meaningless. Every cell counts a generation that returned
+nothing as a failure --- see below, because that choice turns out to
+carry the entire main effect.}
+
+\textbf{The main effect is a return-rate effect, not an accuracy
+effect.} The two ask types do not complete at the same rate: on programs
+the exact ask returned a decodable program 68.2\% of the time against
+the band ask\textquotesingle s 87.6\%, a spread of 19.4 points, and on
+SQL 44.4\% against 65.6\%. Attrition that correlates with the treatment
+can manufacture an effect on its own, so every cell is recomputed
+conditional on the model having answered at all:
+
+{\footnotesize
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.3698\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.1466\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2539\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2297\linewidth-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+asked & scored & programs, of those that answered & SQL, of those that
+answered \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+exactly & exactly & \textbf{97.7\%} {[}94.3, 100.0{]} & 80.0\% {[}67.5,
+92.5{]} \\
+as a band & on the band & \textbf{97.3\%} {[}93.8, 100.0{]} & 91.5\%
+{[}84.7, 98.3{]} \\
+as a band & exactly & 37.2\% {[}28.3, 46.9{]} & 18.6\% {[}10.2,
+28.8{]} \\
+exactly & on the band & 98.9\% {[}96.6, 100.0{]} & 85.0\% {[}72.5,
+95.0{]} \\
+\end{longtable}}
+
+On programs the tolerance benefit \textbf{disappears}: 97.7\% against
+97.3\%. Asking for a band does not make the generator more accurate. It
+makes it more likely to answer at all, and the 18.6-point
+intent-to-treat gain is entirely the difference in how often an exact
+ask produces nothing usable. On SQL a residual gap survives (80.0\%
+against 91.5\%) but the intervals overlap and we do not claim it.
+
+Both framings are legitimate and they answer different questions. A
+practitioner who issues one call per target and takes what comes back is
+in the intent-to-treat column, and for them the band ask really is worth
+18.6 points --- because a third of exact asks return nothing and that is
+a real cost. A practitioner who retries until the model answers is in
+the conditional column, and for them the band buys nothing on programs.
+\textbf{What we withdraw is the claim that a tolerance makes the
+artifact more likely to hit the target; what stands is that it makes the
+generator more likely to produce an artifact.}
+
+We did not notice this until a collaborating session found the same
+failure in its own experiment and suggested checking completion rates by
+arm. The check is now part of the tool (§6) and of §10.
 
 And by where the target sits in the generator\textquotesingle s
 distribution:
@@ -775,12 +853,18 @@ rarity & asked exactly & asked as a band & lift \\
 {[}0.30, 1.01) & 94.4\% & 100.0\% & +5.6 \\
 \end{longtable}}
 
-\textbf{Tolerance buys nothing in the head and 51.5 points in the tail.}
-In the common bands compliance is already saturated and a band cannot
-improve it; in the rare band it takes a target from failing three times
-in four to succeeding four times in five. That is the shape a
-prescription wants, because it says when to reach for it: loosen the
-targets you are struggling to hit, and leave the rest alone.
+\emph{Intent-to-treat, so these inherit the return-rate effect above and
+should be read as "what one call per target buys", not as accuracy.}
+
+\textbf{Per call issued, tolerance buys nothing in the head and 51.5
+points in the tail.} In the common bands compliance is already
+saturated; in the rare band a band takes a target from failing three
+times in four to succeeding four times in five. Given the correction
+above, the mechanism is that rare exact targets are the ones an exact
+ask most often fails to answer at all, and the band ask gets an answer
+out. The prescription survives with its reason changed: loosen the
+targets you are struggling to hit, because otherwise you will frequently
+get nothing back.
 
 The two cross terms carry the caveats, and they are the reason all four
 cells were measured.
@@ -1525,6 +1609,14 @@ for an emergent exact target is the one worth +51.5 points in the tail.
 It also warns, on every target, to check observability separately,
 because that is the axis we lost a registered prediction to.
 
+\textbf{\texttt{completion\_check}} refuses a cross-arm verdict when the
+arms did not answer at equal rates. This is in the tool because it
+caught a 19-point effect of ours that was not there (§3.4) and a
+boundary result of a collaborator\textquotesingle s that rested on five
+observations out of sixty. In both cases the tell was the sample count
+rather than the effect size, and in both cases the spurious result was
+cleaner and more interesting than the truth.
+
 \textbf{\texttt{diagnose\_misses}} reads §3.7 off generations you have
 already paid for. Given the failures and a function returning how far
 each fell on each axis of your acceptance criterion, it returns the
@@ -2099,12 +2191,23 @@ scored in the artifact\textquotesingle s space:}
   views could not rank the corpora above their own sampling noise
 \end{itemize}
 
-Five failures, one survivor class. The failures were not bad luck:
-correlation shape is precisely the evidence type this paper argues is
-confounded, and we kept reaching for it because it is cheap, because it
-produces a table quickly, and because a decile profile with a monotone
-trend and \emph{p} = 3×10\(^{-103}\) in its first cell looks like a
-finding.
+Six failures now, and the sixth is a different species. The tolerance
+main effect (§3.4) was real as an intent-to-treat number and not real as
+an accuracy claim: the exact ask returned nothing 32\% of the time
+against the band ask\textquotesingle s 12\%, and conditional on the
+generator answering at all the two are indistinguishable at 97.7\% and
+97.3\%. That is not a correlation-shape error. It is attrition
+correlated with the treatment, which is the classic way an experiment
+manufactures an effect, and we found it only because a collaborating
+session hit the same failure and suggested checking completion rates by
+arm.
+
+Five failures of one kind, one survivor class, The failures were not bad
+luck: correlation shape is precisely the evidence type this paper argues
+is confounded, and we kept reaching for it because it is cheap, because
+it produces a table quickly, and because a decile profile with a
+monotone trend and \emph{p} = 3×10\(^{-103}\) in its first cell looks
+like a finding.
 
 One failure is worth stating in detail because the rule that catches it
 is general. The SQL decoder appeared to be the one case that cleared its

@@ -233,6 +233,32 @@ def triage(target: str) -> Triage:
     return Triage(target, kind, exact, notes, sug)
 
 
+def completion_check(arms: dict, tol: float = 0.15) -> dict:
+    """Refuse a cross-arm verdict when the arms did not complete at equal rates.
+
+    `arms` maps an arm name to a list of per-generation records, each truthy if
+    that generation returned a usable artifact. Attrition that correlates with
+    the treatment manufactures effects: in this project it produced a 19-point
+    tolerance "benefit" that vanished once completion was equalized, and in a
+    collaborating experiment a boundary result resting on five observations out
+    of sixty. In both cases the tell was the sample count, not the effect size.
+
+    This check is cheaper than the reasoning that recovers from either.
+    """
+    rates = {k: (sum(1 for x in v if x) / len(v) if v else 0.0)
+             for k, v in arms.items()}
+    spread = max(rates.values()) - min(rates.values()) if rates else 0.0
+    ok = spread <= tol
+    return {"rates": rates, "spread": float(spread), "ok": bool(ok),
+            "verdict": ("comparable" if ok else
+                        f"REFUSED: completion rates differ by "
+                        f"{100*spread:.1f} points across arms, so a difference in "
+                        f"outcome cannot be separated from a difference in how "
+                        f"often each arm answered at all. Report intent-to-treat "
+                        f"and conditional figures separately, or equalize the "
+                        f"generation budget until the rates match.")}
+
+
 # -------------------------------------------------------------- 2b. misses
 
 def diagnose_misses(misses, axis_distance) -> dict:
