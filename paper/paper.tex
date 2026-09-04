@@ -938,13 +938,15 @@ axes are written in.
 \subsection{7. Scoring axes in the artifact\textquotesingle s
 space}\label{7-scoring-axes-in-the-artifacts-space}
 
-All four factors are computed from \emph{level vectors}: one embedding
-per level of each axis. In the text-only setting those are embeddings of
-the level descriptions --- what a level \emph{claims} it will do. Once
-the artifact can be embedded, the natural improvement is to replace them
-with the centroid of everything actually produced under each level: what
-the level \emph{did}. That substitution is what makes the scoring
-empirical, and on its own it is wrong.
+The companion paper scores a candidate axis by four factors --- spread,
+transversality, independence and headroom (its §5.2) --- all computed
+from \emph{level vectors}: one embedding per level of each axis. In the
+text-only setting those are embeddings of the level descriptions ---
+what a level \emph{claims} it will do. Once the artifact can be
+embedded, the natural improvement is to replace them with the centroid
+of everything actually produced under each level: what the level
+\emph{did}. That substitution is what makes the scoring empirical, and
+on its own it is wrong.
 
 A centroid computed that way is a \textbf{marginal mean where the score
 needs a partial effect}. Specs are sampled independently, so every other

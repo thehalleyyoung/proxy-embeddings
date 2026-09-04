@@ -321,6 +321,7 @@ same visual place.
 ![{{FIG:fig13_contact_sheet.png}}. Sixteen renders per policy, same generator, same budget, same image model. Rows 1–2, naive prompting: a corpus with a 0.000 exact-duplicate rate and healthy lexical diversity that still returns one visual mode — magenta and cyan collage, barcodes and QR codes, Renaissance portraits and classical busts, Michelangelo hands, warning triangles and neon OPEN signs recurring across nearly every panel. Rows 3–4, max-min steering with literal and latent repulsion on both the text and vision sides: medium, palette, register and composition all move, across a medieval triptych, a botanical cabinet, a photographed sculpture installation, a torn-paper abstract and a civic notice.](figures/fig13_contact_sheet.png)
 
 *{{FIG:fig13_contact_sheet.png}}. Sixteen renders per policy, same generator, same budget, same image model. Rows 1–2, naive prompting: a corpus with a 0.000 exact-duplicate rate and healthy lexical diversity that still returns one visual mode — magenta and cyan collage, barcodes and QR codes, Renaissance portraits and classical busts, Michelangelo hands, warning triangles and neon OPEN signs recurring across nearly every panel. Rows 3–4, max-min steering with literal and latent repulsion on both the text and vision sides: medium, palette, register and composition all move, across a medieval triptych, a botanical cabinet, a photographed sculpture installation, a torn-paper abstract and a civic notice.*
+
 ### 4.3 Audio: whether a prompt can be steered is a property of the embedder
 
 The more portable finding is that whether a prompt can be steered before rendering
@@ -342,6 +343,7 @@ embedder. Structural contracts have a length ceiling as well — compliance with
 requested section sequence is exact at prompt lengths near 560 characters, 0.11 at
 a mean of 658, and zero by ~1,600 — so a structural contract for music must be
 short or it is noise.
+
 ### 4.4 The ranking does not depend on the viewpoint
 
 A max-min score is a distance
@@ -367,6 +369,7 @@ three corpora whose fifth-percentile distance is non-zero in every
 representation, mean tau is +0.67 and RAC is still first under all four. Naive
 sampling and high-temperature sampling score exactly zero on prosody and on
 stylometry — at least one item in twenty has an exact neighbour in those channels.
+
 ### 4.5 Literal and latent diversity move in opposite directions
 
 Literal and latent diversity move in opposite directions in one corpus, which is
@@ -388,6 +391,7 @@ same corpus.
 ![{{FIG:fig11_literal_vs_latent.png}}. The decoupling, normalized to each series' value at *n* = 5. Literal diversity falls monotonically while latent diversity rises: two measurements of two different quantities that one word, "diversity", has been covering for.](figures/fig11_literal_vs_latent.png)
 
 *{{FIG:fig11_literal_vs_latent.png}}. The decoupling, normalized to each series' value at n = 5. Literal diversity falls monotonically while latent diversity rises: two measurements of two different quantities that one word, "diversity", has been covering for.*
+
 ### 4.6 A class of repetition the embedding misses
 
 One comparison in the artifact channel runs against the method, and it belongs
@@ -409,6 +413,7 @@ coverage objective 21% (0.206 → 0.247), but does not close it. Optical spread 
 structural repetition are both measured on pixels and point in opposite
 directions: our corpora occupy a wider region of that space while repeating their
 compositional scaffolding more often within it.
+
 ### 4.7 A defect no diversity measure can see
 
 The audits of §6 ask whether the axes reach the artifact. This one asks whether
@@ -457,6 +462,7 @@ item bank exists to span, it is latent rather than semantic, and nothing in the
 objective can see it. Measuring diversity well is not the same as measuring
 fitness for purpose, and the gap between them is not visible from inside the
 objective.
+
 ## 5. Steering through the proxy
 
 ### 5.1 Images: closing the loop where the product lives
@@ -522,6 +528,7 @@ is oversampling rather than a new mechanism. What the dimensions add is an
 allocation rule: oversampling buys far more in a low-dimensional channel than in a
 high-dimensional one, and **if a pipeline is going to pay for extra renders, it
 should select them on the channel the objective cannot see.**
+
 ## 6. Conditioning across the seam
 
 The companion paper audits whether a commanded axis level shows up in the
@@ -580,10 +587,12 @@ inside. **Conditioning strength degrades at the boundary where the generator
 changes hands**, so the modality-agnostic claim holds for the calculus — which
 needs only an embedding — and not for the conditioning, which needs a generator
 that reads the same language the axes are written in.
+
 ## 7. Scoring axes in the artifact's space
 
-All four factors are computed from *level vectors*: one embedding per level of
-each axis. In the text-only setting those are embeddings of the level
+The companion paper scores a candidate axis by four factors — spread,
+transversality, independence and headroom (its §5.2) — all computed from *level
+vectors*: one embedding per level of each axis. In the text-only setting those are embeddings of the level
 descriptions — what a level *claims* it will do. Once the artifact can be
 embedded, the natural improvement is to replace them with the centroid of
 everything actually produced under each level: what the level *did*. That

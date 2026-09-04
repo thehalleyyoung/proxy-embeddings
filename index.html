@@ -867,13 +867,15 @@ conditioning, which needs a generator that reads the same language the
 axes are written in.</p>
 <h2 id="7-scoring-axes-in-the-artifacts-space">7. Scoring axes in the
 artifact's space</h2>
-<p>All four factors are computed from <em>level vectors</em>: one
-embedding per level of each axis. In the text-only setting those are
-embeddings of the level descriptions — what a level <em>claims</em> it
-will do. Once the artifact can be embedded, the natural improvement is
-to replace them with the centroid of everything actually produced under
-each level: what the level <em>did</em>. That substitution is what makes
-the scoring empirical, and on its own it is wrong.</p>
+<p>The companion paper scores a candidate axis by four factors — spread,
+transversality, independence and headroom (its §5.2) — all computed from
+<em>level vectors</em>: one embedding per level of each axis. In the
+text-only setting those are embeddings of the level descriptions — what
+a level <em>claims</em> it will do. Once the artifact can be embedded,
+the natural improvement is to replace them with the centroid of
+everything actually produced under each level: what the level
+<em>did</em>. That substitution is what makes the scoring empirical, and
+on its own it is wrong.</p>
 <p>A centroid computed that way is a <strong>marginal mean where the
 score needs a partial effect</strong>. Specs are sampled independently,
 so every other axis varies inside each level group; with sixty items,
