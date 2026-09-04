@@ -24,12 +24,16 @@ rather than merely transmitting specificity. Reach extends past the generator's
 own experience: on targets it has **never once produced**, compliance is 94.4%
 for expressions and 25.0% for programs, against 0.0% for both controls.
 
-**And one line of prompt recovers most of what the tail costs.** Stating an
-emergent target as a band rather than a point lifts compliance from 27.3% to
-**78.8%** in the rarest band and does nothing in the head, where it is already
-saturated. The tolerance has to be in the *ask*: relaxing the acceptance
-criterion afterwards recovers nothing, because failures are wholesale rather than
-near-misses.
+**And one line of prompt changes what you get back, though not in the way we
+first reported.** Stating an emergent target as a band rather than a point lifts
+compliance per call issued from 27.3% to **78.8%** in the rarest band. But the
+arms do not answer at equal rates, and conditional on the generator answering at
+all the two are indistinguishable (97.7% against 97.3%): **a tolerance buys a
+returned artifact, not a better one.** Observability is the axis that moves
+accuracy — an unobservable target was answered 24 times out of 24 and hit 0 —
+and the two are separated in §3.8. The tolerance must still be in the *ask*:
+relaxing the acceptance criterion afterwards recovers nothing, because failures
+on emergent targets are wholesale rather than near-misses.
 
 **Matching a distribution: it works, and it degrades predictably.** Compliance
 falls monotonically as the target moves into the generator's tail — 100%, 63.9%,
@@ -412,7 +416,7 @@ counts as a hit even though the prompt forbids it. The natural corpus and the
 targets come from the same generator, so a different generator would relabel
 which targets are rare. And `retry` was measured on programs only.
 
-### 3.4 Ask for a range: the cheapest intervention in this paper
+### 3.4 Ask for a range: it buys a returned artifact, not a better one
 
 Emergent targets are the expensive ones, and there is a one-line change that
 recovers most of what they cost. State the requirement as a band rather than a
@@ -527,7 +531,9 @@ this is worth **+47.7 points** [+34.8, +60.2] (§3.3).
 or is the success criterion computed somewhere it cannot see? A collaborating
 measurement on a glob-pattern decoder isolated this axis directly: asked to match
 a count over a 600-name corpus it could not see, compliance was 45.8%; shown the
-corpus, **90.0%**, with nothing else changed.
+corpus, **90.0%**, with nothing else changed. Unlike tolerance, this axis moves
+accuracy rather than the return rate — the unobservable arm answered every time
+and was never right (§3.8).
 
 **Is the target a point or a band?** Stating an emergent target as a range rather
 than an exact value is worth **+51.5 points** in the rarest band and nothing in
@@ -650,6 +656,45 @@ binding*, and it costs one pass over generations you have already paid for:
 These prescriptions point in opposite directions, and a single compliance number
 cannot tell you which one applies. Both of ours read 18.6% and 66.7% — neither
 number says whether to widen the criterion or rewrite the target.
+
+### 3.8 Two mechanisms, separated
+
+Tolerance and observability are easy to conflate — both are ways a target can be
+"too demanding" — and two measurements separate them cleanly, each holding the
+other axis fixed.
+
+**Tolerance changes the return rate.** On programs, the exact ask and the band
+ask hit at the same rate once the generator answers at all (97.7% against
+97.3%); what differs is how often it answers (68.2% against 87.6%). Loosening a
+target does not help the model find a better artifact. It helps it produce one.
+
+**Observability changes accuracy.** A collaborating measurement on a
+glob-pattern decoder asked for an exact match count over a 600-name corpus the
+generator could not see. That arm returned a pattern **24 times out of 24** and
+hit its target **0 times out of 24**. Full completion, zero compliance: the model
+was perfectly willing to answer and could not, because the information needed to
+answer was not available to it. Shown the corpus, compliance went to 90.0%.
+
+| | return rate | compliance | what is binding |
+|---|---|---|---|
+| exact ask, observable (programs) | 68.2% | 97.7% *of returns* | the model often declines to answer |
+| exact ask, **un**observable (glob) | **100%** | **0.0%** | the model answers and cannot be right |
+
+These are different failures and they call for different repairs. A low return
+rate is fixed by loosening the ask. A zero compliance rate at full return is not
+fixed by loosening anything — the generator needs the information, and §3.5's
+second step is the one that applies.
+
+The diagnostic is cheap and it is the return rate. **If your generator is
+answering and missing, the target is unobservable or emergent; if it is
+declining to answer, the target is over-tight.** A single compliance number
+cannot distinguish these, and both look like "the model can't do it".
+
+*One qualification on the glob figures: the corpus-shown arm returned 20 of 24
+against the other arms' 24 of 24, a 17-point spread that exceeds the threshold
+this paper recommends. It runs against the arm with the highest compliance, so
+90.0% is conservative rather than inflated, but it is reported rather than
+glossed.*
 
 ## 4. Distances: the channel as a ruler
 

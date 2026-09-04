@@ -21,7 +21,7 @@ from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 
 HERE = pathlib.Path(__file__).resolve().parent
-OUT = HERE / "runs" / "tolerance_sql"
+OUT = HERE / "runs" / "tolerance_sql2"
 OUT.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(HERE)); sys.path.insert(0, str(HERE.parent.parent / "code"))
 
@@ -69,10 +69,10 @@ def _one(args):
                f"`{col}` has a value between {lo:.4g} and {hi:.4g}")
     try:
         txt = chat([{"role": "user", "content": prompt_for(req)}],
-                   temperature=1.0, max_tokens=1400)
+                   temperature=1.0, max_tokens=2600)
         if not (txt or "").strip():
             txt = chat([{"role": "user", "content": prompt_for(req)}],
-                       temperature=1.0, max_tokens=2600)
+                       temperature=1.0, max_tokens=4000)
         q = S.extract(txt or "")
         if q and S.is_safe(q)[0]:
             rows = S.run_query(q)
