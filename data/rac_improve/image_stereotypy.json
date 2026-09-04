@@ -1,0 +1,90 @@
+[
+  {
+    "axis": "Appropriation distance",
+    "levels": 5,
+    "mean": 0.9806451612903226,
+    "worst_level": "Distant visual allusion",
+    "worst_device": "create",
+    "worst_share": 1.0
+  },
+  {
+    "axis": "Copy and seriality logic",
+    "levels": 5,
+    "mean": 0.9810483870967742,
+    "worst_level": "Mechanical repetition with drift",
+    "worst_device": "create",
+    "worst_share": 1.0
+  },
+  {
+    "axis": "Materiality disclosure",
+    "levels": 5,
+    "mean": 0.9806451612903226,
+    "worst_level": "Construction visibly exposed",
+    "worst_device": "create",
+    "worst_share": 1.0
+  },
+  {
+    "axis": "Register collision",
+    "levels": 5,
+    "mean": 0.9810483870967742,
+    "worst_level": "Commercial language undercut by critique",
+    "worst_device": "create",
+    "worst_share": 1.0
+  },
+  {
+    "axis": "Self-referentiality",
+    "levels": 5,
+    "mean": 0.9808467741935484,
+    "worst_level": "Interpretation loops back on itself",
+    "worst_device": "create",
+    "worst_share": 1.0
+  },
+  {
+    "axis": "Status hierarchy treatment",
+    "levels": 5,
+    "mean": 0.9804166666666667,
+    "worst_level": "Distributes authority across participants",
+    "worst_device": "create",
+    "worst_share": 1.0
+  },
+  {
+    "axis": "Textual agency",
+    "levels": 6,
+    "mean": 0.9809876543209876,
+    "worst_level": "Caption anchors interpretation",
+    "worst_device": "create",
+    "worst_share": 1.0
+  },
+  {
+    "axis": "[percept] Camera viewpoint and angle",
+    "levels": 6,
+    "mean": 0.9809876543209876,
+    "worst_level": "Centered eye-level frontal view",
+    "worst_device": "create",
+    "worst_share": 1.0
+  },
+  {
+    "axis": "[percept] Lighting direction and hardness",
+    "levels": 6,
+    "mean": 0.9814814814814814,
+    "worst_level": "Flat overcast illumination with nearly shadowless, even tonal coverage",
+    "worst_device": "create",
+    "worst_share": 1.0
+  },
+  {
+    "axis": "[percept] Motion and temporal blur",
+    "levels": 6,
+    "mean": 0.9805128205128205,
+    "worst_level": "Multiple-exposure ghosting showing several displaced positions of the same forms",
+    "worst_device": "create",
+    "worst_share": 1.0
+  },
+  {
+    "axis": "[percept] Shot scale",
+    "levels": 5,
+    "mean": 0.98125,
+    "worst_level": "Distant long shot with tiny subjects surrounded by expansive space",
+    "worst_device": "create",
+    "worst_share": 1.0
+  }
+]

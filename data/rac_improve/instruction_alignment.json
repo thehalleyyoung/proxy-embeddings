@@ -1,0 +1,29 @@
+{
+  "base": {
+    "decide": 27,
+    "plan": 23,
+    "classify": 2,
+    "code": 20,
+    "rewrite": 3,
+    "explain": 11,
+    "critique": 4,
+    "summarize": 5,
+    "extract": 5
+  },
+  "aligned": {
+    "summarize": 14,
+    "classify": 18,
+    "rewrite": 15,
+    "code": 18,
+    "creative": 17,
+    "critique": 17,
+    "plan": 1
+  },
+  "underused": [
+    "creative",
+    "classify",
+    "rewrite",
+    "critique",
+    "summarize"
+  ]
+}

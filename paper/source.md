@@ -1,0 +1,719 @@
+## Abstract
+
+Every diversity objective in this line of work is computed in an embedding, and
+the embedding is a proxy: for a rendered image it is a text encoder's view of the
+instruction, for a poem it is a semantic model nearly blind to metre, for an exam
+item it is a space in which the answer key does not exist. Recursive Axis
+Conditioning (RAC) assumes an embedding oracle and no inverse; this paper asks
+what follows when the oracle is a proxy for the artifact rather than the artifact
+itself, and extends the method across that gap.
+
+We measure the gap in three modalities. Pairwise similarity of image
+instructions in text-embedding space predicts pairwise similarity of the
+rendered pictures at **Pearson *r* between 0.167 and 0.421** across seven arms —
+14.5% shared variance pooled, 8.2% within-arm — and instructions with a 0.000
+duplicate rate render to one visual mode. In audio, **whether a prompt can be
+steered before rendering is a property of the embedder**: prompt-to-track
+alignment is 0.68 under MuQ-MuLan and 0.18 under CLAP-music, per-arm verdicts
+flip between embedders, and each nominates a different most-redundant pair.
+Conditioning itself degrades at the seam where one model's language becomes
+another model's input: **nine of eleven image axes are realized in the written
+instruction and four of eleven in the render**, a mean loss of 35%. And an
+embedding is blind to every property it does not encode, including ones that
+decide usability — **90% of a generated exam bank's keys sit in position A** and
+no diversity measure moves.
+
+Three things survive the gap. *Steering through the proxy*: rendering a bounded
+sample, embedding it in the artifact's own space and mapping its crowded
+directions back into the text space gives the best arm in the image domain (+18%
+centered Vendi over text-only steering at matched *n*) and raises mean-centered
+CLAP Vendi on rendered instrumentals from 11.5 to 17.43. *Selecting on the
+channel the objective cannot see*: best-of-3 renders chosen on pixel statistics
+raise optical min-gap 1.24× at no cost in CLIP. And *the ranking does not depend
+on the viewpoint*: under four independent representations, three of which the
+method never optimizes, RAC ranks first under every one, at a mean Kendall τ of
++0.83. The prescriptions are short: name the embedder, measure at the artifact,
+audit in a channel the objective never optimizes, and balance by construction
+what the embedding cannot see.
+
+---
+
+## 1. Introduction
+
+Recursive Axis Conditioning (RAC) is a generation loop that improves a chosen
+diversity measure: it asks the generator to name the language-valued axes along
+which its own outputs can differ, ranks them, takes their most-different levels,
+splits an exhausted axis into finer sub-axes, and keeps one of *K* candidates by
+the measure. The companion paper, *Recursive Axis Conditioning for Diverse Synthetic Data Generation*, builds that loop, measures it against
+the released state of the art — first of twelve corpora on coverage of a held-out
+human reference at a twentieth of Alpaca's budget, an exam bank with no enemy
+pair at a blind-adjudicated radius — and states the theory that bounds it.
+Everything in it rests on one assumption: an *embedding oracle* *E* that maps an
+item to a point in ℝ<sup>*D*</sup>, with no inverse. Every axis is scored in
+*E*, every candidate is selected in *E*, and every diversity number is a
+statistic of *E*.
+
+This paper is about the word *oracle*. In two of the companion's five domains the
+thing being made is not text at all. An image instruction is written by one model
+and rendered by another; a music prompt becomes a two-minute instrumental. The
+text embedder never sees the picture or hears the track, so what it measures is a
+*proxy* for the artifact the reader receives — and even where the artifact is
+text, `nomic-embed-text` is a semantic model nearly blind to metre, rhyme and line
+length, and no embedding at all encodes where an exam item's answer key sits among
+its options. The oracle is always a proxy. The question is how far it is from the
+artifact, what falls into the gap, and what a method that only ever sees the
+proxy can do about it.
+
+We answer in four parts. **What the proxy sees** (§4): text-embedding similarity
+between image instructions predicts rendered-image similarity at Pearson *r*
+between 0.167 and 0.421, so most of the visual variance is unexplained by
+anything a text-side method optimizes; in audio, whether a prompt can be steered
+before rendering is a property of the embedder, with prompt-to-track alignment of
+0.68 under MuQ-MuLan against 0.18 under CLAP-music; literal and latent diversity
+of one corpus move in opposite directions as it grows; a whole class of visual
+repetition — tiled grids, shared palettes, recoloured compositions — is invisible
+to embedding metrics and visible to a 16×16 luminance map; and a generated exam
+bank whose keys sit 90% in position A scores identically on every diversity
+measure to a balanced one. Against that, the *ranking* of methods does survive
+the choice of viewpoint: under four independent representations, three of which
+the method never optimizes, RAC ranks first under every one. **Steering through
+the proxy** (§5): rendering a bounded sample, embedding it in the artifact's own
+space and mapping its crowded directions back into the text space gives the best
+image arm at matched *n* and, through an audio embedder, raises mean-centered
+CLAP Vendi on rendered tracks from 11.5 to 17.43; and when a pipeline pays for
+extra renders, choosing among them on the channel the objective cannot see buys
+1.24× on that channel at zero cost in CLIP. **Conditioning across the seam**
+(§6): by intervention, nine of eleven image axes are realized in the written
+instruction and four of eleven in the render, a mean loss of 35% of the effect at
+the boundary where one model's language becomes another model's input. **Scoring
+in the artifact's space** (§7): the obvious way to make axis scoring empirical —
+replace level descriptions with the centroid of what each level produced — is a
+marginal mean where a partial effect is needed, and it is the companion's
+manipulation-based repair that makes artifact-space scoring usable at all.
+
+The contributions, in the order we would defend them:
+
+- **A measured proxy gap in three modalities** (§4.2, §4.3), with the pooled and
+  within-arm shared variance stated separately and the embedder named in every
+  audio number.
+- **Cross-modal steering as an extension of the loop** (§5.1, §5.2): the same
+  ledger that repels what the model keeps *saying* also repels what it keeps
+  *showing*, through a least-squares bridge from the artifact's embedding into
+  the text embedding the loop already optimizes.
+- **The seam result** (§6): conditioning strength degrades where the generator
+  changes hands, established by manipulation rather than correlation, with the
+  instrument's share of the loss separated from the renderer's.
+- **Two failures no embedding can see** (§4.6, §4.7), with the audit that finds
+  each and the repair that needs no embedding — a structural ban block for
+  compositional repetition, and a uniform key permutation that needs no answer
+  key.
+- **Robustness of the ranking to the viewpoint** (§4.4): four independent
+  representations agree at a mean Kendall τ of +0.83, and the method the companion
+  paper proposes ranks first under all four.
+- **A short practice** (§8): name the embedder, measure at the artifact, audit in
+  a channel the objective never optimizes, and balance by construction what the
+  embedding cannot see.
+
+## 2. The oracle is a proxy
+
+We assume throughout:
+
+> **Assumption (embedding oracle, no inverse).** We have access to *E*: Text → ℝ<sup>*D*</sup>, computable on demand. We have **no** *E*<sup>−1</sup>: ℝ<sup>*D*</sup> → Text.
+
+This is the structural fact that shapes the entire design. Given a corpus
+*X<sub>n</sub>* we can compute, exactly and cheaply, the point in
+ℝ<sup>*D*</sup> that would most improve any of our diversity measures — the
+direction of least occupied spectral energy, the centre of the largest empty
+ball, the point maximizing marginal coverage. Knowing that point is worth nothing
+on its own, because no procedure turns a target embedding back into a poem.
+
+Consequently the system cannot *solve* for its next item. It can only **propose**
+(sample from *p*(· | *x*) for some prompt *x* we can write), **measure** (embed
+the proposals and score them), and **select** (keep one). All of the control is
+in the choice of *x*, and that choice is expressible only in language. This is
+why the latent variables here are language-valued — named axes with named levels
+— rather than continuous codes: they are the only handles that reach the
+generator. It is also why the axis scoring of the companion paper's §5 exists. **The axis scoring is a
+surrogate for the missing inverse**: unable to decode the direction we want to
+travel, we score the language-valued conditions we *can* write by how nearly
+their induced output distributions point that way.
+
+Three consequences follow for measurement, and they order the evidence in this
+paper.
+
+Two facts about circularity are worth stating before the results. Our packing
+selection rule maximizes a weighted sum of embedding-space orthogonality and
+embedding-space min-gap, and we then report embedding-space diversity metrics;
+centered Vendi is a monotone function of how flat the Gram spectrum is, which is
+close to what the orthogonality term climbs, and median nearest-neighbour
+distance *is* the min-gap term. Those wins should be read as confirmation that the
+optimizer works, not as independent evidence. The independent evidence is the
+literal measures, which the method never observes, and the out-of-objective
+channels of §4.1, which live downstream of a rendering step or in a feature space
+nothing in the loop touches. Sorted by how much weight they can bear:
+embedding-space measures are partly circular; literal-space measures are
+independent; rendered-artifact and out-of-objective measures are the most
+independent, and they carry the argument.
+
+The proxy adds a fourth rung below all three. When the artifact is rendered by a
+model the embedder never sees, even the most independent text-side measure is a
+measure of the *instruction*, and whether the instruction's diversity reaches the
+picture is an empirical question — with, it turns out, a discouraging answer
+(§4.2). The companion paper states five practices that follow from naming the
+objective; this paper is where the last three are tested.
+
+1. **Say which objective you mean.** They are different problems with different
+   optimal policies, and "diverse" does not distinguish them.
+2. **Count exact duplicates before computing anything.** A 74% duplicate rate
+   makes every distance statistic a statistic about duplication.
+3. **Publish the pairwise-similarity distribution** your kernel operates on. Mean
+   pairwise cosine was 0.883 in one of our corpora and 0.444 in another under the
+   same embedder; an ε or a Vendi score means nothing without it.
+4. **Measure at the level of the artifact you ship.** Text-embedding similarity
+   explains 14.5% of the variance in whether rendered images look alike, pooled
+   across seven rendered arms, and 8.2% within-arm (the companion paper's §4.2).
+5. **Audit in a channel the objective never optimizes** (§4.1, §4.7; the companion paper's §8.3). It is the
+   only measurement in this paper that cannot be a restatement of the selection
+   rule, and it is where both the strongest positive result and the largest
+   undetected defect were found.
+
+## 3. Setup
+
+**Generator and embedders.** `openai/gpt-5.6-luna` via OpenRouter for generation,
+judging, attractor mining and axis elicitation. Text embeddings:
+`nomic-embed-text` (768-d, unit-normalized) served locally by Ollama, so
+embedding is free and the loop is never rate-limited by its own measuring
+instrument. Images: `gpt-image-1-mini`, embedded with CLIP ViT-B/32. Audio: Lyria
+3 Pro instrumentals, embedded with CLAP and MERT. Every corpus is append-only
+JSONL with embeddings checkpointed alongside, resumable after a kill; every
+number carries a provenance tag naming the procedure that produced it.
+
+**Domains.** *DALL·E instructions for post-modern artworks*, where diversity is
+the product and the same corpus can be measured in three spaces — words,
+text-embedding, and the rendered picture. *Psychometric test questions*,
+multiple-choice items assessing general reasoning, where two items with the same
+construct are a validity problem rather than an aesthetic one. *Instruction
+corpora*, for the head-to-head against released artifacts. *Poetry*, a pilot
+where craft rather than content carries the variation. *Instrumental-music
+prompts*, the longest chain in the paper: latent axes → text prompt →
+two-minute instrumental → audio embedding.
+
+**Methods compared.** Five published approaches, implemented faithfully rather
+than as strawmen, each getting the same generator, embedder and budget accounting
+as ours.
+
+| arm | what it is |
+|---|---|
+| `naive` | plain repeated prompting — the honest floor |
+| `high_temp` | temperature 1.6 — the trivial diversity lever |
+| `self_instruct` | **Self-Instruct / Alpaca**: few-shot exemplars sampled from the pool, plus ROUGE-L ≤ 0.7 rejection against it |
+| `evol_instruct` | **Evol-Instruct (WizardLM)**: sample an existing item, apply a random evolution operator (deepen, concretize, add constraint, harder reasoning, mutate form) |
+| `persona` | **Persona-Hub / AttrPrompt**: a flat catalogue of personas × attributes, sampled uniformly |
+| `rac` | **Recursive Axis Conditioning** (ours) |
+| `rac+vision` | RAC, plus steering on the *rendered image* (the companion paper's §4.2) |
+
+**What we measure, and what each measure misses.** We report several because they
+disagree, and a corpus that one of them calls healthy another calls collapsed.
+
+- **Exact-duplicate rate** — byte-identical repetition. Unambiguous, cheap, and
+  the first thing to compute; blind to paraphrase.
+- **Distinct-*n*, 4-gram self-repetition, *n*-gram Vendi** — surface statistics
+  over token sequences. They catch templating that the duplicate rate misses and
+  read meaning not at all. **These are independent of our objective**, since the
+  method sees only embeddings and has no access to token counts or string
+  identity.
+- **Mean-centered embedding Vendi** — the exponential of the von Neumann entropy
+  of the corpus Gram matrix, an effective number of distinct items. It summarizes
+  the whole spectrum, which makes it insensitive to local structure. Centering
+  matters as much as the statistic: the shared mean direction of text embeddings
+  compresses the uncentered score by roughly 2.7×, so an uncentered Vendi reports
+  the cone as much as the content.
+- **Median nearest-neighbour distance** — how much room the typical item has. It
+  goes to exactly zero when the median item has a perfect twin.
+- **Worst-case nearest-neighbour distance (the packing radius)** — the only
+  measure here under which a single collision is a defect regardless of everything
+  else.
+- **Coverage, density, precision and recall against a reference** — computed with
+  reference-side *k*-NN radii so nothing is tunable per corpus. These are the only
+  measures that know what the space is supposed to look like, and the only ones
+  that let corpora of different scales be compared. Covered fraction at a *fixed*
+  radius does not survive that comparison: it correlates −0.991 with within-corpus
+  spacing, so it ranks corpora by how tightly they cluster rather than by how much
+  they reach.
+- **A judged threshold**, where an application defines the failure (the companion paper's §7.4).
+- **Measures on the rendered artifact**, and **measures in a channel the loop
+  never optimizes** (§4.1), which are the ones that cannot be circular.
+**Scale and cost.** The text corpora comprise 43,171 real generations for roughly
+$8.50 of OpenRouter spend, plus 1,796 rendered images across sixteen image arms
+and up to three quality tiers, a further 285 renders for the two render-side
+probes of §5.3 and §6, 100 rendered Lyria instrumentals, and 236 adjudicated exam-item
+pairs. Both `naive` arms reach *n* = 10,000; the reimplemented baselines reach
+2,500 each. Every comparison is reported at a matched *n* that all compared arms
+actually reached. Total API spend across the project is roughly $40.
+
+## 4. What the proxy sees
+
+### 4.1 Audit in a channel the proxy never sees
+
+The strongest evidence available for any embedding-optimized method is a channel
+that is *causally downstream of the artifact and upstream of nothing the loop
+reads*. Each artifact domain has one, and the companion paper's central
+comparison (its §7.5) is made there: twenty-two prosodic and structural features
+for poems, where `nomic-embed-text` is nearly blind to metre and rhyme; thirteen
+item-architecture features for exam items; nine pixel statistics — luminance,
+contrast, tonal range, saturation, colourfulness, hue entropy, edge density, edge
+anisotropy, and where the visual weight sits — for renders. At matched generator
+budget RAC separates from the strongest comparison on all three: 2.25× the
+prosodic spread of naive prompting on 200 of 200 random draws, 97.6% distinct
+item architectures against 43.9% after deduplicating both banks, and 1.53× the
+optical spread with every one of eleven RAC image corpora above every one of
+five published baselines (*U* = 55 of 55, *p* = 0.0002).
+
+What that comparison teaches about instruments is the part that belongs here.
+**Use a distance statistic, not a spectral one, on a designed feature channel.**
+Vendi is the exponentiated entropy of a covariance spectrum and scores the
+effective *dimensionality* of variation rather than its extent; on a
+768-dimensional embedding no single direction dominates and the distinction
+rarely bites, but on a nine-dimensional feature vector it dominates completely,
+and a corpus that spreads far along two or three optical directions scores
+*below* one that wobbles slightly along all nine. On mean pairwise distance,
+optical spread correlates with CLIP diversity at *r* = +0.76 (*p* = 0.003) across
+thirteen corpora; under the spectral estimator the same corpora correlate at
+−0.60. The proxy and the artifact channel agree or disagree depending on which
+statistic is read off the channel, before any question about the embedding
+arises. Degradation does not explain the separation either: blurring *k* of sixty
+baseline renders lowers CLIP Vendi monotonically, 43.81 to 41.72 as *k* runs 0 to
+30, so an embedding-space objective is penalized rather than rewarded for
+admitting degraded images.
+
+The rest of this section is what such channels reveal that the proxy does not.
+
+### 4.2 Text diversity is nearly blind to image diversity
+
+We rendered the first 199 DALL·E instructions from the naive corpus and embedded
+them with CLIP. Pairwise cosine similarity in text-embedding space correlates with
+pairwise cosine similarity in image-embedding space at **Pearson *r* between 0.167
+and 0.421** across the seven rendered arms, and at 0.285 within-arm centred. The
+gap varies by a factor of 2.5 depending on which corpus is measured: lowest on
+`self_instruct` (0.167) and on the naive arm (0.170), highest on the arm this
+paper's own method produced (0.421). Pooled, the shared variance is 14.5%;
+within-arm it is 8.2%. Knowing that two instructions are semantically far apart
+therefore tells you rather little about whether the two pictures look different,
+and every text-side diversity method in this literature — ours included — is
+optimizing a proxy that leaves most of what the reader receives unexplained. That
+the correlation is strongest on our own corpus is worth stating plainly: the proxy
+is least misleading exactly where the instructions were built to differ
+structurally rather than only lexically.
+
+The qualitative version is more damning than the correlation. Independently
+generated instructions, from a corpus with a 0.000 exact-duplicate rate and
+healthy lexical diversity, render to near-interchangeable pictures: the same
+magenta-and-cyan palette, a classical marble bust, neon signage, halftone collage,
+a receding grid. A vision judge shown samples rates the set's distinctness 6–7 out
+of 10 and names the attractors precisely — *"muted beige, cream, brown, ochre and
+black foundations accented by saturated cyan/teal, turquoise, pink"*,
+*"appropriation of canonical or religious imagery, especially Mona Lisa-like
+female portraits"*, *"frontal, museum-like presentation with centered, symmetrical
+compositions"*. This is a second mode collapse, downstream of ours, contributed by
+the image model and by the fact that much of what varies in the text lands in the
+same visual place.
+
+![{{FIG:fig13_contact_sheet.png}}. Sixteen renders per policy, same generator, same budget, same image model. Rows 1–2, naive prompting: a corpus with a 0.000 exact-duplicate rate and healthy lexical diversity that still returns one visual mode — magenta and cyan collage, barcodes and QR codes, Renaissance portraits and classical busts, Michelangelo hands, warning triangles and neon OPEN signs recurring across nearly every panel. Rows 3–4, max-min steering with literal and latent repulsion on both the text and vision sides: medium, palette, register and composition all move, across a medieval triptych, a botanical cabinet, a photographed sculpture installation, a torn-paper abstract and a civic notice.](figures/fig13_contact_sheet.png)
+
+*{{FIG:fig13_contact_sheet.png}}. Sixteen renders per policy, same generator, same budget, same image model. Rows 1–2, naive prompting: a corpus with a 0.000 exact-duplicate rate and healthy lexical diversity that still returns one visual mode — magenta and cyan collage, barcodes and QR codes, Renaissance portraits and classical busts, Michelangelo hands, warning triangles and neon OPEN signs recurring across nearly every panel. Rows 3–4, max-min steering with literal and latent repulsion on both the text and vision sides: medium, palette, register and composition all move, across a medieval triptych, a botanical cabinet, a photographed sculpture installation, a torn-paper abstract and a civic notice.*
+### 4.3 Audio: whether a prompt can be steered is a property of the embedder
+
+The more portable finding is that whether a prompt can be steered before rendering
+is a property of the *embedder* rather than of music. Measuring the Spearman
+correlation between prompt-pair similarity through the text tower and track-pair
+similarity through the audio tower:
+
+| embedder | alignment (naive / conditioned) | note |
+|---|---|---|
+| **MuQ-MuLan** | **0.68 / 0.47** | a usable steering gradient |
+| CLAP-fused | 0.50 / 0.21 | weak; ~0.05 on the steered corpus |
+| CLAP-music | 0.18 / 0.06 | worst; median within-corpus NN distance 0.004 — it hears one track |
+
+Cross-embedder agreement on pairwise track similarity spans 0.22–0.84, per-arm
+diversity verdicts flip between embedders, and each embedder nominates a different
+most-redundant pair. Two prescriptions follow: steer music with MuQ-MuLan rather
+than CLAP, and never publish an audio-diversity number without naming its
+embedder. Structural contracts have a length ceiling as well — compliance with a
+requested section sequence is exact at prompt lengths near 560 characters, 0.11 at
+a mean of 658, and zero by ~1,600 — so a structural contract for music must be
+short or it is noise.
+### 4.4 The ranking does not depend on the viewpoint
+
+A max-min score is a distance
+in a chosen embedding, so a natural worry is that it names a property of the
+embedder rather than of the corpus. Six exam-item corpora — this method's bank
+against naive sampling, persona prompting, self-instruct, evol-instruct and
+high-temperature sampling, 200 items each — were scored under four independent
+representations: CLIP text, TF-IDF with no learned semantics at all, the
+twenty-two-feature prosodic vector, and a 150-dimensional function-word profile
+of the kind used for authorship attribution. Each score is the fifth-percentile
+nearest-neighbour distance divided by the mean pairwise distance of the same
+cloud, which is invariant to the global rescaling an embedding choice is free to
+apply, and each representation is admitted only if its between-corpus spread
+exceeds its own within-corpus sampling noise — all four clear that bar by factors
+of 9.7 to 24.7.
+
+The four views agree, at a mean Kendall tau of +0.83 across their six pairings,
+and **RAC ranks first under every one of them**, including the three it never
+optimizes. It also holds the best worst-case score, so it wins under a
+distributionally-robust reading of diversity as well as under any single view.
+The agreement is not an artifact of the degenerate baselines: restricted to the
+three corpora whose fifth-percentile distance is non-zero in every
+representation, mean tau is +0.67 and RAC is still first under all four. Naive
+sampling and high-temperature sampling score exactly zero on prosody and on
+stylometry — at least one item in twenty has an exact neighbour in those channels.
+### 4.5 Literal and latent diversity move in opposite directions
+
+Literal and latent diversity move in opposite directions in one corpus, which is
+why both are reported throughout. Measuring the DALL·E naive corpus as it grows:
+
+| *n* | distinct-2 | 4-gram self-repetition | *n*-gram Vendi | centered embedding Vendi |
+|---|---|---|---|---|
+| 5 | 0.870 | 0.031 | 4.9 | 3.79 |
+| 40 | 0.492 | 0.211 | 30.2 | 24.13 |
+| 300 | 0.252 | 0.384 | 142.5 | 55.70 |
+| 1,000 | 0.145 | 0.520 | 246.6 | 63.05 |
+| 1,750 | 0.112 | 0.577 | 283.3 | 65.30 |
+
+Literal diversity collapses monotonically — by *n* = 1,750 more than half of each
+new instruction's 4-grams have already appeared — while latent diversity rises and
+then saturates. Reporting either alone supports an opposite conclusion about the
+same corpus.
+
+![{{FIG:fig11_literal_vs_latent.png}}. The decoupling, normalized to each series' value at *n* = 5. Literal diversity falls monotonically while latent diversity rises: two measurements of two different quantities that one word, "diversity", has been covering for.](figures/fig11_literal_vs_latent.png)
+
+*{{FIG:fig11_literal_vs_latent.png}}. The decoupling, normalized to each series' value at n = 5. Literal diversity falls monotonically while latent diversity rises: two measurements of two different quantities that one word, "diversity", has been covering for.*
+### 4.6 A class of repetition the embedding misses
+
+One comparison in the artifact channel runs against the method, and it belongs
+here. Embedding metrics miss
+an entire class of visual repetition — tiled grids of one cell, a shared palette,
+the same composition recoloured — so we audit it with deliberately dumb
+non-semantic signatures: a 16×16 luminance layout map, an autocorrelation tiling
+score, a hue histogram. Scored at matched *n* = 60 and matched render tier, **the
+published baselines are better than our arms on both structural measures**: layout
+twins above 0.5 cosine average 0.223 across the five baselines against 0.473
+across our eleven, and literal tilings 0.117 against 0.406, with no baseline worse
+than our best arm on layout. A corpus told to differ along seven or eleven named
+dimensions apparently converges on a compositional template that plain repeated
+prompting does not. Adding literal-space structural bans to the prompt — grids
+banned when recent renders tile, dominant hue pairs named and banned,
+layout-change demands when layouts collide, plus a learned text→bad-structure
+bridge — halves palette twins (0.78 → 0.35 in the coverage arm) and improves the
+coverage objective 21% (0.206 → 0.247), but does not close it. Optical spread and
+structural repetition are both measured on pixels and point in opposite
+directions: our corpora occupy a wider region of that space while repeating their
+compositional scaffolding more often within it.
+### 4.7 A defect no diversity measure can see
+
+The audits of §6 ask whether the axes reach the artifact. This one asks whether
+the resulting bank is *usable*. For a test bank, key position is a hard
+requirement: correct answers must be distributed across option positions, because
+an examinee who notices an imbalance can exploit it without reading anything.
+Asking a fixed solver each item and recording which position it chose:
+
+| bank | A | B | C | D | χ² vs uniform (3 df) |
+|---|---|---|---|---|---|
+| RAC | **0.900** | 0.050 | 0.050 | 0.000 | **90.4** |
+| naive | 0.225 | 0.550 | 0.225 | 0.000 | 24.6 |
+| RAC, after balancing | 0.200 | 0.175 | 0.300 | 0.325 | **2.6** |
+
+**Ninety percent of the RAC bank's keys sit in position A**, against a critical
+value of 7.81 at *p* = .05. An examinee who answers A to everything scores 90%
+without reading a stem, and neither bank ever places a key in D. This is a
+property of the solver only if the solver is not reading the items, so we
+separated the two by permutation: ask each item twice, once as written and once
+with its options reordered, and record which option *text* is chosen. The answer
+follows the content in 95% of RAC items and 100% of naive items, and stays on the
+same letter in only 17.5% and 30%. The solver reads; the imbalance is in the bank.
+
+**Why the method cannot see this.** Key position is not a semantic property, so it
+is invisible to every measure in this paper — embedding diversity, *n*-gram
+diversity, Vendi, coverage and the enemy-item radius are all exactly as favourable
+on a bank whose key is always A as on a balanced one. It is invisible to the axis
+set for the same reason: all seven axes condition on item content, and even
+*distractor logic* governs what the distractors are like rather than where the key
+sits among them. And it is structural rather than accidental — a generator asked
+for a stem and four options writes the answer it has in mind first and builds
+distractors around it, so A is where the key lands by default.
+
+The repair needs no answer key. Permuting each item's options uniformly at random
+moves the key with its own text from whatever position it held, so the bank
+becomes uniform by construction; options whose text refers to a position ("none of
+the above", "both A and B") are detected and left as written, which affects 37 of
+1,999 items. Applied to the RAC bank this takes χ² from 90.4 to 2.6 —
+indistinguishable from uniform — while content-tracking is unchanged at 95%.
+
+The general form is the sharpest limitation in this paper. **A diversity objective
+defined over an embedding is blind to any property of the artifact the embedding
+does not encode, including properties that decide whether the artifact can be used
+at all.** Difficulty is the same story in the same domain: it is the parameter an
+item bank exists to span, it is latent rather than semantic, and nothing in the
+objective can see it. Measuring diversity well is not the same as measuring
+fitness for purpose, and the gap between them is not visible from inside the
+objective.
+## 5. Steering through the proxy
+
+### 5.1 Images: closing the loop where the product lives
+
+The vision-steered arm closes the loop where the product lives. It renders a
+bounded sample of accepted instructions, embeds them with CLIP, and feeds two
+things back into the text-side loop: a least-squares map from the crowded *image*
+directions into instruction-embedding space, so the text-side orthogonality term
+can push away from visual redundancy it cannot itself perceive; and mined *visual*
+attractors from the vision judge, appended to the same ledger as the textual ones.
+It is the paper's mechanism applied one level down — the ledger already repels
+against what the model keeps saying, and now also against what it keeps showing —
+and it is the best arm in the companion paper's
+competitive comparison (its the companion paper's §7.2).
+
+The margin is measurable in the space the loop optimizes and visible on the page.
+At matched *n* = 200 in the DALL·E domain, the text-only RAC arm scores centered
+Vendi 77.67 and median nearest-neighbour distance 0.171; the vision-steered arm
+scores 91.97 and 0.192, an 18% gain in centered Vendi, and leads every column of
+the seven-arm comparison — distinct-2 0.699 against 0.660, 4-gram
+self-repetition 0.040 against 0.068, *n*-gram Vendi 170.9 against 167.0. The
+contact sheet of §4.2 shows the same thing without a number: rows 3–4, steered on
+both the text and the vision side, move medium, palette, register and composition
+where rows 1–2 return one visual mode.
+
+### 5.2 Audio: cross-modal steering through an audio embedder
+
+At matched *n*, matched prompt length and the same generator, the conditioned
+music arm reaches centered Vendi 43.03 against naive's 22.99 (1.87×), halves
+4-gram self-repetition (0.140 against 0.291), raises distinct-2 (0.545 against
+0.348) and holds roughly three times the room between nearest neighbours (0.079
+against 0.027), on 100 prompts per arm with no exact duplicates in either — so the
+effect is semantic. On 100 rendered Lyria instrumentals generated by cross-modal
+steering with zero rejection, 100% of tracks verify as instrumental in CLAP space
+and mean-centered CLAP Vendi is 17.43 against 11.5 for naive prompts and 14.1 for
+axis-conditioned prompts under the same embedder.
+
+The rendered arm was steered through CLAP and is measured in CLAP. §4.3's
+alignment table says the same loop through MuQ-MuLan would have a steering
+gradient nearly four times as strong on the naive arm (0.68 against 0.18), which
+is the experiment we would run next; the prescription — steer music with
+MuQ-MuLan rather than CLAP — is §4.3's, and the loop is the image one of §5.1
+with the audio tower in place of CLIP.
+
+### 5.3 Best-of-*K* at the render: select on the channel the objective cannot see
+
+The companion paper measures best-of-*K* on the written candidate (its §8.4):
+selecting on the gap alone raises the minimum nearest-neighbour distance by 20%
+in three of three seeds, at a cost of a third of a craft point. The same question
+at the *render* has a sharper answer, because the two channels have very
+different effective dimensions. Best-of-*K* on the written candidate happens
+before the handoff and §6 locates the loss after it, so we also ran
+*K* = 3 renders behind each of 60 fixed instructions and kept the render
+maximizing min distance to the accepted set — once in CLIP, once in optical
+statistics, over the same candidates. Selecting on optics raises pixel min NN from
+1.039 to 1.292 (1.24×) and the fifth-percentile NN by 0.336 (paired subsample, 95%
+CI [+0.128, +0.488]), **and costs nothing in the channel the method optimizes**:
+CLIP min NN moves by −0.001 with the interval [−0.029, +0.033] tight around zero.
+Selecting on CLIP raises CLIP min NN by 0.040 ([+0.025, +0.071]) and moves optics
+not at all detectably. Both gains lie on the *K*<sup>1/*m*</sup> curve — 1.24× at
+*K* = 3 implies *m* ≈ 4.4, and 1.04× implies *m* ≈ 17 — so render-side selection
+is oversampling rather than a new mechanism. What the dimensions add is an
+allocation rule: oversampling buys far more in a low-dimensional channel than in a
+high-dimensional one, and **if a pipeline is going to pay for extra renders, it
+should select them on the channel the objective cannot see.**
+## 6. Conditioning across the seam
+
+The companion paper audits whether a commanded axis level shows up in the
+artifact (its §8.1), by manipulation rather than correlation: hold a base spec
+fixed, set one axis to each of its levels in turn, generate, and read the
+displacement, centring within base so that only variation produced by *setting*
+the axis contributes, with a null that shuffles levels within each base. Two
+instruments read each artifact — *identifiability*, whether CLIP(ℓ) is the
+nearest of the axis's level descriptions to an image generated under level ℓ,
+against a chance rate of 1/|levels|; and *separation*, the η² of artifact
+embeddings grouped by commanded level under a permutation null — and a third
+channel that lives outside the embedding the method optimizes: pixel statistics
+for images, prosody for poems. On poems every axis is realized on at least one
+channel. On images three of seven axes identify their level at or below chance,
+two are undetectable on both channels, and the axis the attribution scoring
+ranked *first* is the least realized in the corpus. The image domain is where the
+proxy question becomes a conditioning question, because the image pipeline has a
+seam the poem pipeline does not.
+
+![{{FIG:fig17_axis_realization.png}}. Axis realization measured on the artifact. Left: on 60 max-min renders, three of seven axes identify their commanded level at or below chance, and two are undetectable on both the CLIP and pixel channels. Right: on 60 poems, every axis is realized — on the semantic channel, the prosodic channel, or both. Dashed lines mark chance and the permutation null.](figures/fig17_axis_realization.png)
+
+*{{FIG:fig17_axis_realization.png}}. Axis realization measured on the artifact. Left: on 60 max-min renders, three of seven axes identify their commanded level at or below chance, and two are undetectable on both the CLIP and pixel channels. Right: on 60 poems, every axis is realized — on the semantic channel, the prosodic channel, or both. Dashed lines mark chance and the permutation null.*
+**Images, by intervention: the loss is at the render, not in the writing.** The
+image pipeline has two stages — the model that proposed the axes writes an
+instruction, and `gpt-image-1-mini` renders it — so the same manipulation can be
+read on both sides of the handoff. Over all eleven axes at three bases and five
+levels, embedding the written instruction with CLIP, the render with CLIP, and the
+render's optics separately: nine of eleven axes are realized in the **written
+instruction** at *p* < 0.05 (mean ρ = 0.148), against four of eleven in the
+**render** (mean ρ = 0.096). Ten of the eleven attenuate, a mean loss of 35% of
+the text-side effect (Wilcoxon signed-rank *p* = .005; paired *t*, *p* = .003,
+both two-sided).
+**Conditioning reaches the instruction and loses a third of its grip at the
+render.** The image domain's weak realization is therefore not a failure of the
+axis calculus to produce usable conditioning — the conditioning is there, in the
+prompt, and measurable — but of that conditioning to survive a generator that
+never saw the axis set.
+
+Part of the apparent loss is the instrument rather than the renderer, and this is
+the §4.1 lesson arriving from the other direction. The four perceptual axes
+attenuate most in CLIP and are precisely the axes CLIP is least equipped to
+register: measured on pixels instead, *Lighting direction* reads 0.229 against
+0.092 in CLIP, *Shot scale* 0.252 against 0.105, and *Motion and temporal blur*
+0.203 against 0.069. An axis commanding optics moves the optics and barely moves a
+semantic embedding.
+
+**The seam explains the split.** The calculus is identical across the two domains,
+the axes are comparably abstract, and the budgets match. What differs is where the
+conditioning has to travel. A poem is written by the same model that proposed the
+axes, so the conditioning never leaves the system that understands it. An image
+axis is written by that model into a prompt and handed to a different model, which
+never saw the axis set, shares no latent space with it, and is under no obligation
+to honour a distinction like *copies outrank an absent original*. the companion paper's §4.2 measured
+this seam from the outside as a proxy gap; the intervention measures it from the
+inside. **Conditioning strength degrades at the boundary where the generator
+changes hands**, so the modality-agnostic claim holds for the calculus — which
+needs only an embedding — and not for the conditioning, which needs a generator
+that reads the same language the axes are written in.
+## 7. Scoring axes in the artifact's space
+
+All four factors are computed from *level vectors*: one embedding per level of
+each axis. In the text-only setting those are embeddings of the level
+descriptions — what a level *claims* it will do. Once the artifact can be
+embedded, the natural improvement is to replace them with the centroid of
+everything actually produced under each level: what the level *did*. That
+substitution is what makes the scoring empirical, and on its own it is wrong.
+
+A centroid computed that way is a **marginal mean where the score needs a partial
+effect**. Specs are sampled independently, so every other axis varies inside each
+level group; with sixty items, seven axes and five levels each, a group holds
+about twelve items whose spread is mostly produced by the other six axes. The
+estimator cannot tell "this axis moves the artifact" from "this axis co-occurred
+with movement", and nothing in the loop ever intervenes on one axis while holding
+the rest fixed.
+
+The consequence is not a modest loss of precision. It is a **systematic
+inversion**, and the mechanism is our own transversality term. An axis that
+genuinely moves the artifact fills the corpus with variance along its own
+direction; the occupied eigenspace absorbs that direction; and transversality —
+the fraction of an axis's variation lying *outside* the occupied span — collapses
+toward zero for precisely that axis. An axis the generator ignores contributes
+only isotropic noise, little of which the occupied basis captures, so its
+transversality stays high. Because promise is multiplicative, the effective axis
+sinks and the inert one rises. **The better an axis is, the harder the score
+punishes it.**
+The repair — partial effects from one additive model over all axes, a
+null-corrected realization factor ρ, and the interventional probe when a
+generation budget can be spent on measurement — is the companion paper's §5.3,
+and it is what makes artifact-space scoring usable: with it the strong axis ranks
+first on all 24 seeds of a ground-truth test where the attribution form ranked the
+inert axis first in 17 of 24. What belongs here is the consequence for a proxy.
+Level vectors read in the artifact's own embedding are only as good as that
+embedding's grip on the axis. §6 shows the four perceptual image axes attenuate
+most in CLIP and are precisely the axes CLIP is least equipped to register —
+*Lighting direction* reads 0.229 on pixels against 0.092 in CLIP — so an axis
+commanding optics can be scored as inert in the very space that was adopted to
+make the scoring honest. Where a designed feature channel exists for the
+artifact, the realization factor should be computed there as well, and the axis
+kept if either channel finds it.
+
+## 8. Practice
+
+The prescriptions are short, and each is attached to the measurement that
+motivates it.
+
+1. **Name the embedder, and publish the pairwise-similarity distribution it
+   operates on.** Per-arm audio verdicts flip between embedders and each
+   nominates a different most-redundant pair (§4.3); mean pairwise cosine was
+   0.883 in one text corpus and 0.444 in another under the same embedder. A
+   diversity number without its embedder and its similarity distribution is not
+   a number.
+2. **Count exact duplicates before computing anything, and report the literal
+   and the latent separately.** They move in opposite directions in the same
+   corpus (§4.5), and a 74% duplicate rate makes every distance statistic a
+   statistic about duplication.
+3. **Measure at the level of the artifact you ship.** Text-embedding similarity
+   explains 14.5% of the variance in whether rendered images look alike, pooled
+   across seven arms, and 8.2% within-arm (§4.2). If the artifact is rendered,
+   the objective belongs in the space the artifact occupies.
+4. **Audit in at least one channel the objective never optimizes**, with a
+   distance statistic rather than a spectral one (§4.1). It is the only
+   measurement that cannot be a restatement of the selection rule, and it is
+   where the strongest positive result and the largest undetected defect in this
+   line of work were both found.
+5. **When a render is in the loop, steer through it.** Render a bounded sample,
+   embed it in the artifact's space, and bridge its crowded directions back into
+   the text space the loop optimizes (§5.1); steer audio through an embedder
+   whose text and audio towers agree (§5.2).
+6. **Spend extra renders on the low-dimensional channel.** Best-of-*K* buys
+   *K*<sup>1/*m*</sup>; selecting renders on nine pixel statistics buys 1.24× at
+   *K* = 3 where selecting on CLIP buys 1.04× (§5.3).
+7. **Measure axis realization at the artifact, by intervention, wherever the
+   generator changes hands** (§6). Where the seam exists, a third of the
+   conditioning does not cross it.
+8. **Balance by construction what the embedding cannot see.** Key position,
+   difficulty, compositional template: none is encoded, none is optimized, and
+   each decides usability. A uniform permutation of options needs no answer key
+   and takes χ² from 90.4 to 2.6 (§4.7); a structural ban block halves palette
+   twins (§4.6).
+9. **Read the output.** A corpus can be diverse along every dimension you
+   thought to measure and uniform along the one you did not.
+
+## 9. Limitations
+
+- **One text embedder.** All text geometry is `nomic-embed-text` with cosine
+  distance. §4.4 shows the *ranking* of methods survives four representations;
+  whether the *magnitudes* transfer is untested, and the companion paper's
+  coverage and packing numbers inherit that.
+- **A joint embedder varies both towers at once.** §4.3 changes one knob — the
+  model supplying both the text tower and the audio tower — so it shows that the
+  alignment moves and cannot say which side moves it. Crossing text-side and
+  artifact-side encoders independently on fixed bytes is the decomposition this
+  paper does not contain.
+- **The renders carry no logged seed.** The image endpoint exposes no seed
+  parameter, so no render in this paper can be regenerated, and render
+  stochasticity cannot be separated from the quantity being measured. Every
+  artifact-space number here — the proxy correlations of §4.2, the realization
+  of §6, the render selection of §5.3 — is a statement about an unlogged seed
+  distribution, and a repeat-draw floor at a logged seed is the missing
+  measurement.
+- **Several image results are single-seed.** The image arms are one seed each
+  at *n* = 60; the vision-steered arm's margin in §5.1 is one run at *n* = 200;
+  the audio steering arm is one run of 100 tracks.
+- **Judge bias is unmeasured.** Vision and language-model judges name
+  attractors, classify blueprint areas and read device forms; none is calibrated
+  against human raters, and a judge that shares the generator's blind spots
+  would miss exactly what the generator misses.
+- **The structural signatures are deliberately dumb.** A 16×16 luminance map, a
+  tiling score and a hue histogram find tilings and palette twins and nothing
+  subtler; they are a floor on what the embedding misses, not a measure of it.
+- **Steering closes part of the gap and not all of it.** Literal-space bans
+  halve palette twins and improve the coverage objective by 21% and do not close
+  the structural deficit; the vision-steered arm is the best arm in the image
+  domain and still renders through a model that never saw the axes.
+
+## 10. Conclusion
+
+An embedding oracle is the only thing the loop can see, and it is always a proxy.
+In the two domains where the artifact is rendered by a model the embedder never
+meets, the proxy explains a seventh of the variance in what the reader receives,
+whether a prompt can be steered at all depends on which embedder is asked, and a
+third of the conditioning does not survive the handoff. In the domains where the
+artifact is text, the embedding is still blind to metre, to compositional
+template, and to where an answer key sits — properties that decide whether the
+corpus can be used.
+
+None of this is an argument against the method; it is an argument about where
+the method's numbers are true. The extension that follows is to treat the proxy
+as a proxy: render a sample and steer through the artifact's own space, spend
+oversampling budget on the channel the objective cannot see, audit realization
+by intervention at the seam, and balance by construction what no embedding
+encodes. Under those rules the ranking the companion paper reports is robust —
+first under four representations, three of which the method never optimized, at
+a mean Kendall τ of +0.83 — and the gap between a diverse corpus and a usable one
+is at least visible, which is the precondition for closing it.

@@ -1,0 +1,196 @@
+[
+  {
+    "corpus": "poems",
+    "n_items": 60,
+    "axes": [
+      {
+        "axis": "Register contract",
+        "n": 60,
+        "levels": 5,
+        "semantic_eta2": 0.191,
+        "semantic_p": 0.0005,
+        "prosodic_eta2": 0.178,
+        "prosodic_p": 0.0005,
+        "top_prosodic": {
+          "word_len": 0.723,
+          "latinate": 0.602,
+          "dash_rate": 0.422
+        }
+      },
+      {
+        "axis": "Temporal stance",
+        "n": 60,
+        "levels": 5,
+        "semantic_eta2": 0.124,
+        "semantic_p": 0.0005,
+        "prosodic_eta2": 0.118,
+        "prosodic_p": 0.0005,
+        "top_prosodic": {
+          "modal": 0.567,
+          "past_marker": 0.472,
+          "comma_rate": 0.192
+        }
+      },
+      {
+        "axis": "Voice agency",
+        "n": 60,
+        "levels": 5,
+        "semantic_eta2": 0.113,
+        "semantic_p": 0.0005,
+        "prosodic_eta2": 0.089,
+        "prosodic_p": 0.058,
+        "top_prosodic": {
+          "first_person": 0.291,
+          "past_marker": 0.276,
+          "word_len": 0.156
+        }
+      },
+      {
+        "axis": "Claim posture",
+        "n": 60,
+        "levels": 5,
+        "semantic_eta2": 0.094,
+        "semantic_p": 0.001,
+        "prosodic_eta2": 0.101,
+        "prosodic_p": 0.0095,
+        "top_prosodic": {
+          "question_rate": 0.86,
+          "line_initial_caps": 0.17,
+          "sentence_len": 0.132
+        }
+      },
+      {
+        "axis": "Address geometry",
+        "n": 60,
+        "levels": 5,
+        "semantic_eta2": 0.085,
+        "semantic_p": 0.0115,
+        "prosodic_eta2": 0.116,
+        "prosodic_p": 0.0025,
+        "top_prosodic": {
+          "second_person": 0.723,
+          "colon_semicolon_rate": 0.272,
+          "first_person": 0.17
+        }
+      },
+      {
+        "axis": "Syntactic weather",
+        "n": 60,
+        "levels": 5,
+        "semantic_eta2": 0.084,
+        "semantic_p": 0.016,
+        "prosodic_eta2": 0.114,
+        "prosodic_p": 0.0015,
+        "top_prosodic": {
+          "dash_rate": 0.412,
+          "sentence_len": 0.32,
+          "line_chars_mean": 0.187
+        }
+      },
+      {
+        "axis": "Lineation function",
+        "n": 60,
+        "levels": 5,
+        "semantic_eta2": 0.076,
+        "semantic_p": 0.1164,
+        "prosodic_eta2": 0.236,
+        "prosodic_p": 0.0005,
+        "top_prosodic": {
+          "line_initial_caps": 0.55,
+          "line_chars_mean": 0.526,
+          "syl_per_line_mean": 0.505
+        }
+      }
+    ],
+    "corpus_form": {
+      "alliteration": {
+        "mean": 0.482,
+        "cv": 0.233
+      },
+      "colon_semicolon_rate": {
+        "mean": 0.305,
+        "cv": 0.71
+      },
+      "comma_rate": {
+        "mean": 1.851,
+        "cv": 0.282
+      },
+      "dash_rate": {
+        "mean": 0.304,
+        "cv": 0.963
+      },
+      "first_person": {
+        "mean": 0.068,
+        "cv": 0.502
+      },
+      "latinate": {
+        "mean": 0.021,
+        "cv": 1.072
+      },
+      "line_chars_mean": {
+        "mean": 46.733,
+        "cv": 0.24
+      },
+      "line_chars_sd": {
+        "mean": 8.193,
+        "cv": 0.39
+      },
+      "line_initial_caps": {
+        "mean": 0.461,
+        "cv": 0.539
+      },
+      "modal": {
+        "mean": 0.012,
+        "cv": 1.361
+      },
+      "n_lines": {
+        "mean": 15.017,
+        "cv": 0.157
+      },
+      "n_stanzas": {
+        "mean": 3.05,
+        "cv": 0.618
+      },
+      "past_marker": {
+        "mean": 0.041,
+        "cv": 0.696
+      },
+      "question_rate": {
+        "mean": 0.027,
+        "cv": 2.738
+      },
+      "rhyme_density": {
+        "mean": 0.222,
+        "cv": 0.534
+      },
+      "second_person": {
+        "mean": 0.033,
+        "cv": 0.892
+      },
+      "sentence_len": {
+        "mean": 24.552,
+        "cv": 0.493
+      },
+      "syl_per_line_mean": {
+        "mean": 11.826,
+        "cv": 0.264
+      },
+      "syl_per_line_sd": {
+        "mean": 2.244,
+        "cv": 0.397
+      },
+      "third_person": {
+        "mean": 0.021,
+        "cv": 0.7
+      },
+      "type_token": {
+        "mean": 0.697,
+        "cv": 0.082
+      },
+      "word_len": {
+        "mean": 4.364,
+        "cv": 0.106
+      }
+    }
+  }
+]

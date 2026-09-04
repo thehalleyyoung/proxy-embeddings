@@ -1,0 +1,15 @@
+{
+  "dalle_evol_instruct": 2.5568489728489263,
+  "dalle_high_temp": 2.4940229946296095,
+  "dalle_ihd": 3.7896976848256507,
+  "dalle_naive": 2.7578525853544633,
+  "dalle_persona": 3.2634371195620377,
+  "dalle_self_instruct": 2.8055814206004537,
+  "dalle_steer2_coverage": 4.598181260404679,
+  "dalle_steer2_maxmin": 4.167291539968273,
+  "dalle_steer3_maxmin": 4.102498242946137,
+  "dalle_steer4_maxmin": 4.187437022071995,
+  "dalle_steer_coverage": 4.449034489095703,
+  "dalle_steer_maxmin": 4.762232888209171,
+  "dalle_vision": 4.129676086474979
+}

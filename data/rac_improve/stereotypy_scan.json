@@ -1,0 +1,156 @@
+[
+  {
+    "corpus": "psych items",
+    "axis": "Constraint interaction load",
+    "levels": 5,
+    "n": 900,
+    "mean_share": 0.3773981474733411,
+    "worst_level": "Nested constraints",
+    "worst_device": "because",
+    "worst_share": 0.44274809160305345,
+    "worst_lift": 1.3740458015267176
+  },
+  {
+    "corpus": "psych items",
+    "axis": "Distractor logic",
+    "levels": 5,
+    "n": 900,
+    "mean_share": 0.36485332428952183,
+    "worst_level": "Reversed relation",
+    "worst_device": "blue",
+    "worst_share": 0.3888888888888889,
+    "worst_lift": 1.1437908496732025
+  },
+  {
+    "corpus": "psych items",
+    "axis": "Irrelevant-information treatment",
+    "levels": 5,
+    "n": 900,
+    "mean_share": 0.3911405976874325,
+    "worst_level": "Interleaved irrelevant detail",
+    "worst_device": "blue",
+    "worst_share": 0.4806201550387597,
+    "worst_lift": 1.4135886912904696
+  },
+  {
+    "corpus": "psych items",
+    "axis": "Primary cognitive operation",
+    "levels": 5,
+    "n": 900,
+    "mean_share": 0.4506369251050618,
+    "worst_level": "Evaluate competing explanations",
+    "worst_device": "explanation",
+    "worst_share": 0.6878612716763006,
+    "worst_lift": 2.537193215199469
+  },
+  {
+    "corpus": "psych items",
+    "axis": "Required mental representation",
+    "levels": 6,
+    "n": 900,
+    "mean_share": 0.45978109941692463,
+    "worst_level": "Graph of connections",
+    "worst_device": "connected",
+    "worst_share": 0.515625,
+    "worst_lift": 10.088315217391303
+  },
+  {
+    "corpus": "psych items",
+    "axis": "Scenario framing",
+    "levels": 5,
+    "n": 900,
+    "mean_share": 0.46094803965230796,
+    "worst_level": "Dialogue with conflicting claims",
+    "worst_device": "says",
+    "worst_share": 0.7272727272727273,
+    "worst_lift": 4.065499717673631
+  },
+  {
+    "corpus": "psych items",
+    "axis": "Solution-search topology",
+    "levels": 5,
+    "n": 900,
+    "mean_share": 0.37911642743045515,
+    "worst_level": "Direct constructive derivation",
+    "worst_device": "blue",
+    "worst_share": 0.4344262295081967,
+    "worst_lift": 1.2777242044358725
+  },
+  {
+    "corpus": "poems",
+    "axis": "Address geometry",
+    "levels": 5,
+    "n": 179,
+    "mean_share": 0.5224764597105022,
+    "worst_level": "Address to absent or dead",
+    "worst_device": "name",
+    "worst_share": 0.5714285714285714,
+    "worst_lift": 1.5497835497835497
+  },
+  {
+    "corpus": "poems",
+    "axis": "Claim posture",
+    "levels": 5,
+    "n": 174,
+    "mean_share": 0.5858878531554054,
+    "worst_level": "Ritual pronouncement",
+    "worst_device": "let",
+    "worst_share": 0.8108108108108109,
+    "worst_lift": 2.6126126126126126
+  },
+  {
+    "corpus": "poems",
+    "axis": "Lineation function",
+    "levels": 5,
+    "n": 194,
+    "mean_share": 0.4566036166036166,
+    "worst_level": "End-stopped grammatical closure",
+    "worst_device": "still",
+    "worst_share": 0.5454545454545454,
+    "worst_lift": 1.2749178532311063
+  },
+  {
+    "corpus": "poems",
+    "axis": "Register contract",
+    "levels": 5,
+    "n": 190,
+    "mean_share": 0.5788856704297881,
+    "worst_level": "Ceremonial elevation",
+    "worst_device": "silence",
+    "worst_share": 0.71875,
+    "worst_lift": 2.576650943396227
+  },
+  {
+    "corpus": "poems",
+    "axis": "Syntactic weather",
+    "levels": 5,
+    "n": 190,
+    "mean_share": 0.5318413667660098,
+    "worst_level": "Nested subordinate clauses",
+    "worst_device": "because",
+    "worst_share": 0.7931034482758621,
+    "worst_lift": 3.504410585404972
+  },
+  {
+    "corpus": "poems",
+    "axis": "Temporal stance",
+    "levels": 5,
+    "n": 175,
+    "mean_share": 0.5390860490807229,
+    "worst_level": "Cyclical recurrence",
+    "worst_device": "again",
+    "worst_share": 0.6875,
+    "worst_lift": 2.7979651162790695
+  },
+  {
+    "corpus": "poems",
+    "axis": "Voice agency",
+    "levels": 5,
+    "n": 177,
+    "mean_share": 0.5182913908268878,
+    "worst_level": "Impersonal distributed voice",
+    "worst_device": "through",
+    "worst_share": 0.6470588235294118,
+    "worst_lift": 1.9746450304259637
+  }
+]

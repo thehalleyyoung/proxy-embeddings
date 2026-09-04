@@ -1,0 +1,134 @@
+[
+  {
+    "corpus": "psychometric_ihd",
+    "n": 600,
+    "difficulty_sd": 0.5115215567927308,
+    "difficulty_range": [
+      -0.9444513989280394,
+      1.90490188088493
+    ],
+    "features": {
+      "conditional_rate": {
+        "mean": 0.93,
+        "cv": 1.583
+      },
+      "has_numbers": {
+        "mean": 0.635,
+        "cv": 0.758
+      },
+      "has_symbols": {
+        "mean": 0.18,
+        "cv": 2.134
+      },
+      "irrelevance_markers": {
+        "mean": 0.183,
+        "cv": 2.111
+      },
+      "modal_rate": {
+        "mean": 0.897,
+        "cv": 1.536
+      },
+      "n_constraints": {
+        "mean": 2.007,
+        "cv": 1.078
+      },
+      "n_entities": {
+        "mean": 2.163,
+        "cv": 1.566
+      },
+      "n_options": {
+        "mean": 4.007,
+        "cv": 0.041
+      },
+      "negation_rate": {
+        "mean": 1.009,
+        "cv": 1.385
+      },
+      "option_len_mean": {
+        "mean": 65.076,
+        "cv": 0.796
+      },
+      "option_len_sd": {
+        "mean": 9.146,
+        "cv": 1.234
+      },
+      "quantifier_rate": {
+        "mean": 1.608,
+        "cv": 1.085
+      },
+      "stem_chars": {
+        "mean": 544.505,
+        "cv": 0.37
+      },
+      "stem_words": {
+        "mean": 89.552,
+        "cv": 0.361
+      }
+    },
+    "axes": [
+      {
+        "axis": "Required mental representation",
+        "levels": 6,
+        "n": 600,
+        "structure_eta2": 0.1055,
+        "structure_p": 0.0005,
+        "difficulty_eta2": 0.1722,
+        "difficulty_p": 0.0005
+      },
+      {
+        "axis": "Scenario framing",
+        "levels": 5,
+        "n": 600,
+        "structure_eta2": 0.0691,
+        "structure_p": 0.0005,
+        "difficulty_eta2": 0.1022,
+        "difficulty_p": 0.0005
+      },
+      {
+        "axis": "Constraint interaction load",
+        "levels": 5,
+        "n": 600,
+        "structure_eta2": 0.0494,
+        "structure_p": 0.0005,
+        "difficulty_eta2": 0.096,
+        "difficulty_p": 0.0005
+      },
+      {
+        "axis": "Irrelevant-information treatment",
+        "levels": 5,
+        "n": 600,
+        "structure_eta2": 0.0275,
+        "structure_p": 0.0005,
+        "difficulty_eta2": 0.0452,
+        "difficulty_p": 0.0005
+      },
+      {
+        "axis": "Primary cognitive operation",
+        "levels": 5,
+        "n": 600,
+        "structure_eta2": 0.057,
+        "structure_p": 0.0005,
+        "difficulty_eta2": 0.0242,
+        "difficulty_p": 0.0045
+      },
+      {
+        "axis": "Solution-search topology",
+        "levels": 5,
+        "n": 600,
+        "structure_eta2": 0.0186,
+        "structure_p": 0.0005,
+        "difficulty_eta2": 0.0095,
+        "difficulty_p": 0.2279
+      },
+      {
+        "axis": "Distractor logic",
+        "levels": 5,
+        "n": 600,
+        "structure_eta2": 0.0097,
+        "structure_p": 0.0375,
+        "difficulty_eta2": 0.0067,
+        "difficulty_p": 0.4118
+      }
+    ]
+  }
+]

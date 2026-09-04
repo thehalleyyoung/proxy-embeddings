@@ -1,0 +1,98 @@
+{
+  "dalle_evol_instruct": {
+    "tier": "images_high",
+    "spread": 2.5473271937896786,
+    "medNN": 1.1664649141981998,
+    "minNN": 0.6336080856448497
+  },
+  "dalle_high_temp": {
+    "tier": "images_high",
+    "spread": 2.485796123932186,
+    "medNN": 1.1626228463086787,
+    "minNN": 0.5555913271748744
+  },
+  "dalle_ihd": {
+    "tier": "images_high",
+    "spread": 3.7557413808895954,
+    "medNN": 1.6470181643690496,
+    "minNN": 1.165032128594026
+  },
+  "dalle_naive": {
+    "tier": "images_high",
+    "spread": 2.5669688226410368,
+    "medNN": 1.1544538960468058,
+    "minNN": 0.6635215267402533
+  },
+  "dalle_persona": {
+    "tier": "images_high",
+    "spread": 3.2408183257511807,
+    "medNN": 1.38208217074067,
+    "minNN": 0.6908415001634223
+  },
+  "dalle_self_instruct": {
+    "tier": "images_high",
+    "spread": 2.7979860403938854,
+    "medNN": 1.2497956284155092,
+    "minNN": 0.513072977057542
+  },
+  "dalle_steer2_coverage": {
+    "tier": "images",
+    "spread": 4.577736413041828,
+    "medNN": 1.8255077672983422,
+    "minNN": 1.2252602496592389
+  },
+  "dalle_steer2_maxmin": {
+    "tier": "images",
+    "spread": 4.1446914961762475,
+    "medNN": 1.7481596207366024,
+    "minNN": 1.0177784519743052
+  },
+  "dalle_steer3_maxmin": {
+    "tier": "images",
+    "spread": 4.08102688291369,
+    "medNN": 1.6700276559636364,
+    "minNN": 1.050587365134404
+  },
+  "dalle_steer4_maxmin": {
+    "tier": "images",
+    "spread": 4.16335752954386,
+    "medNN": 1.6922821966529331,
+    "minNN": 0.815780486926943
+  },
+  "dalle_steer5_maxmin": {
+    "tier": "images",
+    "spread": 4.297204991748837,
+    "medNN": 1.6084180447655332,
+    "minNN": 1.0297491339160099
+  },
+  "dalle_steer6_maxmin": {
+    "tier": "images",
+    "spread": 3.6599718065087092,
+    "medNN": 1.6160835891400618,
+    "minNN": 0.8280923935294068
+  },
+  "dalle_steer7_maxmin": {
+    "tier": "images",
+    "spread": 4.25035569644439,
+    "medNN": 1.7333937049149875,
+    "minNN": 1.1057376198617628
+  },
+  "dalle_steer_coverage": {
+    "tier": "images",
+    "spread": 4.416992407531208,
+    "medNN": 1.6297338830339414,
+    "minNN": 0.9734565597415514
+  },
+  "dalle_steer_maxmin": {
+    "tier": "images",
+    "spread": 4.736060930051999,
+    "medNN": 1.9504132576134738,
+    "minNN": 1.025870465858488
+  },
+  "dalle_vision": {
+    "tier": "images_high",
+    "spread": 3.9313429676070584,
+    "medNN": 1.2993055149341046,
+    "minNN": 0.5776306599197673
+  }
+}

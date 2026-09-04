@@ -1,0 +1,44 @@
+[
+  {
+    "corpus": "psychometric_ihd",
+    "n": 40,
+    "n_options": 4,
+    "position_counts": {
+      "A": 36,
+      "B": 2,
+      "C": 2,
+      "D": 0
+    },
+    "position_share": {
+      "A": 0.9,
+      "B": 0.05,
+      "C": 0.05,
+      "D": 0.0
+    },
+    "chi2_vs_uniform": 90.4,
+    "df": 3,
+    "content_tracking_rate": 0.95,
+    "letter_locked_rate": 0.175
+  },
+  {
+    "corpus": "psychometric_naive",
+    "n": 40,
+    "n_options": 4,
+    "position_counts": {
+      "A": 9,
+      "B": 22,
+      "C": 9,
+      "D": 0
+    },
+    "position_share": {
+      "A": 0.225,
+      "B": 0.55,
+      "C": 0.225,
+      "D": 0.0
+    },
+    "chi2_vs_uniform": 24.6,
+    "df": 3,
+    "content_tracking_rate": 1.0,
+    "letter_locked_rate": 0.3
+  }
+]

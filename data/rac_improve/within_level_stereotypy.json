@@ -1,0 +1,20 @@
+{
+  "base": {
+    "appearance": 68,
+    "ambience": 10,
+    "unused_constraint": 3,
+    "unit": 1,
+    "timing": 6,
+    "provenance": 2
+  },
+  "device": {
+    "timing": 12,
+    "unit": 10,
+    "ambience": 14,
+    "appearance": 22,
+    "authority": 11,
+    "superseded": 11,
+    "provenance": 9,
+    "unused_constraint": 1
+  }
+}

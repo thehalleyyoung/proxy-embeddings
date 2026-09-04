@@ -1,0 +1,141 @@
+[
+  {
+    "run": "dalle_steer2_maxmin",
+    "n_items": 60,
+    "axes": [
+      {
+        "axis": "Textual agency",
+        "kind": "seed",
+        "n": 60,
+        "levels": 6,
+        "clip_id_acc": 0.283,
+        "chance": 0.167,
+        "clip_id_lift": 1.7,
+        "clip_id_p": 0.005,
+        "clip_eta2": 0.111,
+        "clip_eta2_p": 0.0005,
+        "literal_eta2": 0.11,
+        "literal_eta2_p": 0.1129,
+        "top_literal_features": {
+          "edge_anisotropy": 0.164,
+          "luminance": 0.141,
+          "colourfulness": 0.138
+        }
+      },
+      {
+        "axis": "Materiality disclosure",
+        "kind": "seed",
+        "n": 60,
+        "levels": 5,
+        "clip_id_acc": 0.3,
+        "chance": 0.2,
+        "clip_id_lift": 1.5,
+        "clip_id_p": 0.0475,
+        "clip_eta2": 0.08,
+        "clip_eta2_p": 0.016,
+        "literal_eta2": 0.172,
+        "literal_eta2_p": 0.0005,
+        "top_literal_features": {
+          "contrast": 0.279,
+          "edge_density": 0.241,
+          "luminance": 0.231
+        }
+      },
+      {
+        "axis": "Register collision",
+        "kind": "seed",
+        "n": 60,
+        "levels": 5,
+        "clip_id_acc": 0.217,
+        "chance": 0.2,
+        "clip_id_lift": 1.08,
+        "clip_id_p": 0.4648,
+        "clip_eta2": 0.077,
+        "clip_eta2_p": 0.0425,
+        "literal_eta2": 0.047,
+        "literal_eta2_p": 0.8666,
+        "top_literal_features": {
+          "colourfulness": 0.071,
+          "luminance": 0.07,
+          "edge_density": 0.066
+        }
+      },
+      {
+        "axis": "Self-referentiality",
+        "kind": "seed",
+        "n": 60,
+        "levels": 5,
+        "clip_id_acc": 0.317,
+        "chance": 0.2,
+        "clip_id_lift": 1.58,
+        "clip_id_p": 0.0065,
+        "clip_eta2": 0.077,
+        "clip_eta2_p": 0.0445,
+        "literal_eta2": 0.123,
+        "literal_eta2_p": 0.007,
+        "top_literal_features": {
+          "luminance": 0.231,
+          "contrast": 0.163,
+          "tonal_range": 0.159
+        }
+      },
+      {
+        "axis": "Appropriation distance",
+        "kind": "seed",
+        "n": 60,
+        "levels": 5,
+        "clip_id_acc": 0.167,
+        "chance": 0.2,
+        "clip_id_lift": 0.83,
+        "clip_id_p": 0.7736,
+        "clip_eta2": 0.072,
+        "clip_eta2_p": 0.1939,
+        "literal_eta2": 0.111,
+        "literal_eta2_p": 0.0215,
+        "top_literal_features": {
+          "edge_anisotropy": 0.23,
+          "colourfulness": 0.181,
+          "luminance": 0.112
+        }
+      },
+      {
+        "axis": "Status hierarchy treatment",
+        "kind": "seed",
+        "n": 60,
+        "levels": 5,
+        "clip_id_acc": 0.15,
+        "chance": 0.2,
+        "clip_id_lift": 0.75,
+        "clip_id_p": 0.8126,
+        "clip_eta2": 0.07,
+        "clip_eta2_p": 0.2944,
+        "literal_eta2": 0.119,
+        "literal_eta2_p": 0.0125,
+        "top_literal_features": {
+          "tonal_range": 0.213,
+          "contrast": 0.199,
+          "centre_weight": 0.195
+        }
+      },
+      {
+        "axis": "Copy and seriality logic",
+        "kind": "seed",
+        "n": 60,
+        "levels": 5,
+        "clip_id_acc": 0.233,
+        "chance": 0.2,
+        "clip_id_lift": 1.17,
+        "clip_id_p": 0.4668,
+        "clip_eta2": 0.065,
+        "clip_eta2_p": 0.6742,
+        "literal_eta2": 0.044,
+        "literal_eta2_p": 0.9205,
+        "top_literal_features": {
+          "edge_anisotropy": 0.108,
+          "hue_entropy": 0.079,
+          "colourfulness": 0.056
+        }
+      }
+    ]
+  }
+]
