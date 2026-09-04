@@ -1,0 +1,182 @@
+[
+  {
+    "cell": 42,
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the pattern must match the string 'fe80::1ff:fe23:4567:890a'"
+  },
+  {
+    "cell": 46,
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the pattern must match the string '+44 20 7946 0958'"
+  },
+  {
+    "cell": 147,
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the pattern must match the string 'c 1'"
+  },
+  {
+    "cell": 93,
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the pattern must match the string '\u20ac50'"
+  },
+  {
+    "cell": 167,
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the pattern must match the string 'c.b0aa'"
+  },
+  {
+    "cell": 56,
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the pattern must match the string '__dunder__'"
+  },
+  {
+    "cell": 78,
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the pattern must match the string 'trailing space '"
+  },
+  {
+    "cell": 157,
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the pattern must match the string 'b_b.-c'"
+  },
+  {
+    "cell": 209,
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the pattern must match the string ' 1ac-cb1ab'"
+  },
+  {
+    "cell": 163,
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the pattern must match the string 'bb ac.'"
+  },
+  {
+    "cell": 79,
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the pattern must match the string '  '"
+  },
+  {
+    "cell": 136,
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the pattern must match the string ' b0'"
+  },
+  {
+    "cell": 101,
+    "rarity": 0.008695652173913044,
+    "band": "[0.001,0.02)",
+    "req": "the pattern must match the string 'true'"
+  },
+  {
+    "cell": 17,
+    "rarity": 0.008695652173913044,
+    "band": "[0.001,0.02)",
+    "req": "the pattern must match the string '3.14'"
+  },
+  {
+    "cell": 10,
+    "rarity": 0.008695652173913044,
+    "band": "[0.001,0.02)",
+    "req": "the pattern must match the string '1a'"
+  },
+  {
+    "cell": 212,
+    "rarity": 0.008695652173913044,
+    "band": "[0.001,0.02)",
+    "req": "the pattern must match the string '0010 abb1a'"
+  },
+  {
+    "cell": 108,
+    "rarity": 0.008695652173913044,
+    "band": "[0.001,0.02)",
+    "req": "the pattern must match the string '0'"
+  },
+  {
+    "cell": 89,
+    "rarity": 0.008695652173913044,
+    "band": "[0.001,0.02)",
+    "req": "the pattern must match the string 'aaaaaaaaaaaaaaaaaaaa'"
+  },
+  {
+    "cell": 86,
+    "rarity": 0.008695652173913044,
+    "band": "[0.001,0.02)",
+    "req": "the pattern must match the string 'aabb'"
+  },
+  {
+    "cell": 20,
+    "rarity": 0.008695652173913044,
+    "band": "[0.001,0.02)",
+    "req": "the pattern must match the string '0042'"
+  },
+  {
+    "cell": 28,
+    "rarity": 0.008695652173913044,
+    "band": "[0.001,0.02)",
+    "req": "the pattern must match the string '2024-13-45'"
+  },
+  {
+    "cell": 194,
+    "rarity": 0.008695652173913044,
+    "band": "[0.001,0.02)",
+    "req": "the pattern must match the string '01- b. .10'"
+  },
+  {
+    "cell": 139,
+    "rarity": 0.008695652173913044,
+    "band": "[0.001,0.02)",
+    "req": "the pattern must match the string 'a0c'"
+  },
+  {
+    "cell": 24,
+    "rarity": 0.008695652173913044,
+    "band": "[0.001,0.02)",
+    "req": "the pattern must match the string '1_000'"
+  },
+  {
+    "cell": 40,
+    "rarity": 0.05217391304347826,
+    "band": "[0.02,0.1)",
+    "req": "the pattern must match the string '999.999.999.999'"
+  },
+  {
+    "cell": 116,
+    "rarity": 0.02608695652173913,
+    "band": "[0.02,0.1)",
+    "req": "the pattern must match the string 'v1.2.3-beta.1'"
+  },
+  {
+    "cell": 115,
+    "rarity": 0.02608695652173913,
+    "band": "[0.02,0.1)",
+    "req": "the pattern must match the string 'v1.2.3'"
+  },
+  {
+    "cell": 25,
+    "rarity": 0.034782608695652174,
+    "band": "[0.02,0.1)",
+    "req": "the pattern must match the string '2024-01-31'"
+  },
+  {
+    "cell": 39,
+    "rarity": 0.1826086956521739,
+    "band": "[0.1,0.3)",
+    "req": "the pattern must match the string '192.168.0.1'"
+  },
+  {
+    "cell": 118,
+    "rarity": 0.8347826086956521,
+    "band": "[0.3,1.01)",
+    "req": "the pattern must match the string '2.0.0-rc1'"
+  }
+]

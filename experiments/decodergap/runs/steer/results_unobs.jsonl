@@ -1,0 +1,108 @@
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 88, "want": "I169", "seed": 0, "got": "I46", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 88, "want": "I169", "seed": 1, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 88, "want": "I169", "seed": 2, "got": "I119", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 73, "want": "I42", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 73, "want": "I42", "seed": 1, "got": "I69", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 73, "want": "I42", "seed": 2, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 31, "want": "I150", "seed": 0, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 31, "want": "I150", "seed": 1, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 31, "want": "I150", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 85, "want": "I9", "seed": 0, "got": "I4", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 85, "want": "I9", "seed": 1, "got": "I7", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 85, "want": "I9", "seed": 2, "got": "I4", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 63, "want": "I70", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 63, "want": "I70", "seed": 1, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 63, "want": "I70", "seed": 2, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 89, "want": "I85", "seed": 0, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 89, "want": "I85", "seed": 1, "got": "I6", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 89, "want": "I85", "seed": 2, "got": "I27", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 62, "want": "I20", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 62, "want": "I20", "seed": 1, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 62, "want": "I20", "seed": 2, "got": "I0", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 51, "want": "I10", "seed": 0, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 51, "want": "I10", "seed": 1, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 51, "want": "I10", "seed": 2, "got": "I34", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 111, "want": "I80", "seed": 0, "got": "I183", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 111, "want": "I80", "seed": 1, "got": "I3", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 111, "want": "I80", "seed": 2, "got": "I16", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 132, "want": "I176", "seed": 0, "got": "I4", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 132, "want": "I176", "seed": 1, "got": "I4", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 132, "want": "I176", "seed": 2, "got": "I34", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 87, "want": "I121", "seed": 0, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 87, "want": "I121", "seed": 1, "got": "I5", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 87, "want": "I121", "seed": 2, "got": "I2", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 104, "want": "I184", "seed": 0, "got": "I1", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 104, "want": "I184", "seed": 1, "got": "I7", "hit": false, "calls": 1}
+{"arm": "blind", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 104, "want": "I184", "seed": 2, "got": "I85", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 88, "want": "I169", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 88, "want": "I169", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 88, "want": "I169", "seed": 2, "got": "I84", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 73, "want": "I42", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 73, "want": "I42", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 73, "want": "I42", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 31, "want": "I150", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 31, "want": "I150", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 31, "want": "I150", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 85, "want": "I9", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 85, "want": "I9", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 85, "want": "I9", "seed": 2, "got": "I8", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 63, "want": "I70", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 63, "want": "I70", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 63, "want": "I70", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 89, "want": "I85", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 89, "want": "I85", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 89, "want": "I85", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 62, "want": "I20", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 62, "want": "I20", "seed": 1, "got": "I4", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 62, "want": "I20", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 51, "want": "I10", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 51, "want": "I10", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 51, "want": "I10", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 111, "want": "I80", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 111, "want": "I80", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 111, "want": "I80", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 132, "want": "I176", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 132, "want": "I176", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 132, "want": "I176", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 87, "want": "I121", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 87, "want": "I121", "seed": 1, "got": "I28", "hit": false, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 87, "want": "I121", "seed": 2, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 104, "want": "I184", "seed": 0, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 104, "want": "I184", "seed": 1, "calls": 1}
+{"arm": "decoy", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 104, "want": "I184", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 88, "want": "I169", "seed": 0, "got": "I169", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 88, "want": "I169", "seed": 1, "got": "I169", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 88, "want": "I169", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 73, "want": "I42", "seed": 0, "got": "I42", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 73, "want": "I42", "seed": 1, "got": "I42", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 73, "want": "I42", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 31, "want": "I150", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 31, "want": "I150", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 31, "want": "I150", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 85, "want": "I9", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 85, "want": "I9", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 85, "want": "I9", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 63, "want": "I70", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 63, "want": "I70", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 63, "want": "I70", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 89, "want": "I85", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 89, "want": "I85", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 89, "want": "I85", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 62, "want": "I20", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 62, "want": "I20", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 62, "want": "I20", "seed": 2, "got": "I20", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 51, "want": "I10", "seed": 0, "got": "I10", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 51, "want": "I10", "seed": 1, "got": "I10", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 51, "want": "I10", "seed": 2, "got": "I10", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 111, "want": "I80", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 111, "want": "I80", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 111, "want": "I80", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 132, "want": "I176", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 132, "want": "I176", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 132, "want": "I176", "seed": 2, "got": "I176", "hit": true, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 87, "want": "I121", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 87, "want": "I121", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 87, "want": "I121", "seed": 2, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 104, "want": "I184", "seed": 0, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 104, "want": "I184", "seed": 1, "calls": 1}
+{"arm": "instruct", "band": "[0,0.001) unobserved", "rarity": 0.0, "input_idx": 104, "want": "I184", "seed": 2, "calls": 1}

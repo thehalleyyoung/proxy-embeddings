@@ -1,0 +1,362 @@
+[
+  {
+    "cell": "name=cust034",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the result must contain at least one row in which the column `name` has the value `cust034`"
+  },
+  {
+    "cell": "name=cust041",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the result must contain at least one row in which the column `name` has the value `cust041`"
+  },
+  {
+    "cell": "name=cust042",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the result must contain at least one row in which the column `name` has the value `cust042`"
+  },
+  {
+    "cell": "name=cust035",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the result must contain at least one row in which the column `name` has the value `cust035`"
+  },
+  {
+    "cell": "name=cust005",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the result must contain at least one row in which the column `name` has the value `cust005`"
+  },
+  {
+    "cell": "name=cust071",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the result must contain at least one row in which the column `name` has the value `cust071`"
+  },
+  {
+    "cell": "name=cust091",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the result must contain at least one row in which the column `name` has the value `cust091`"
+  },
+  {
+    "cell": "name=cust054",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the result must contain at least one row in which the column `name` has the value `cust054`"
+  },
+  {
+    "cell": "name=cust105",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the result must contain at least one row in which the column `name` has the value `cust105`"
+  },
+  {
+    "cell": "name=cust027",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the result must contain at least one row in which the column `name` has the value `cust027`"
+  },
+  {
+    "cell": "status=pending",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the result must contain at least one row in which the column `status` has the value `pending`"
+  },
+  {
+    "cell": "name=cust044",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved",
+    "req": "the result must contain at least one row in which the column `name` has the value `cust044`"
+  },
+  {
+    "cell": "category_revenue_share_pct=-64.42",
+    "rarity": 0.001658374792703151,
+    "band": "[0.001,0.02)",
+    "req": "the result must contain at least one row in which the column `category_revenue_share_pct` has the value `-64.42`"
+  },
+  {
+    "cell": "country_revenue_share_pct=3.31",
+    "rarity": 0.001658374792703151,
+    "band": "[0.001,0.02)",
+    "req": "the result must contain at least one row in which the column `country_revenue_share_pct` has the value `3.31`"
+  },
+  {
+    "cell": "revenue_2023=874.76",
+    "rarity": 0.001658374792703151,
+    "band": "[0.001,0.02)",
+    "req": "the result must contain at least one row in which the column `revenue_2023` has the value `874.76`"
+  },
+  {
+    "cell": "category_revenue_share_pct=3.91",
+    "rarity": 0.001658374792703151,
+    "band": "[0.001,0.02)",
+    "req": "the result must contain at least one row in which the column `category_revenue_share_pct` has the value `3.91`"
+  },
+  {
+    "cell": "country_revenue_share_pct=5.05",
+    "rarity": 0.001658374792703151,
+    "band": "[0.001,0.02)",
+    "req": "the result must contain at least one row in which the column `country_revenue_share_pct` has the value `5.05`"
+  },
+  {
+    "cell": "average_order_value=1262.44",
+    "rarity": 0.001658374792703151,
+    "band": "[0.001,0.02)",
+    "req": "the result must contain at least one row in which the column `average_order_value` has the value `1262.44`"
+  },
+  {
+    "cell": "product=prod013",
+    "rarity": 0.003316749585406302,
+    "band": "[0.001,0.02)",
+    "req": "the result must contain at least one row in which the column `product` has the value `prod013`"
+  },
+  {
+    "cell": "sell_through_pct=7.6",
+    "rarity": 0.001658374792703151,
+    "band": "[0.001,0.02)",
+    "req": "the result must contain at least one row in which the column `sell_through_pct` has the value `7.6`"
+  },
+  {
+    "cell": "category_revenue_pct=7.09",
+    "rarity": 0.011608623548922056,
+    "band": "[0.001,0.02)",
+    "req": "the result must contain at least one row in which the column `category_revenue_pct` has the value `7.09`"
+  },
+  {
+    "cell": "customer_id=21",
+    "rarity": 0.01658374792703151,
+    "band": "[0.001,0.02)",
+    "req": "the result must contain at least one row in which the column `customer_id` has the value `21`"
+  },
+  {
+    "cell": "revenue_growth_pct=156.2",
+    "rarity": 0.013266998341625208,
+    "band": "[0.001,0.02)",
+    "req": "the result must contain at least one row in which the column `revenue_growth_pct` has the value `156.2`"
+  },
+  {
+    "cell": "units_per_order=5.92",
+    "rarity": 0.001658374792703151,
+    "band": "[0.001,0.02)",
+    "req": "the result must contain at least one row in which the column `units_per_order` has the value `5.92`"
+  },
+  {
+    "cell": "revenue_per_order=709.86",
+    "rarity": 0.04311774461028192,
+    "band": "[0.02,0.1)",
+    "req": "the result must contain at least one row in which the column `revenue_per_order` has the value `709.86`"
+  },
+  {
+    "cell": "orders=11",
+    "rarity": 0.09618573797678276,
+    "band": "[0.02,0.1)",
+    "req": "the result must contain at least one row in which the column `orders` has the value `11`"
+  },
+  {
+    "cell": "product_id=3",
+    "rarity": 0.06301824212271974,
+    "band": "[0.02,0.1)",
+    "req": "the result must contain at least one row in which the column `product_id` has the value `3`"
+  },
+  {
+    "cell": "city=Madrid",
+    "rarity": 0.07462686567164178,
+    "band": "[0.02,0.1)",
+    "req": "the result must contain at least one row in which the column `city` has the value `Madrid`"
+  },
+  {
+    "cell": "product=prod065",
+    "rarity": 0.03980099502487562,
+    "band": "[0.02,0.1)",
+    "req": "the result must contain at least one row in which the column `product` has the value `prod065`"
+  },
+  {
+    "cell": "revenue_2023=1743.23",
+    "rarity": 0.06135986733001658,
+    "band": "[0.02,0.1)",
+    "req": "the result must contain at least one row in which the column `revenue_2023` has the value `1743.23`"
+  },
+  {
+    "cell": "unique_customers=6",
+    "rarity": 0.06301824212271974,
+    "band": "[0.02,0.1)",
+    "req": "the result must contain at least one row in which the column `unique_customers` has the value `6`"
+  },
+  {
+    "cell": "name=prod053",
+    "rarity": 0.028192371475953566,
+    "band": "[0.02,0.1)",
+    "req": "the result must contain at least one row in which the column `name` has the value `prod053`"
+  },
+  {
+    "cell": "product=prod030",
+    "rarity": 0.02321724709784411,
+    "band": "[0.02,0.1)",
+    "req": "the result must contain at least one row in which the column `product` has the value `prod030`"
+  },
+  {
+    "cell": "yoy_growth_pct=-23.8",
+    "rarity": 0.0845771144278607,
+    "band": "[0.02,0.1)",
+    "req": "the result must contain at least one row in which the column `yoy_growth_pct` has the value `-23.8`"
+  },
+  {
+    "cell": "name=prod072",
+    "rarity": 0.03150912106135987,
+    "band": "[0.02,0.1)",
+    "req": "the result must contain at least one row in which the column `name` has the value `prod072`"
+  },
+  {
+    "cell": "revenue_share_pct=20.68",
+    "rarity": 0.04477611940298507,
+    "band": "[0.02,0.1)",
+    "req": "the result must contain at least one row in which the column `revenue_share_pct` has the value `20.68`"
+  },
+  {
+    "cell": "revenue_2024=3917.77",
+    "rarity": 0.14427860696517414,
+    "band": "[0.1,0.3)",
+    "req": "the result must contain at least one row in which the column `revenue_2024` has the value `3917.77`"
+  },
+  {
+    "cell": "yoy_growth_pct=153.5",
+    "rarity": 0.11774461028192372,
+    "band": "[0.1,0.3)",
+    "req": "the result must contain at least one row in which the column `yoy_growth_pct` has the value `153.5`"
+  },
+  {
+    "cell": "stock=344",
+    "rarity": 0.1044776119402985,
+    "band": "[0.1,0.3)",
+    "req": "the result must contain at least one row in which the column `stock` has the value `344`"
+  },
+  {
+    "cell": "revenue=3790.3",
+    "rarity": 0.18407960199004975,
+    "band": "[0.1,0.3)",
+    "req": "the result must contain at least one row in which the column `revenue` has the value `3790.3`"
+  },
+  {
+    "cell": "paid_orders=1",
+    "rarity": 0.16583747927031509,
+    "band": "[0.1,0.3)",
+    "req": "the result must contain at least one row in which the column `paid_orders` has the value `1`"
+  },
+  {
+    "cell": "orders_2024=4",
+    "rarity": 0.11774461028192372,
+    "band": "[0.1,0.3)",
+    "req": "the result must contain at least one row in which the column `orders_2024` has the value `4`"
+  },
+  {
+    "cell": "yoy_growth_pct=-69.9",
+    "rarity": 0.11608623548922056,
+    "band": "[0.1,0.3)",
+    "req": "the result must contain at least one row in which the column `yoy_growth_pct` has the value `-69.9`"
+  },
+  {
+    "cell": "country_rank=2",
+    "rarity": 0.10281923714759536,
+    "band": "[0.1,0.3)",
+    "req": "the result must contain at least one row in which the column `country_rank` has the value `2`"
+  },
+  {
+    "cell": "units_sold=38",
+    "rarity": 0.1791044776119403,
+    "band": "[0.1,0.3)",
+    "req": "the result must contain at least one row in which the column `units_sold` has the value `38`"
+  },
+  {
+    "cell": "yoy_growth_pct=60.8",
+    "rarity": 0.12271973466003316,
+    "band": "[0.1,0.3)",
+    "req": "the result must contain at least one row in which the column `yoy_growth_pct` has the value `60.8`"
+  },
+  {
+    "cell": "customers=1",
+    "rarity": 0.10945273631840796,
+    "band": "[0.1,0.3)",
+    "req": "the result must contain at least one row in which the column `customers` has the value `1`"
+  },
+  {
+    "cell": "revenue_2024=2026.86",
+    "rarity": 0.11774461028192372,
+    "band": "[0.1,0.3)",
+    "req": "the result must contain at least one row in which the column `revenue_2024` has the value `2026.86`"
+  },
+  {
+    "cell": "country=UK",
+    "rarity": 0.5339966832504146,
+    "band": "[0.3,1.01)",
+    "req": "the result must contain at least one row in which the column `country` has the value `UK`"
+  },
+  {
+    "cell": "country=Spain",
+    "rarity": 0.548922056384743,
+    "band": "[0.3,1.01)",
+    "req": "the result must contain at least one row in which the column `country` has the value `Spain`"
+  },
+  {
+    "cell": "category_rank=1",
+    "rarity": 0.5638474295190713,
+    "band": "[0.3,1.01)",
+    "req": "the result must contain at least one row in which the column `category_rank` has the value `1`"
+  },
+  {
+    "cell": "country=Italy",
+    "rarity": 0.548922056384743,
+    "band": "[0.3,1.01)",
+    "req": "the result must contain at least one row in which the column `country` has the value `Italy`"
+  },
+  {
+    "cell": "order_year=2019",
+    "rarity": 0.40298507462686567,
+    "band": "[0.3,1.01)",
+    "req": "the result must contain at least one row in which the column `order_year` has the value `2019`"
+  },
+  {
+    "cell": "order_year=2020",
+    "rarity": 0.41459369817578773,
+    "band": "[0.3,1.01)",
+    "req": "the result must contain at least one row in which the column `order_year` has the value `2020`"
+  },
+  {
+    "cell": "order_year=2024",
+    "rarity": 0.45439469320066334,
+    "band": "[0.3,1.01)",
+    "req": "the result must contain at least one row in which the column `order_year` has the value `2024`"
+  },
+  {
+    "cell": "country=Germany",
+    "rarity": 0.548922056384743,
+    "band": "[0.3,1.01)",
+    "req": "the result must contain at least one row in which the column `country` has the value `Germany`"
+  },
+  {
+    "cell": "category_rank=2",
+    "rarity": 0.5538971807628524,
+    "band": "[0.3,1.01)",
+    "req": "the result must contain at least one row in which the column `category_rank` has the value `2`"
+  },
+  {
+    "cell": "customers=4",
+    "rarity": 0.3117744610281924,
+    "band": "[0.3,1.01)",
+    "req": "the result must contain at least one row in which the column `customers` has the value `4`"
+  },
+  {
+    "cell": "order_year=2023",
+    "rarity": 0.45107794361525705,
+    "band": "[0.3,1.01)",
+    "req": "the result must contain at least one row in which the column `order_year` has the value `2023`"
+  },
+  {
+    "cell": "order_year=2021",
+    "rarity": 0.43449419568822556,
+    "band": "[0.3,1.01)",
+    "req": "the result must contain at least one row in which the column `order_year` has the value `2021`"
+  }
+]

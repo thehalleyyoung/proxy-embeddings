@@ -12,7 +12,7 @@ import base64, pathlib, re, subprocess
 
 HERE = pathlib.Path(__file__).resolve().parent
 
-TITLE = "A Lever, Not a Ruler: Steering an Output Modality You Cannot Address"
+TITLE = "Proxy Embeddings: What a Text Channel Can and Cannot Tell You About the Artifact"
 REPO_URL = "https://github.com/thehalleyyoung/proxy-embeddings"
 COMPANION_URL = "https://thehalleyyoung.github.io/rac/"
 COMPANION_LABEL = "main paper: Recursive Axis Conditioning"

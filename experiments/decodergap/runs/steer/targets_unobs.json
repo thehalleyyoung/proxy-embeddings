@@ -1,0 +1,226 @@
+[
+  {
+    "input_idx": 88,
+    "input": [
+      2,
+      41,
+      26,
+      -13,
+      -30,
+      27,
+      30,
+      -15,
+      17,
+      -46,
+      16,
+      4,
+      15
+    ],
+    "want": "I169",
+    "want_str": "169",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved"
+  },
+  {
+    "input_idx": 73,
+    "input": [
+      47,
+      22,
+      -21,
+      -21,
+      11
+    ],
+    "want": "I42",
+    "want_str": "42",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved"
+  },
+  {
+    "input_idx": 31,
+    "input": [
+      -2,
+      4,
+      -8,
+      16
+    ],
+    "want": "I150",
+    "want_str": "150",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved"
+  },
+  {
+    "input_idx": 85,
+    "input": [
+      -4,
+      1,
+      4,
+      6,
+      -26,
+      -43,
+      -36,
+      -47
+    ],
+    "want": "I9",
+    "want_str": "9",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved"
+  },
+  {
+    "input_idx": 63,
+    "input": [
+      34,
+      -4,
+      19,
+      -37,
+      -35
+    ],
+    "want": "I70",
+    "want_str": "70",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved"
+  },
+  {
+    "input_idx": 89,
+    "input": [
+      -25,
+      -41,
+      -1,
+      -30,
+      22,
+      -16,
+      19,
+      39,
+      50,
+      18,
+      -25,
+      -29,
+      44
+    ],
+    "want": "I85",
+    "want_str": "85",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved"
+  },
+  {
+    "input_idx": 62,
+    "input": [
+      47,
+      44,
+      26,
+      -40,
+      -7
+    ],
+    "want": "I20",
+    "want_str": "20",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved"
+  },
+  {
+    "input_idx": 51,
+    "input": [
+      4,
+      30,
+      -13
+    ],
+    "want": "I10",
+    "want_str": "10",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved"
+  },
+  {
+    "input_idx": 111,
+    "input": [
+      24,
+      48,
+      -4,
+      -23,
+      16,
+      9,
+      44,
+      7,
+      -43,
+      -30,
+      -26,
+      -50,
+      -28,
+      43,
+      -39,
+      49,
+      -23,
+      34,
+      23,
+      -28,
+      3
+    ],
+    "want": "I80",
+    "want_str": "80",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved"
+  },
+  {
+    "input_idx": 132,
+    "input": [
+      1,
+      7,
+      0,
+      2,
+      7,
+      8,
+      2,
+      4,
+      0,
+      7
+    ],
+    "want": "I176",
+    "want_str": "176",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved"
+  },
+  {
+    "input_idx": 87,
+    "input": [
+      -43,
+      16,
+      18,
+      -31,
+      36,
+      30,
+      43,
+      -43
+    ],
+    "want": "I121",
+    "want_str": "121",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved"
+  },
+  {
+    "input_idx": 104,
+    "input": [
+      -5,
+      45,
+      -23,
+      -7,
+      13,
+      -44,
+      -39,
+      -14,
+      18,
+      50,
+      -22,
+      3,
+      -14,
+      12,
+      44,
+      -23,
+      -18,
+      38,
+      3,
+      42,
+      24
+    ],
+    "want": "I184",
+    "want_str": "184",
+    "rarity": 0.0,
+    "band": "[0,0.001) unobserved"
+  }
+]

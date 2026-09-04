@@ -17,7 +17,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 
-TITLE = "A Lever, Not a Ruler: Steering an Output Modality You Cannot Address"
+TITLE = "Proxy Embeddings: What a Text Channel Can and Cannot Tell You About the Artifact"
 
 PREAMBLE = r"""
 % ICLR-style page: 5.5in text block on US letter, Times, 10pt
