@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+decodergap/__init__.py
+decodergap/_api.py
+decodergap/_core.py
+decodergap.egg-info/PKG-INFO
+decodergap.egg-info/SOURCES.txt
+decodergap.egg-info/dependency_links.txt
+decodergap.egg-info/requires.txt
+decodergap.egg-info/top_level.txt

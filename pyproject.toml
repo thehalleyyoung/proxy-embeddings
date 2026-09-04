@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "decodergap"
+version = "0.1.0"
+description = "What a text channel can and cannot tell you about the artifact it is decoded into"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = ["numpy>=1.21", "scipy>=1.7"]
+
+[project.optional-dependencies]
+baselines = ["scikit-learn>=1.0"]
+
+[tool.setuptools]
+packages = ["decodergap"]
