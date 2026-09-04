@@ -82,3 +82,46 @@ usually in the emergent-and-unobservable regime, which is the worse one. We
 predict compliance orders: constructible > emergent-observable >
 emergent-unobservable, and we record here that the SQL number (31.3%) is an
 estimate for the middle case and should not be quoted for the third.
+
+---
+
+## Outcome: the SVG prediction FAILED its own falsifier
+
+Recorded here rather than adjusted. 52 targets × 3 arms × 3 seeds.
+
+| prediction | registered | observed | verdict |
+|---|---|---|---|
+| 1. `instruct` ≥ 70% | ≥ 70% | **18.6%** [12.2, 25.0] | **FAILED** |
+| 2. approximately flat in rarity | flat | 13.9 / 11.1 / 30.6 / 16.7 / 25.0 — not flat, not monotone | **FAILED** |
+| 3. `decoy` near the floor, below `instruct` | yes | 3.2% vs 18.6% | held |
+
+The registered falsifier reads: *if SVG `instruct` compliance decays with rarity
+in the way programs do, or lands below 50% overall, the constructible/emergent
+distinction does not predict reach and should be reported as unsupported rather
+than rescued.* It landed at 18.6%. **On this test the distinction is not
+supported**, and the paper says so.
+
+### The diagnosis, which is a separate and clearly post-hoc claim
+
+The most likely reason SVG behaves this way is that its target is not the simple
+constructible thing the registration assumed. Every other decoder's target is a
+single property. An SVG target is a **conjunction of four quantized properties** —
+tag, grid cell (1 of 36), size band (1 of 5), fill-hue band (1 of 9) — and three
+of those quantizations are *our measurement apparatus*, not anything the
+generator can compute. It is told "column 5 of 6, row 2 of 6, medium in area,
+blue"; it cannot check whether the circle it drew has an area fraction above the
+0.05 threshold that separates our size bands, or whether its chosen blue falls in
+hue bin 5 or 6.
+
+So SVG is constructible **in principle** and unobservable **in practice**: the
+generator cannot verify its own compliance. That is the observability axis, and
+it means the registration mis-classified the domain rather than the rule
+necessarily being wrong.
+
+That explanation is post-hoc and is not evidence. It makes one testable
+prediction, which is being run: **if the misses are quantization misses, scoring
+the same generations with one band of tolerance on cell and size should raise
+compliance sharply; if the misses are wholesale, it should not.** The re-run
+records the marks each generation actually produced so the miss distance can be
+measured rather than assumed. Whatever that returns is reported next to this
+failure, not in place of it.

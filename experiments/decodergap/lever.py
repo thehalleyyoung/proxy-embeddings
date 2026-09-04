@@ -306,8 +306,15 @@ def _one(args) -> dict:
         if item:
             a = A.decode(item)
             if a is not None:
-                rec["hit"] = t["cell"] in A.cells(a)
-                rec["n_cells"] = len(A.cells(a))
+                cs = A.cells(a)
+                rec["hit"] = t["cell"] in cs
+                rec["n_cells"] = len(cs)
+                # the produced artifact is kept so a miss can be diagnosed:
+                # a target that is a CONJUNCTION of quantized properties can be
+                # missed by a hair on one of them, and exact scoring cannot tell
+                # that from missing it entirely.
+                if name == "svg":
+                    rec["produced"] = sorted(cs)[:400]
     except Exception as e:
         rec["error"] = str(e)[:160]
     return rec

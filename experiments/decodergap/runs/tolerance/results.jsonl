@@ -1,0 +1,258 @@
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 0}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 1}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 2}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 0}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 1}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 2}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 0, "got": "I12236", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 1, "got": "I12236", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 2, "got": "I12236", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 0}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 1}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 2}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "seed": 0}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "seed": 1, "got": "I10", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "seed": 2}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 0}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 1}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 2}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 0}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 1}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 2}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 1, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 0}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 1}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 2, "got": "I20", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 0}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 1, "got": "I126", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 2}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "seed": 0}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "seed": 1}
+{"arm": "exact", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "seed": 2}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "seed": 0, "got": "I95", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "seed": 1, "got": "I95", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "seed": 2, "got": "I95", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "seed": 0, "got": "I65", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "seed": 1}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "seed": 2}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "seed": 0}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "seed": 1}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "seed": 2, "got": "I8", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "seed": 0}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "seed": 1}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "seed": 2}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "seed": 0}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "seed": 1}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "seed": 2}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "seed": 0}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "seed": 1}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "seed": 2}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "seed": 0, "got": "I9", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "seed": 1, "got": "I9", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "seed": 2, "got": "I9", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "seed": 0, "got": "I71", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "seed": 1, "got": "I71", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "seed": 2, "got": "I71", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "seed": 0, "got": "I1", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "seed": 1, "got": "I1", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "seed": 2, "got": "I1", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "seed": 0}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "seed": 1, "got": "I10", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "seed": 2}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "seed": 0, "got": "I5", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "seed": 1, "got": "I5", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "seed": 2, "got": "I5", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "seed": 0}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "seed": 1, "got": "I6", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "seed": 2, "got": "I6", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "seed": 0, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "seed": 1, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "seed": 2, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "seed": 0}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "seed": 1, "got": "I44", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "seed": 2, "got": "I44", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "seed": 1, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "seed": 1, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "seed": 0, "got": "I41", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "seed": 1, "got": "I41", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "seed": 2, "got": "I41", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "seed": 0, "got": "I39", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "seed": 1, "got": "I39", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "seed": 2, "got": "I39", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "seed": 0, "got": "I4", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "seed": 1, "got": "I4", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "seed": 2, "got": "I4", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "seed": 0, "got": "I0", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "seed": 1, "got": "I0", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "seed": 2, "got": "I0", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "seed": 1, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "seed": 0, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "seed": 1, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "seed": 2, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "seed": 1, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "seed": 0, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "seed": 1, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "seed": 2, "got": "E:IndexError", "hit_exact": false, "hit_tol": false}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 1, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "seed": 1, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "seed": 1, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "seed": 0, "got": "I0", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "seed": 1, "got": "I0", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "seed": 2, "got": "I0", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "seed": 0, "got": "I1", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "seed": 1, "got": "I1", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "seed": 2, "got": "I1", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 1, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 1, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 0, "got": "I1", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 1, "got": "I1", "hit_exact": true, "hit_tol": true}
+{"arm": "exact", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 2, "got": "I2", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 0, "got": "I12", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 1, "got": "I12", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 2}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 0, "got": "I196", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 1, "got": "I196", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 2}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 0, "got": "I10110", "hit_exact": false, "hit_tol": false}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 1, "got": "I12236", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 2, "got": "I11020", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 0}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 1, "got": "I49", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 2, "got": "I57", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "seed": 0, "got": "I12", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "seed": 1}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "seed": 2, "got": "I10", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 0, "got": "I26", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 1, "got": "I32", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 2, "got": "I32", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 0, "got": "I18", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 1, "got": "I18", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 2, "got": "I18", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 0, "got": "I0", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 1, "got": "I0", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.009852216748768473, "seed": 2, "got": "I4", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 0, "got": "I19", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 1, "got": "I18", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 2, "got": "I18", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 0, "got": "I120", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 1, "got": "I120", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.0049261083743842365, "seed": 2, "got": "I120", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "seed": 0}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "seed": 1, "got": "I114", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.001,0.02)", "rarity": 0.019704433497536946, "seed": 2}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "seed": 0, "got": "I95", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "seed": 1, "got": "I95", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.08374384236453201, "seed": 2, "got": "I86", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "seed": 0, "got": "I72", "hit_exact": false, "hit_tol": false}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "seed": 1}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "seed": 2, "got": "I65", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "seed": 0, "got": "I9", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "seed": 1, "got": "I9", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.034482758620689655, "seed": 2, "got": "I7", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "seed": 0, "got": "I17", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "seed": 1, "got": "I17", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "seed": 2, "got": "I17", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "seed": 0}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "seed": 1}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.054187192118226604, "seed": 2}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "seed": 0}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "seed": 1}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "seed": 2, "got": "I95", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "seed": 0}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "seed": 1, "got": "I7", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.04433497536945813, "seed": 2}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "seed": 0, "got": "I71", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "seed": 1, "got": "I71", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.04926108374384237, "seed": 2, "got": "I71", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "seed": 0, "got": "I3", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "seed": 1, "got": "I3", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.024630541871921183, "seed": 2, "got": "I3", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "seed": 0, "got": "I10", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "seed": 1, "got": "I5", "hit_exact": false, "hit_tol": false}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.06896551724137931, "seed": 2, "got": "I8", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "seed": 0, "got": "I5", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "seed": 1, "got": "I5", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.09852216748768473, "seed": 2, "got": "I5", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "seed": 0, "got": "I8", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "seed": 1, "got": "I8", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.02,0.1)", "rarity": 0.029556650246305417, "seed": 2, "got": "I8", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "seed": 0, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "seed": 1, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.270935960591133, "seed": 2}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "seed": 0, "got": "I44", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "seed": 1, "got": "I48", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "seed": 2, "got": "I46", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "seed": 0, "got": "I4", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "seed": 1, "got": "I0", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.15763546798029557, "seed": 2}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "seed": 0, "got": "I3", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "seed": 1, "got": "I3", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.12807881773399016, "seed": 2, "got": "I3", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "seed": 0, "got": "I41", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "seed": 1, "got": "I41", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.11822660098522167, "seed": 2, "got": "I41", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "seed": 0, "got": "I41", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "seed": 1, "got": "I42", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.10837438423645321, "seed": 2, "got": "I42", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "seed": 0, "got": "I4", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "seed": 1, "got": "I4", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.1477832512315271, "seed": 2, "got": "I4", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "seed": 0, "got": "I0", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "seed": 1, "got": "I1", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.1,0.3)", "rarity": 0.20689655172413793, "seed": 2, "got": "I1", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "seed": 1, "got": "I4", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.35467980295566504, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "seed": 0, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "seed": 1, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.33497536945812806, "seed": 2, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "seed": 1, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "seed": 0, "got": "I3", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "seed": 1, "got": "I4", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.33004926108374383, "seed": 2, "got": "I4", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 1, "got": "I4", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 2, "got": "I4", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "seed": 0, "got": "I1", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "seed": 1, "got": "I4", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3694581280788177, "seed": 2, "got": "I1", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "seed": 0, "got": "I3", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "seed": 1, "got": "I3", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3793103448275862, "seed": 2, "got": "I3", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "seed": 0, "got": "I0", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "seed": 1, "got": "I0", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "seed": 2, "got": "I0", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "seed": 0, "got": "I3", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "seed": 1, "got": "I1", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.32019704433497537, "seed": 2, "got": "I1", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 1, "got": "I0", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 2, "got": "I0", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 0, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 1, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 2, "got": "I2", "hit_exact": true, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 0, "got": "I0", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 1, "got": "I0", "hit_exact": false, "hit_tol": true}
+{"arm": "tolerant", "band": "[0.3,1.01)", "rarity": 0.3497536945812808, "seed": 2, "got": "I1", "hit_exact": true, "hit_tol": true}
